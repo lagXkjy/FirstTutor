@@ -1,0 +1,18 @@
+<!--component/music/music.wxml-->
+<view class='wrapper'>
+  <view bindtap='deleteMusic' wx:if='{{showDelete}}' class='delete'>
+    <image mode='widthFix' src='/images/delete-0.png' class='delete-image'></image>
+    <text class='delete-g'>|</text>
+  </view>
+  <view class='content'>
+    <view bindtap='musicPlay' class='content-image'>
+      <image hidden='{{isPlay}}' mode='widthFix' src='{{myType == 1 ? "/images/play1.png" : "/images/play.png"}}' class='play'></image>
+      <image hidden='{{!isPlay}}' mode='widthFix' src='{{myType == 1 ? "/images/pause1.png" : "/images/pause.png"}}' class='play'></image>
+    </view>
+    <view class='time'>{{start}}</view>
+    <view class='develop'>
+      <progress percent='{{develop}}' class='progress' activeColor='{{myType == 1 ? "#c24838" : "#7c9acf"}}' backgroundColor='#eaeaea' stroke-width='4'></progress>
+    </view>
+    <view class='time'>{{end}}</view>
+  </view>
+</view>

@@ -1,0 +1,18 @@
+/* component/voice/voice.wxss */
+
+.wrapper {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 5rpx;
+  box-sizing: border-box;
+  padding: 20rpx 30rpx;
+  color: #5a5a5a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+}
+
+.wrapper-image {
+  width: 40rpx;
+}

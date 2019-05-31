@@ -1,0 +1,52 @@
+<!--pages/static/templateMessage/templateMessage.wxml-->
+<view class='header'>
+  <view class='fon-30 margin-b'>
+    为何需要设置模板消息推送
+  </view>
+  <text class='fon-24 c8'>
+  由于微信小程序不支持主动下发模板消息，为了方便您及时收到外教沟通的消息，我们将通过微信公众号以即时消息方式向您推送，请按照以下步骤进行模板消息设置。
+  </text>
+</view>
+<view class='item'>
+  <view class='title fon-28 border-b-1'>
+    第一步：绑定手机号
+  </view>
+  <view class='form'>
+    <input bindinput='input' class='input' name='phone' type='number' placeholder='请准确输入手机号' placeholder-style='font-size:24rpx;' maxlength='11'></input>
+    <button class='submit' bindtap='submit'>提交</button>
+  </view>
+  <view class='item-context fon-24'>
+    <text>已经参与过课程报名、学习需求提供过手机号的学生可不填</text>
+  </view>
+</view>
+<view class='item'>
+  <view class='title fon-28 border-b-1'>
+    第二步：关注微信公众号
+  </view>
+  <view class='two'>
+    <view class='two-box'>
+      <view class='two-top'>
+        <view class='two-left-top'>
+          <image mode='widthFix' class='image-point' src='/images/point.png'></image>
+          <view class='min-box'>点击右上角【<image mode='widthFix' class='image-point-min' src='/images/point.png'></image>】</view>
+        </view>
+        <image mode='widthFix' class='image-right' src='/images/right-1.png'></image>
+        <text>点击“关于FirstTutor”</text>
+      </view>
+      <view class='two-bottom'>
+        <text>关注“FirstTutor”公众号</text>
+        <image mode='widthFix' class='image-right image-left' src='/images/right-1.png'></image>
+        <text>点击“相关公众号”</text>
+      </view>
+    </view>
+    <image mode='widthFix' class='two-image' src='/images/this.png'></image>
+  </view>
+</view>
+<view class='item'>
+  <view class='title fon-28 border-b-1'>
+    第三步：进入微信公众号进行绑定
+  </view>
+  <view class='item-context fon-24'>
+    <text>点击微信公众号自定义菜单“学生绑定”进行学生手机号绑定（手机号要求与小程序端提供的手机号一致）。绑定成功后，您就可以即时收到外教的沟通信息了。</text>
+  </view>
+</view>

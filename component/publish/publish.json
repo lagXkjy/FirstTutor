@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "music": "/component/music/music"
+  }
+}

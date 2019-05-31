@@ -1,0 +1,70 @@
+<view class='flex padding-tb-20 padding-lr-30 aitems-center border-b-1 between'>
+  <view class='flex1 aitems-center  fon-30 flex '>
+    <view class='width-150 ca margin-r-10'>姓名</view>
+    <view class='c2b list-textArea'>{{stuInfo.StuName}}</view>
+  </view>
+</view>
+<view class='flex padding-tb-20 padding-lr-30 aitems-center border-b-1 between'>
+  <view class='flex1 aitems-center  fon-30 flex '>
+    <view class='width-150 ca margin-r-10'>手机号</view>
+    <view class='c2b list-textArea'>{{stuInfo.StuPhone}}</view>
+  </view>
+</view>
+<view class='flex padding-tb-20 padding-lr-30 aitems-center border-b-1 between'>
+  <view class='flex1 aitems-center  fon-30 flex '>
+    <view class='width-150 ca margin-r-10'>所在区域</view>
+    <view class='c2b list-textArea'>{{lnd.NedAreaSelect.city}} - {{lnd.NedAreaSelect.area}}</view>
+  </view>
+</view>
+<view class='flex padding-tb-20 padding-lr-30 aitems-center border-b-1 between'>
+  <view class='flex1 aitems-center  fon-30 flex '>
+    <view class='width-150 ca margin-r-10'>选择星期</view>
+    <view class='c2b list-textArea'>{{weekList[lnd.NedCorAfw - 1]}}</view>
+  </view>
+</view>
+<view class='flex padding-tb-20 padding-lr-30 aitems-center border-b-1 between'>
+  <view class='flex1 aitems-center  fon-30 flex '>
+    <view class='width-150 ca margin-r-10'>时间段</view>
+    <view class='c2b list-textArea'>{{timeList[lnd.NedClaTime - 1]}}</view>
+  </view>
+</view>
+<view class='flex padding-tb-20 padding-lr-30 aitems-center border-b-1 between'>
+  <view class='flex1 aitems-center  fon-30 flex '>
+    <view class='width-150 ca margin-r-10'>
+      <view>费用区间</view>
+      <view>(小时费)</view>
+    </view>
+    <view class='c2b list-textArea'>¥{{lnd.NedMinPrice}} - ¥{{lnd.NedMaxPrice}}</view>
+  </view>
+</view>
+<view class='flex padding-tb-20 padding-lr-30 aitems-center border-b-1 between'>
+  <view class='flex1 aitems-center  fon-30 flex '>
+    <view class='width-150 ca margin-r-10'>上课地址</view>
+    <view class='c2b list-textArea'>{{lnd.NedAddress}}</view>
+  </view>
+</view>
+<view class='flex padding-tb-20 padding-lr-30 aitems-center border-b-1 between'>
+  <view class='flex1 aitems-center  fon-30 flex '>
+    <view class='width-150 ca margin-r-10'>性别</view>
+    <view class='c2b list-textArea'>{{stuInfo.StuGender === 0 ? "女" : "男" }}</view>
+  </view>
+</view>
+<view class='flex padding-tb-20 padding-lr-30 aitems-center border-b-1 between'>
+  <view class='flex1 aitems-center  fon-30 flex '>
+    <view class='width-150 ca margin-r-10'>年龄</view>
+    <view class='c2b list-textArea'>{{stuInfo.StuAge}}</view>
+  </view>
+</view>
+<view class='flex padding-tb-20 padding-lr-30 aitems-center border-b-1 between'>
+  <view class='flex1 aitems-center  fon-30 flex '>
+    <view class='width-150 ca margin-r-10'>学习课程</view>
+    <view class='c2b list-textArea'>{{lnd.NedCorName}}</view>
+  </view>
+</view>
+<view class='flex padding-tb-20 padding-lr-30 aitems-center border-b-1 between'>
+  <view class='flex1 aitems-center  fon-30 flex '>
+    <view class='width-150 ca margin-r-10'>其他要求</view>
+    <view class='c2b list-textArea'>{{lnd.NedOther}}</view>
+  </view>
+</view>
+

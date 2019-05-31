@@ -1,0 +1,417 @@
+page {
+  background-color: #f5f6f9;
+  font-family: "黑体";
+  box-sizing: border-box;
+}
+
+/*结构  */
+
+.flex {
+  display: flex;
+  display: -webkit-flex;
+}
+
+.input-width {
+  width: 400rpx;
+}
+
+/*超出影藏  */
+
+.XianZhi {
+  word-wrap: break-word;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.XianZhi1 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.flex1 {
+  flex: 1;
+  -webkit-flex: 1;
+}
+
+.between {
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+}
+
+.center {
+  justify-content: center;
+  -webkit-justify-content: center;
+}
+
+.j-right {
+  justify-content: flex-end;
+  -webkit-justify-content: flex-end;
+}
+
+.around {
+  justify-content: space-around;
+  -webkit-justify-content: space-around;
+}
+
+.warp {
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+}
+
+.aitems-center {
+  align-items: center;
+  -webkit-align-items: center;
+}
+
+.yuan {
+  border-radius: 50%;
+  display: block;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+/*颜色  */
+
+.white {
+  color: #fff;
+}
+
+.c74 {
+  color: #747474;
+}
+
+.c32 {
+  color: #323232;
+}
+
+.ca {
+  color: #aaa;
+}
+
+.c2 {
+  color: #c2c2c2;
+}
+
+.c72 {
+  color: #727272;
+}
+
+.purple-bg {
+  background-color: #7c99d0;
+}
+
+.purple {
+  color: #7c99d0;
+}
+
+.bg-fff {
+  background-color: #fff;
+}
+
+.bg-f9 {
+  background-color: #f9f9f9;
+}
+
+.c40 {
+  color: #404040;
+}
+
+.c88 {
+  color: #888;
+}
+
+.c2b {
+  color: #2b2b2b;
+}
+
+.chuang {
+  color: #c4a46b;
+}
+
+.ca1 {
+  color: #a1a1a1;
+}
+
+.c8 {
+  color: #888;
+}
+
+.c74 {
+  color: #747474;
+}
+
+.green {
+  color: #6dc293;
+}
+
+/*字体大小  */
+
+.fon-26 {
+  font-size: 26rpx;
+}
+
+.fon-72 {
+  font-size: 72rpx;
+}
+
+.fon-32 {
+  font-size: 32rpx;
+}
+
+.fon-36 {
+  font-size: 36rpx;
+}
+
+.fon-28 {
+  font-size: 28rpx;
+}
+
+.fon-24 {
+  font-size: 24rpx;
+}
+
+.fon-30 {
+  font-size: 30rpx;
+}
+
+.fon-18 {
+  font-size: 18rpx;
+}
+
+.fon-48 {
+  font-size: 48rpx;
+}
+
+.fon-42 {
+  font-size: 42rpx;
+}
+
+.fon-37 {
+  font-size: 37rpx;
+}
+
+.fon-20 {
+  font-size: 20rpx;
+}
+
+.fon-22 {
+  font-size: 22rpx;
+}
+
+/*边框  */
+
+.border {
+  border: 1px solid #7c99d0;
+}
+
+.border-l-2 {
+  border-left: 2px solid #7c99d0;
+}
+
+.border-b-1 {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.border-r-1 {
+  border-right: 1px solid #ccc;
+}
+
+.border-t-1 {
+  border-top: 1px solid #e0e0e0;
+}
+
+/*padding  */
+
+.padding-lr-30 {
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+
+.padding-tb-20 {
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.padding-tb-30 {
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+}
+
+.padding-tb-40 {
+  padding-top: 40rpx;
+  padding-bottom: 40rpx;
+}
+
+.padding-b-20 {
+  padding-bottom: 20rpx;
+}
+
+.padding-50 {
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+}
+
+.padding-l-20 {
+  padding-left: 20rpx;
+}
+
+.padding-l-30 {
+  padding-left: 30rpx;
+}
+
+/*marging  */
+
+.margin-t-20 {
+  margin-top: 20rpx;
+}
+
+.margin-l-20 {
+  margin-left: 20rpx;
+}
+
+.margin-t-10 {
+  margin-top: 10rpx;
+}
+
+.margin-r-20 {
+  margin-right: 20rpx;
+}
+
+.margin-b-10 {
+  margin-bottom: 10rpx;
+}
+
+.margin-t-60 {
+  margin-top: 60rpx;
+}
+
+.margin-t-50 {
+  margin-top: 50rpx;
+}
+
+.margin-l-10 {
+  margin-left: 10rpx;
+}
+
+.t-center {
+  text-align: center;
+}
+
+.margin-b-20 {
+  margin-bottom: 20rpx;
+}
+
+.margin-r-10 {
+  margin-right: 14rpx;
+}
+
+.border-R-0 {
+  border-right: 0 !important;
+}
+
+/*高度  */
+
+.height-85 {
+  height: 85rpx;
+}
+
+.height-75 {
+  height: 75rpx;
+}
+
+/*宽度  */
+
+.width-150 {
+  width: 150rpx;
+}
+
+.width-135 {
+  width: 135rpx;
+}
+
+.width-100 {
+  width: 100rpx;
+}
+
+/*暂无数据  */
+
+.ZanWuShuJu {
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #888;
+}
+
+/*按钮  */
+
+.btn {
+  width: 90%;
+}
+
+.big-outer {
+  padding-bottom: 80rpx;
+}
+
+/*特殊图片  */
+
+.HuangGuan {
+  width: 28rpx;
+}
+
+.touXiang {
+  width: 99rpx;
+  height: 99rpx;
+}
+
+/*星星  */
+
+.img-xing {
+  width: 25rpx;
+  margin-left: 10rpx;
+}
+
+.banXin {
+  width: 12.5rpx;
+}
+
+.di {
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  bottom: 0;
+}
+
+.di2 {
+  position: absolute;
+  z-index: 90;
+  left: 0;
+  bottom: 4rpx;
+}
+
+.touxiang-image {
+  border-radius: 50%;
+}
+
+/*  暂无数据  */
+
+.noData {
+  width: 100%;
+  font-size: 38rpx;
+  text-align: center;
+  margin-top: 200rpx;
+  color: #888;
+}
+
+/* 请求数据完了 */
+.data-over{
+  text-align: center;
+  font-size: 32rpx;
+  line-height: 32rpx;
+  color: #888;
+}

@@ -1,0 +1,73 @@
+
+
+<view class='flex height-85 border-b-1 padding-lr-30  between aitems-center'>
+  <picker class='flex1' value="{{index}}" range="{{array}}" bindchange="bindPickerChange">
+    <view class='flex picker aitems-center '>
+      <view class="fon-30 flex aitems-center yanse ">
+        <view class='width-135'> 所在区域 </view>
+        <view class='ca'>{{array[index]}}</view>
+      </view>
+    </view>
+  </picker>
+  <image mode='widthFix' style='width:20rpx;' src='/images/jian_13.png'></image>
+</view>
+
+<view class='flex height-85 border-b-1 padding-lr-30  between aitems-center'>
+  <picker class='flex1' value="{{index}}" range="{{array}}" bindchange="bindPickerChange">
+    <view class='flex picker aitems-center '>
+      <view class="fon-30 flex aitems-center yanse ">
+        <view class='width-135'> 选择星期 </view>
+        <view class='ca'>{{array[index]}}</view>
+      </view>
+    </view>
+  </picker>
+  <image mode='widthFix' style='width:20rpx;' src='/images/jian_13.png'></image>
+</view>
+
+<view class='flex height-85 border-b-1 padding-lr-30  between aitems-center'>
+  <picker class='flex1' value="{{index}}" range="{{array}}" bindchange="bindPickerChange">
+    <view class='flex picker aitems-center '>
+      <view class="fon-30 flex aitems-center yanse ">
+        <view class='width-135'> 时间段 </view>
+        <view class='ca'>{{array[index]}}</view>
+      </view>
+    </view>
+  </picker>
+  <image mode='widthFix' style='width:20rpx;' src='/images/jian_13.png'></image>
+</view>
+
+
+<view class='flex height-85 border-b-1 padding-lr-30  between aitems-center'>
+  <picker class='flex1' value="{{index}}" range="{{array}}" bindchange="bindPickerChange">
+    <view class='flex picker aitems-center '>
+      <view class="fon-30 flex aitems-center yanse ">
+        <view class='width-135'> 费用区间 </view>
+        <view class='ca'>{{array[index]}}</view>
+      </view>
+    </view>
+  </picker>
+  <image mode='widthFix' style='width:20rpx;' src='/images/jian_13.png'></image>
+</view>
+
+<view class='flex height-85 padding-lr-30 aitems-center border-b-1 between'>
+  <view class='flex1 aitems-center  fon-30 flex '>
+    <view class='width-135'>上课地址</view>
+    <input class='ca flex1' value='上海市浦东新区张衡路666号'></input>
+  </view>
+</view>
+
+<view class='flex  padding-lr-30 aitems-center border-b-1 between'>
+  <view class='flex1 aitems-center  fon-30 flex '>
+    <view class='width-135'>学习课程</view>
+    <textarea class='ca textarea '></textarea>
+  </view>
+</view>
+
+<view class='flex  padding-lr-30 aitems-center border-b-1 between'>
+  <view class='flex1 aitems-center  fon-30 flex '>
+    <view class='width-135'>其他要求</view>
+    <textarea class='ca textarea '></textarea>
+  </view>
+</view>
+
+<button class='btn purple-bg margin-t-60 white'>发布课程</button>

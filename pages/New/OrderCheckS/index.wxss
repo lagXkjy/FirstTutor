@@ -1,0 +1,88 @@
+/* pages/New/OrderCheck/index.wxss */
+
+.QiHao {
+  width: 42rpx;
+  margin-right: 14rpx;
+}
+
+.middle-m {
+  padding-top: 30rpx;
+  padding-bottom: 40rpx;
+}
+
+.AnNiu {
+  padding: 13rpx 20rpx;
+  text-align: center;
+  margin: 14rpx 0;
+  margin-left: 10rpx;
+}
+
+.purplea {
+  background-color: #e8f0ff;
+  width: 93rpx;
+  height: 42rpx;
+  line-height: 42rpx;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.color-block {
+  color: #353535;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.box-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.box-right .box-right-num {
+  margin-bottom: 10rpx;
+}
+
+.num-margin-l {
+  margin-left: 60rpx;
+}
+
+.btn-box {
+  border: 1px solid transparent;
+  border-radius: 0;
+  line-height: normal;
+  font-size: 24rpx;
+  margin: 14rpx 0 14rpx 10rpx;
+  padding: 13rpx 20rpx;
+}
+
+.btn-box::after {
+  border: none;
+}
+
+.info {
+  width: 100%;
+  display: flex;
+  padding: 10rpx 30rpx;
+  background: #fff;
+  border-top: 1px solid #e0e0e0;
+  font-size: 26rpx;
+  justify-content: space-between;
+  box-sizing: border-box;
+  align-items: center;
+  color: #353535;
+}
+
+.info-name {
+  display: flex;
+  align-items: center;
+}
+
+.info-image {
+  width: 46rpx;
+  height: 46rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}

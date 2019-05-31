@@ -1,0 +1,95 @@
+<block wx:if='{{!isEn}}'>
+  <view class='box padding-b-30'>
+    <view class='title'>
+      活动名称
+    </view>
+    <input bindinput='inputEvent' value='{{activeName}}' class='name' type='text'></input>
+  </view>
+  <view class='box padding-b-30'>
+    <view class='title'>
+      活动头图
+    </view>
+    <view bindtap='chooseHeadImage' class='uploadImage'>
+      <view class='uploadImage-explain'>
+        上传头图
+      </view>
+      <image wx:if='{{!headImage.url}}' mode='widthFix' class='uploadImage-no' src='/images/uploadImage.png'></image>
+      <image wx:else mode='aspectFill' class='uploadImage-image' src='{{headImage.isRevise ? srcClockInImage + headImage.url :srcClockInCatch + headImage.url}}'></image>
+    </view>
+  </view>
+  <view wx:if='{{!pageStatus}}' class='box padding-b-30'>
+    <view class='title'>
+      打卡类型
+    </view>
+    <view bindtap='radioCheck' data-index='0' class='type'>
+      <view class='radio'>
+        <view class='{{clockInType === 0 && "radio-check"}}'></view>
+      </view>
+      <view class='radio-title'>每日打卡</view>
+      <view class='radio-context'>成员可以打卡历史任何一天的主题</view>
+    </view>
+    <view bindtap='radioCheck' data-index='1' class='type margin-t-30'>
+      <view class='radio'>
+        <view class='{{clockInType === 1 && "radio-check"}}'></view>
+      </view>
+      <view class='radio-title'>闯关模式</view>
+      <view class='radio-context'>只有解锁的主题才可以打卡</view>
+    </view>
+  </view>
+  <view class='box'>
+    <view class='title'>
+      活动详情
+    </view>
+    <publish bindsyncData='syncData' show-add='{{true}}' placeholder='请填写打卡活动详情...' stop-play='{{stopPlay}}' theme-info-data='{{themeInfoData}}'></publish>
+  </view>
+  <view wx:if='{{pageStatus}}' bindtap='reverse' class='footer-btn'>修改</view>
+  <view wx:else bindtap='toDetail' class='footer-btn'>创建</view>
+</block>
+
+<block wx:if='{{isEn}}'>
+  <view class='box'>
+    <view class='title'>
+      Name of the Activity
+    </view>
+    <input bindinput='inputEvent' value='{{activeName}}' class='name' type='text'></input>
+  </view>
+  <view class='box'>
+    <view class='title'>
+      Activity Image
+    </view>
+    <view bindtap='chooseHeadImage' class='uploadImage'>
+      <view wx:if='{{!headImage.url}}' class='uploadImage-explain'>
+        Upload Title Image
+      </view>
+      <image wx:if='{{!headImage.url}}' mode='widthFix' class='uploadImage-no' src='/images/uploadImage.png'></image>
+      <image wx:else mode='aspectFill' class='uploadImage-image' src='{{headImage.isRevise ? srcClockInImage + headImage.url :srcClockInCatch + headImage.url}}'></image>
+    </view>
+  </view>
+  <view wx:if='{{!pageStatus}}' class='box'>
+    <view class='title'>
+      Type of Clock in
+    </view>
+    <view bindtap='radioCheck' data-index='0' class='type'>
+      <view class='radio'>
+        <view class='{{clockInType === 0 && "radio-check"}}'></view>
+      </view>
+      <view class='radio-title-en'>Daily Clock in</view>
+      <view class='radio-context-en'>Members can clock in any Themes in history</view>
+    </view>
+    <view bindtap='radioCheck' data-index='1' class='type margin-t-30'>
+      <view class='radio'>
+        <view class='{{clockInType === 1 && "radio-check"}}'></view>
+      </view>
+      <view class='radio-title-en'>Gage-Task</view>
+      <view class='radio-context-en'>Only unlocked themes can be clocked in.</view>
+    </view>
+  </view>
+  <view class='box'>
+    <view class='title'>
+      Event Details
+    </view>
+    <publish bindsyncData='syncData' show-add='{{true}}' placeholder='Please enter the clock in details' stop-play='{{stopPlay}}' theme-info-data='{{themeInfoData}}'></publish>
+  </view>
+  <view wx:if='{{pageStatus}}' bindtap='reverse' class='footer-btn'>Revise</view>
+  <view wx:else bindtap='toDetail' class='footer-btn'>Create</view>
+</block>

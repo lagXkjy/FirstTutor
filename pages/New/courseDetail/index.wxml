@@ -1,0 +1,34 @@
+<!-- pages/Home/CourseInformation/index.wxml -->
+<view class='big-outer'>
+  <tea-course course='{{course}}' other='{{true}}'></tea-course>
+  <!-- 课程时长 -->
+  <view class='flex aitems-center height-85 padding-lr-30 bg-fff border-t-1 fon-30 c2b border-b-1'>
+    Course Duration
+    <view class='ca margin-l-20'>{{course.courseTimeLong}}小时</view>
+  </view>
+  <!-- 外教信息 -->
+  <tutor-info is-en='{{isEn}}' info-list='{{tea}}' photo-url='{{srcForIdPhoto}}'></tutor-info>
+  <!-- 选择上课时间 -->
+  <view class='border-b-1 margin-t-20'>
+    <modular-title title-context='Select Time Slot'></modular-title>
+  </view>
+  <!-- 时间段选择组件 -->
+  <vip-time-slot wx:if='{{IsVip}}' time-tables='{{[timeTables]}}' is-radio='{{true}}'></vip-time-slot>
+  <time-slot wx:else time-tables='{{[timeTables, true]}}' is-radio='{{true}}'></time-slot>
+  <!-- 课程介绍 -->
+  <view class='border-b-1 margin-t-20'>
+    <modular-title title-context='Course Introduction'></modular-title>
+  </view>
+  <view class='padding-lr-30 bg-fff fon-24 padding-tb-20'>
+    <view class='c72'>{{course.CorDescript}}</view>
+  </view>
+  <!-- 定金说明 -->
+  <view class='border-b-1 margin-t-20'>
+    <modular-title title-context='Statement on Deposit'></modular-title>
+  </view>
+  <view class='padding-lr-30 fon-24  c88 bg-fff padding-tb-40'>
+    Students pay the tutor course fees offline, less the deposit (i.e. {{tea.TeaDepositPer}}% of the total fee for the first course paid by students to FirstTutor online) from the payable for the first course to tutor. The deposit is the one-off lump sum
+    fee charged by FirstTutor for its platform service.
+  </view>
+  <view bindtap='goHome' class='footer fon-30 white purple-bg'>Homepage</view>
+</view>

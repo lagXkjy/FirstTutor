@@ -1,0 +1,53 @@
+<wxs module="filter" src="../../../utils/filter.wxs"></wxs>
+<view wx:for='{{infoList}}' wx:key='FgtId' class='margin-t-20'>
+  <view class='flex fon-26 border-t-1 bg-f9 c8 height-75 between padding-lr-30 aitems-center'>
+    <view>一对{{item.FgtMemNum==1?"一":item.FgtMemNum==2?"二":"三"}}</view>
+    <!-- vip -->
+    <!-- FgtCourseCancel：课程取消  0：正常    1：取消    2：已取消且已退款   
+        在课程订单开始前48小时前都可以取消，取消订单后，退款
+        OdrPayType：支付状态（0 未支付 1已支付 2 退款中 3 已退款）
+        FgtMemNum：团人数 -->
+    <view class='color-block'>{{item.CourseInfo.OrderStatr === '拼团中' ? '拼团中，还差' + (item.FgtMemNum - item.FgtAttCount) : item.CourseInfo.OrderStatr }}</view>
+    <!-- <block wx:if="{{item.CourseInfo.CorIsVipCourses}}">
+      <view class='color-block'>{{item.CourseInfo.OrderStatr}}</view>
+    </block>
+    <block wx:else>
+        <view wx:if='{{item.FgtMemNum!=1&&item.FgtStatus==2}}' class='color-block'>拼团成功</view>
+        <view wx:if='{{item.FgtMemNum!=1&&item.FgtStatus==3}}' class='color-block'>拼团失败</view>
+        <view wx:if='{{item.FgtMemNum!=1&&item.FgtType==1&&item.FgtStatus==1}}' class='color-block'>拼团中，还差{{item.FgtMemNum - item.FgtAttCount}}人成团</view>
+        <view wx:if='{{item.FgtMemNum==1&&item.OdrPayType==0&&item.FgtCourseCancel==0}}' class='color-block'>未支付</view>
+        <view wx:if='{{item.FgtMemNum==1&&item.OdrPayType==1&&item.FgtCourseCancel==0}}' class='color-block'>已支付</view>
+        <view wx:if='{{item.FgtMemNum==1&&item.OdrPayType==2&&item.FgtCourseCancel==0}}' class='color-block'>退款中</view>
+        <view wx:if='{{item.FgtMemNum==1&&item.OdrPayType==3&&item.FgtCourseCancel==0}}' class='color-block'>已退款</view>
+        <view wx:if='{{item.FgtMemNum==1&&item.FgtCourseCancel!==0}}' class='color-block'>已取消</view>
+    </block> -->
+  </view>
+  <stu-course course='{{item.CourseInfo}}'></stu-course>
+  <view class='info'>
+    <view class='info-name'>
+      <image class='info-image' src='{{item.UserInfo.TeaIdPhoto ?srcForIdPhoto + item.UserInfo.TeaIdPhoto :item.UserInfo.UserAvaUrl}}'></image>
+      <text>{{item.UserInfo.TeaName || item.UserInfo.UserNickName}}</text>
+    </view>
+    <view wx:if="{{item.CourseInfo.CorIsVipCourses}}">上课时间：{{item.ClassTime}}</view>
+    <view wx:else>课程时长：{{item.CourseInfo.courseTimeLong}}小时</view>
+  </view>
+  <view class='flex fon-24 border-t-1 border-b-1 padding-lr-30  aitems-center bg-fff between'>
+    <view class='fon-26 color-block'>实付款：¥{{item.PayPrice}}</view>
+    <view class='flex j-right'>
+      <button wx:if='{{item.FgtType==1&&item.FgtStatus==1}}' data-index='{{index}}' open-type='share' class='btn-box border AnNiu white purple-bg'>
+        邀请好友
+      </button>
+      <!-- FgtCourseEnd 0没啥  1 课程已结束 2 课程已完成 -->
+      <!-- vip课程 && 外教方已授课结束 -->
+      <view wx:if="{{item.CourseInfo.CorIsVipCourses&&item.IsCourseBtn}}" bindtap='courseComplete' data-index='{{index}}' class='border AnNiu white purple-bg'>课程完成</view>
+      <!-- vip课程 && 可以显示取消订单按钮 -->
+      <view wx:if='{{item.CourseInfo.CorIsVipCourses&&item.IsCancel}}' bindtap='cancelOrder' data-index='{{index}}' class='border AnNiu white purple-bg'>取消订单</view>
+      <view wx:if='{{item.FgtStatus==2}}' bindtap='SOrderDetail' data-index='{{index}}' class='border AnNiu white purple-bg'>查看详情</view>
+      <view wx:if='{{item.FgtStatus==3}}' bindtap='orderDelete' data-index='{{index}}' class='border AnNiu white purple-bg'>删除订单</view>
+    </view>
+  </view>
+</view>
+<view wx:if='{{infoList.length<=0}}' class='noData'>
+  暂无数据
+</view>
+<view wx:if='{{infoList.length > 0 && isOver}}' class="data-over padding-tb-40">没有更多信息了</view>

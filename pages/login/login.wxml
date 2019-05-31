@@ -1,0 +1,4 @@
+<!-- pages/login/login.wxml -->
+<button open-type="getUserInfo" bindgetuserinfo='getUserInfo' class="wrapper">
+    <image mode="widthFix" src="/images/login.jpg" />
+</button>

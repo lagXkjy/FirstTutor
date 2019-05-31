@@ -1,0 +1,18 @@
+<view class='header'>
+    <view class='header-box'>
+        <open-data wx:if='{{!TeaIdPhoto&&!UserAvaUrl}}' class='avatarUrl' type="userAvatarUrl"></open-data>
+    </view>
+    <view class='header-context'>
+        <open-data wx:if='{{!UserNickName}}' class="userinfo-nickname" type="userNickName" lang="zh_CN"></open-data>
+    </view>
+    <image wx:if='{{vip&&isEn}}' mode='widthFix' class='Guan' src='/images/guan_03.png'></image>
+</view>
+<view class='fon-28 ffoter bg-fff '>
+    <button open-type='getUserInfo' bindgetuserinfo='getUserInfo' hover-class='none' wx:for="{{studentList}}" wx:key='{{index}}' data-url='{{item.luJin}}' class='flex lasta between height-102 padding-lr-30 border-t-1 aitems-center'>
+        <view class='this-flex'>
+            <image mode='widthFix' style='width:44rpx; margin-right:20rpx' src='{{item.url}}'></image>
+            <text>{{item.title}}</text>
+        </view>
+        <image mode='widthFix' style='width:21rpx;' src='/images/jian_13.png'></image>
+    </button>
+</view>

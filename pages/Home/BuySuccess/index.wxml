@@ -1,0 +1,78 @@
+<!--  
+  中文版
+  -->
+<block wx:if='{{!isEn}}'>
+  <view class='bg-fff header border-b-1'>
+    <image class='imgas' mode='widthFix' src='/images/lian_03.jpg'></image>
+    <view class='fon-42 t-center bold'>恭喜您，购买成功！</view>
+    <button wx:if='{{orderType===2}}' bindtap='goHome' class='margin-t-50 border buns bg-fff btn purple fon-37'>返回首页</button>
+    <button wx:if='{{orderType===1}}' bindtap='spellGroup' class='margin-t-50 border buns bg-fff btn purple fon-37'>查看拼团信息</button>
+    <button bindtap='bindShowPoster' class='margin-t-50 white btn purple-bg fon-37'>点击生成海报</button>
+    <view class='fon-24 dibu'>
+      {{poster.PstAbstract}}
+    </view>
+    <view wx:if='{{isPoster}}' class='model'>
+      <view class='modle-main'>
+        <image class='img-haibao' src='{{srcPoster}}{{poster.PstImgName}}'></image>
+        <button bindtap='savePoster' class='btoon purple-bg'>保存海报</button>
+      </view>
+      <view>
+        <view bindtap='bindIsPoster' class='t-center'>
+          <icon type="cancel" color='#fff' size="30" />
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='margin-t-20 border-t-1'>
+    <modular-title title-context='上课地址及外教联系方式'></modular-title>
+  </view>
+  <view class=' border-b-1'>
+    <view bindtap='lookAddress' class='padding-50  padding-tb-20 bg-fff flex aitems-center fon-26 '>
+      <image mode='widthFix' class='address' src='/images/adddress_14.png'></image>
+      {{teaAddress}}
+    </view>
+    <view bindtap='callPhone' data-phone='{{teaPhone}}' class='padding-50  padding-tb-20 bg-fff flex aitems-center fon-26 '>
+      <image mode='widthFix' class='address' src='/images/phone_06.png'></image>
+      {{teaPhone}}
+    </view>
+  </view>
+</block>
+<!--  
+  英文版
+  -->
+<block wx:if='{{isEn}}'>
+  <view class='bg-fff header border-b-1'>
+    <image class='imgas' mode='widthFix' src='/images/lian_03.jpg'></image>
+    <view class='fon-42 t-center bold'>Congratulations on your success!</view>
+    <button wx:if='{{orderType===2}}' bindtap='goHome' class='margin-t-50 border buns bg-fff btn purple fon-37'>Hmoe</button>
+    <button wx:if='{{orderType===1}}' bindtap='spellGroup' class='margin-t-50 border buns bg-fff btn purple fon-37'>Group Information</button>
+    <button bindtap='bindShowPoster' class='margin-t-50 white btn purple-bg fon-37'>Generate a poster</button>
+    <view class='fon-24 dibu'>
+      {{poster.PstAbstract}}
+    </view>
+    <view wx:if='{{isPoster}}' class='model'>
+      <view class='modle-main'>
+        <image class='img-haibao' src='{{srcPoster}}{{poster.PstImgName}}'></image>
+        <button bindtap='savePoster' class='btoon purple-bg'>Save the posters</button>
+      </view>
+      <view>
+        <view bindtap='bindIsPoster' class='t-center'>
+          <icon type="cancel" color='#fff' size="30" />
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='margin-t-20 border-t-1'>
+    <modular-title title-context='Class address and contact information for tutor'></modular-title>
+  </view>
+  <view class=' border-b-1'>
+    <view bindtap='lookAddress' class='padding-50  padding-tb-20 bg-fff flex aitems-center fon-26 '>
+      <image mode='widthFix' class='address' src='/images/adddress_14.png'></image>
+      {{teaAddress}}
+    </view>
+    <view bindtap='callPhone' data-phone='{{teaPhone}}' class='padding-50  padding-tb-20 bg-fff flex aitems-center fon-26 '>
+      <image mode='widthFix' class='address' src='/images/phone_06.png'></image>
+      {{teaPhone}}
+    </view>
+  </view>
+</block>

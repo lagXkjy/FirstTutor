@@ -1,0 +1,8 @@
+<!--pages/me/registerSuccess/registerSuccess.wxml-->
+<image class='image' mode='widthFix' src='/images/lingdai.png'></image>
+<view class='content'>You need to create and launch your courses to activate your tutor account.</view>
+<view class='other'>We strongly recommend you link your mobile phone number with our WeChat account to activate our WeChat message service in order to receive message reminders for orders placed by or message from students automatically by following the instructions below:</view>
+<view class='footer'>
+  <button bindtap='templateMessage' class='btn btn-k'>Set Your WeChat Message Service</button>
+  <button bindtap='releaseCourse' class='btn purple-bg white'>Launch Course</button>
+</view>

@@ -1,0 +1,9 @@
+
+page{
+  background-color: #fff;
+}
+.textarea{
+  height: 100rpx;
+  width: 80%;
+  padding:20rpx 0;
+}

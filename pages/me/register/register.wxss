@@ -1,0 +1,46 @@
+/* pages/New/Abasic/index.wxss */
+
+page {
+  background-color: #fff;
+}
+
+.input-width {
+  /* width: 90%; */
+  padding-left: 0;
+}
+
+.width-left {
+  width: 236rpx;
+}
+
+.width-l {
+  width: 236rpx;
+}
+
+.tiaokuan {
+  padding: 20rpx 40rpx;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.tiaokuan checkbox {
+  transform: scale(0.8);
+}
+
+.tiaokuan-text {
+  color: #7c99d0;
+  font-style: italic;
+}
+
+.save-btn {
+  margin-bottom: 20rpx;
+}
+
+.point {
+  width: 400rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,21 @@
+/* pages/New/seeDetail/index.wxss */
+
+page {
+  background-color: #fff;
+}
+
+view {
+  box-sizing: border-box;
+}
+
+.width-l {
+  width: 30%;
+}
+
+.border-box {
+  box-sizing: border-box;
+}
+
+.width-r {
+  width: 67%;
+}

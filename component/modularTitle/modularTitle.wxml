@@ -1,0 +1,4 @@
+<!--component/modularTitle/modularTitle.wxml-->
+<view class='wrapper border-box'>
+  <view class='content'>{{titleContext}}</view>
+</view>

@@ -1,0 +1,60 @@
+<search bindsearchInput='inputEvent' placeholder='{{isEn ? "search" : "搜索"}} '></search>
+<block wx:if='{{!isEn}}'>
+<block wx:for='{{listData}}' wx:key='Id'>
+  <view class='list'>
+    <view class='info' bindtap='toThemeDetails' data-index='{{index}}'>
+      <view class='box'>
+        <view class='title'>
+          {{item.ThemeName}}
+        </view>
+        <view wx:if='{{themeInfo.ActivityType === 1}}' class='list-time'>{{item.showTime}}</view>
+        <view wx:else class='pass'>第{{item.ThemeCheckpoint}}关</view>
+      </view>
+      <image src='{{srcClockInImage + item.ThemeHeadImg}}' class='theme-image'></image>
+    </view>
+    <view class='list-footer'>
+      <view bindtap='reviseTheme' data-index='{{index}}' data-time='{{item.ThemeName}}' class='list-btn'>
+        <image mode='widthFix' src='/images/compiler.png' class='list-image'></image>
+        编辑
+      </view>
+      <view bindtap='deleteThemeEvent' data-index='{{index}}' class='list-btn'>
+        <image mode='widthFix' src='/images/delete-1.png' class='list-image'></image>
+        删除
+      </view>
+    </view>
+  </view>
+</block>
+<view bindtap='toCreateNewTheme' class='footer'>新建打卡主题</view>
+</block>
+
+
+
+<block wx:if='{{isEn}}'>
+<block wx:for='{{listData}}' wx:key='Id'>
+  <view class='list'>
+    <view class='info' bindtap='toThemeDetails' data-index='{{index}}'>
+      <view class='box'>
+        <view class='title'>
+          {{item.ThemeName}}
+        </view>
+        <view wx:if='{{themeInfo.ActivityType === 1}}' class='list-time'>{{item.showTime}}</view>
+        <view wx:else class='pass'>The {{item.ThemeCheckpoint}} Mission</view>
+      </view>
+      <image src='{{srcClockInImage + item.ThemeHeadImg}}' class='theme-image'></image>
+    </view>
+    <view class='list-footer'>
+      <view bindtap='reviseTheme' data-index='{{index}}' class='list-btn'>
+        <image mode='widthFix' src='/images/compiler.png' class='list-image'></image>
+        Edit
+      </view>
+      <view bindtap='deleteThemeEvent' data-index='{{index}}' class='list-btn'>
+        <image mode='widthFix' src='/images/delete-1.png' class='list-image'></image>
+        Delete
+      </view>
+    </view>
+  </view>
+</block>
+<view bindtap='toCreateNewTheme' class='footer'>New theme</view>
+</block>
+<view wx:if='{{listData.length > 0 && isOver}}' class="data-over padding-tb-40">{{isEn ? 'No More Information' : '没有更多信息了'}}</view>
+<view style='height:100rpx;'></view>

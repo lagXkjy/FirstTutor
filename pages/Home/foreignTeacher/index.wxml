@@ -1,0 +1,102 @@
+<change-type is-en='{{isEn}}' bindisEnEvent='isEnEvent'></change-type>
+<!-- header -->
+<view class='search-box border-b-1'>
+  <view class='search'>
+    <image bindtap='searchClick' class='img-top' src='/images/search.png'></image>
+    <input bindinput='bindInput' value='{{input}}' class='flex1 fon-26' placeholder-class='fon-26' placeholder='{{isEn?"Course Name":"关键字"}}'></input>
+  </view>
+</view>
+<!-- 中文版找外教 -->
+<block wx:if='{{!isEn}}'>
+  <!-- table -->
+  <view class='table-wrapper'>
+    <!-- 区域 -->
+    <view class='table-item'>
+      <view>
+        <picker mode="multiSelector" class=' flex' value="{{countIndex}}" range="{{countList}}" range-key='AiName' bindchange="changeCount" bindcolumnchange='changeColumn'>
+          <view class='flex picker aitems-center '>
+            <view class="fon-26 flex aitems-center yanse ">
+              <view class='c72'>
+                {{countIndex[0] === 0?"区域":countList[0][countIndex[0]].AiName}}
+              </view>
+              <image mode='widthFix' class='xia margin-l-10' src='/images/xia_07.jpg'></image>
+            </view>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <!-- 标签 -->
+    <view class='table-item'>
+      <view>
+        <picker class=' flex' value="{{lableIndex}}" range="{{lableList}}" range-key='LcTitle' bindchange="changeLable">
+          <view class='flex picker aitems-center '>
+            <view class="fon-26 flex aitems-center yanse ">
+              <view class='c72'>{{lableIndex === 0?"标签":lableList[lableIndex].LcTitle}}</view>
+              <image mode='widthFix' class='xia margin-l-10' src='/images/xia_07.jpg'></image>
+            </view>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <!-- 国籍 -->
+    <view class='table-item'>
+      <view>
+        <picker class=' flex' value="{{nationIndex}}" range="{{nationList}}" range-key='NalName' bindchange="changeNation">
+          <view class='flex picker aitems-center '>
+            <view class="fon-26 flex aitems-center yanse ">
+              <view class='c72'>{{nationIndex===0?"国籍":nationList[nationIndex].NalName}}</view>
+              <image mode='widthFix' class='xia margin-l-10' src='/images/xia_07.jpg'></image>
+            </view>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <!-- 价格区间 -->
+    <view class='table-item'>
+      <view>
+        <picker mode='multiSelector' class=' flex' value="{{priceIndex}}" range="{{priceList}}" bindchange="bindPriceChange">
+          <view class='flex picker aitems-center '>
+            <view class="fon-26 flex aitems-center yanse ">
+              <view class='c72'>
+                {{!isPrice?"价格区间":isPriceAll?"所有价格":priceList[0][priceIndex[0]] + '-' + priceList[1][priceIndex[1]]}}
+              </view>
+              <image mode='widthFix' class='xia margin-l-10' src='/images/xia_07.jpg'></image>
+            </view>
+          </view>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <!-- list -->
+  <tutor-info is-en='{{isEn}}' bindtap='teacherInfo' data-index='{{index}}' is-price='{{true}}' wx:for='{{listData}}' wx:key='TeaId' class='list border-b-1' info-list='{{item}}' photo-url='{{srcForIdPhoto}}'></tutor-info>
+  <view wx:if='{{listData.length<=0}}' class='noData'>暂无数据</view>
+  <view wx:if='{{listData.length > 0 && isOverZ}}' class="data-over">没有更多信息了</view>
+</block>
+<!-- 英文版找学生 -->
+<block wx:if='{{isEn}}'>
+  <view wx:for='{{pageListEn}}' wx:key='NedId'>
+    <view bindtap='seeDetail' data-index='{{index}}' class=' middle-m bg-fff flex aitems-center between padding-lr-30'>
+      <view class=' fon-36  c2b left-80'>
+        <view class='point'>{{item.NedCorName}}</view>
+        <view class='c8  fon-24 margin-t-20'>
+          {{item.address || item.NedClaAreaSel.CanAreaName}} | {{item.week}} | {{item.time}}
+        </view>
+      </view>
+      <view class='purplea purple fon-32 bold'>¥{{item.NedMinPrice}} - ¥{{item.NedMaxPrice}}</view>
+    </view>
+    <view class='flex fon-24 border-t-1 border-b-1 padding-lr-30  aitems-center bg-fff between'>
+      <view class='fon-26 c8 image-box'>
+        <image lazy-load='true' mode='widthFix' class='url-image' src='{{item.StuAvaUrl}}'></image>
+        <image lazy-load='true' mode='widthFix' class='url-gender' src='{{item.StuGender==0?"/images/nv.png":"/images/nan.png"}}'></image>
+        <text class='image-t-l'>Age {{item.StuAge}}</text>
+        |
+        <text class='image-t-r'>Views {{item.BrowingTimes}}</text>
+      </view>
+      <view bindtap='onlineChart' data-index='{{index}}' class='border AnNiu white purple-bg'>
+        Online Contact
+      </view>
+    </view>
+  </view>
+  <view wx:if='{{pageListEn.length<=0}}' class='noData'>No Data</view>
+  <view wx:if='{{pageListEn.length > 0 && isOverE}}' class="data-over">No More Information</view>
+</block>

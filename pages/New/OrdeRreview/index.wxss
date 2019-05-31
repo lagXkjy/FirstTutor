@@ -1,0 +1,16 @@
+/* pages/New/OrdeRreview/index.wxss */
+
+.imga {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.outer {
+  padding: 25rpx 30rpx;
+}
+
+.neirong {
+  margin-top: 20rpx;
+}

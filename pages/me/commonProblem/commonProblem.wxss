@@ -1,0 +1,12 @@
+/* pages/me/commonProblem/commonProblem.wxss */
+@import "../../../wxParse/wxParse.wxss";
+
+page {
+  background: #fff;
+}
+
+.wrapper {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 30rpx;
+}

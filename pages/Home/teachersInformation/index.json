@@ -1,0 +1,10 @@
+{
+  "backgroundColor": "#F6F6F6",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#000",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "外教信息",
+  "usingComponents": {
+    "modular-title": "/component/modularTitle/modularTitle"
+  }
+}

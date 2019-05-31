@@ -1,0 +1,219 @@
+<block wx:if='{{!isEn}}'>
+<view class='header'>
+  <view class='header-title'>
+    {{info.title}}
+  </view>
+  <view class='header-content'>
+    <view class='header-left'>
+      <image class='header-images' src='{{info.image}}'></image>
+      <view class='header-info'>
+        <view class='header-name'>
+          {{info.name}}
+        </view>
+        <view class='header-number'>
+          活动编号：{{ActivityID}}
+        </view>
+      </view>
+    </view>
+    <view class='header-right-en'>
+      <view bindtap='toCreateNew' class='header-activity-en'>
+       编辑活动
+      </view>
+      <view bindtap='toMemberManage' class='header-manage'>
+        成员管理
+      </view>
+    </view>
+    <!--
+    <view class='header-right'>
+      <view bindtap='toCreateNew' class='header-activity'>
+        编辑活动
+      </view>
+      <view bindtap='toMemberManage' class='header-manage'>
+        成员管理
+      </view>
+    </view>
+    -->
+  </view>
+</view>
+<view class='box'>
+  <view class='yesterDay'>
+    <text class='yesterDay-title'>昨日概况</text>
+    <text class='yesterDay-time'>数据更新至{{yesData.showTime}}</text>
+  </view>
+  <view class='yesterDay-box'>
+    <view class='yesterDay-list'>
+      <view class='yesterDay-type'>访问人数</view>
+      <view class='yesterDay-number'>{{yesData.BrowseUserCount}}</view>
+    </view>
+    <view class='yesterDay-list'>
+      <view class='yesterDay-type'>新用户数</view>
+      <view class='yesterDay-number'>{{yesData.New_ParticipateUserCount}}</view>
+    </view>
+    <view class='yesterDay-list'>
+      <view class='yesterDay-type'>累计用户数</view>
+      <view class='yesterDay-number'>{{yesData.ParticipateUserCount}}</view>
+    </view>
+  </view>
+  <view class='yesterDay-box'>
+    <view class='yesterDay-list'>
+      <view class='yesterDay-type'>评论数</view>
+      <view class='yesterDay-number'>{{yesData.CommentUserCount}}</view>
+    </view>
+    <view class='yesterDay-list'>
+      <view class='yesterDay-type'>点赞数</view>
+      <view class='yesterDay-number'>{{yesData.FabulousUserCount}}</view>
+    </view>
+    <view class='yesterDay-list'>
+      <view class='yesterDay-type'>打卡人数</view>
+      <view class='yesterDay-number'>{{yesData.JournalUserCount}}</view>
+    </view>
+  </view>
+</view>
+<view class='data'>
+  <view class='data-details'>
+    数据详情
+  </view>
+  <view class='data-time'>
+    <picker bindchange='changeStart' mode='date' start='{{binTime}}' end='{{minTime}}'>
+      <view class='picker'>
+        <text>{{startTime}}</text>
+        <image mode='widthFix' src='/images/xia_07.jpg' class='picker-image'></image>
+      </view>
+    </picker>
+    <text class='data-to'>到</text>
+    <picker bindchange='changeEnd' mode='date' start='{{binTime}}' end='{{maxTime}}'>
+      <view class='picker'>
+        <text>{{endTime}}</text>
+        <image mode='widthFix' src='/images/xia_07.jpg' class='picker-image'></image>
+      </view>
+    </picker>
+  </view>
+  <view class='data-list'>
+    <text class='data-type'>累计用户数</text>
+    <text class='data-number'>{{timeData.BrowseUserCount}}</text>
+  </view>
+  <view class='data-list'>
+    <text class='data-type'>累计打卡人数</text>
+    <text class='data-number'>{{timeData.ParticipateUserCount}}</text>
+  </view>
+  <view class='data-list'>
+    <text class='data-type'>累计打卡次数</text>
+    <text class='data-number'>{{timeData.JournalUserCount}}</text>
+  </view>
+  <view class='data-list'>
+    <text class='data-type'>累计点评数</text>
+    <text class='data-number'>{{timeData.CommentUserCount}}</text>
+  </view>
+</view>
+<view class='footer'>
+  <view class='footer-btn' bindtap="deleteEvent">
+    删除活动
+  </view>
+</view>
+</block>
+
+
+
+<block wx:if='{{isEn}}'>
+<view class='header'>
+  <view class='header-title'>
+    {{info.title}}
+  </view>
+  <view class='header-content'>
+    <view class='header-left'>
+      <image class='header-images' src='{{info.image}}'></image>
+      <view class='header-info-en'>
+        <view class='header-name'>
+          {{info.name}}
+        </view>
+        <view class='header-number'>
+          Activity Code：{{ActivityID}}
+        </view>
+      </view>
+    </view>
+    <view class='header-right-en'>
+      <view bindtap='toCreateNew' class='header-activity-en'>
+        Editing Activity
+      </view>
+      <view bindtap='toMemberManage' class='header-manage'>
+        Member Management
+      </view>
+    </view>
+  </view>
+</view>
+<view class='box'>
+  <view class='yesterDay'>
+    <text class='yesterDay-title'>Summary of Yersterday</text>
+    <text class='yesterDay-time'>Data updates until {{yesData.showTime}}</text>
+  </view>
+  <view class='yesterDay-box'>
+    <view class='yesterDay-list'>
+      <view class='yesterDay-type-en'>Visitors</view>
+      <view class='yesterDay-number-en'>{{yesData.BrowseUserCount}}</view>
+    </view>
+    <view class='yesterDay-list'>
+      <view class='yesterDay-type-en'>Number of New Users</view>
+      <view class='yesterDay-number-en'>{{yesData.New_ParticipateUserCount}}</view>
+    </view>
+    <view class='yesterDay-list'>
+      <view class='yesterDay-type-en'>Number of Total Users</view>
+      <view class='yesterDay-number-en'>{{yesData.ParticipateUserCount}}</view>
+    </view>
+  </view>
+  <view class='yesterDay-box'>
+    <view class='yesterDay-list'>
+      <view class='yesterDay-type-en'>Number of Comments</view>
+      <view class='yesterDay-number-en'>{{yesData.CommentUserCount}}</view>
+    </view>
+    <view class='yesterDay-list'>
+      <view class='yesterDay-type-en'>Number of Likes</view>
+      <view class='yesterDay-number-en'>{{yesData.FabulousUserCount}}</view>
+    </view>
+    <view class='yesterDay-list'>
+      <view class='yesterDay-type-en'>The number of Clock in Users</view>
+      <view class='yesterDay-number-en'>{{yesData.JournalUserCount}}</view>
+    </view>
+  </view>
+</view>
+<view class='data'>
+  <view class='data-details'>
+    Details of the data
+  </view>
+  <view class='data-time'>
+    <picker bindchange='changeStart' mode='date' start='{{binTime}}' end='{{minTime}}'>
+      <view class='picker'>
+        <text>{{startTime}}</text>
+        <image mode='widthFix' src='/images/xia_07.jpg' class='picker-image'></image>
+      </view>
+    </picker>
+    <text class='data-to'>to</text>
+    <picker bindchange='changeEnd' mode='date' start='{{binTime}}' end='{{maxTime}}'>
+      <view class='picker'>
+        <text>{{endTime}}</text>
+        <image mode='widthFix' src='/images/xia_07.jpg' class='picker-image'></image>
+      </view>
+    </picker>
+  </view>
+  <view class='data-list'>
+    <text class='data-type'>Number of Total Users</text>
+    <text class='data-number'>{{timeData.BrowseUserCount}}</text>
+  </view>
+  <view class='data-list'>
+    <text class='data-type'>Number of total Punch-In Users</text>
+    <text class='data-number'>{{timeData.ParticipateUserCount}}</text>
+  </view>
+  <view class='data-list'>
+    <text class='data-type'>Number of Clock in</text>
+    <text class='data-number'>{{timeData.JournalUserCount}}</text>
+  </view>
+  <view class='data-list'>
+    <text class='data-type'>Number of Comments</text>
+    <text class='data-number'>{{timeData.CommentUserCount}}</text>
+  </view>
+</view>
+<view class='footer'>
+  <view class='footer-btn' bindtap="deleteEvent">
+    Deleting activity
+  </view>
+</view>
+</block>

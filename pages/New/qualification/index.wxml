@@ -1,0 +1,11 @@
+<!--pages/New/qualification/index.wxml-->
+<view class='top flex warp bg-fff'>
+  <view class='img' wx:for="{{imageList}}" wx:key='{{index}}' bindtap='deleteImg' data-index='{{index}}'>
+    <image class='img-src' src='{{item.QfsCreateOn?srcImg:item.sqlUpload?srcUploadImg:""}}{{item.QfsPicName}}'></image>
+    <view class='img-box'>
+      <image src='/images/d-delete.png'></image>
+    </view>
+  </view>
+  <image wx:if='{{imageCount>0}}' class='ZiPian' bindtap='bindImage' src='/images/tupian_03.jpg'></image>
+</view>
+<button bindtap='submit' class='btn purple-bg margin-t-60 white'>save</button>

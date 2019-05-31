@@ -1,0 +1,55 @@
+/* pages/New/NeedSee/index.wxss */
+
+.middle-m {
+  padding-top: 30rpx;
+  padding-bottom: 40rpx;
+}
+
+.AnNiu {
+  padding: 13rpx 20rpx;
+  text-align: center;
+  margin: 14rpx 0;
+  margin-left: 10rpx;
+}
+
+.wrapper>view:nth-child(1) {
+  margin-top: 0;
+}
+
+.image-box {
+  display: flex;
+  align-items: center;
+}
+
+.url-image {
+  width: 50rpx;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+
+.url-gender {
+  width: 24rpx;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+
+.image-t-l {
+  margin-right: 6rpx;
+}
+
+.image-t-r {
+  margin-left: 6rpx;
+}
+
+.left-80 {
+  width: 70%;
+}
+
+.point {
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,119 @@
+/* pages/New/orderDetails/index.wxss */
+
+.QiHao {
+  width: 42rpx;
+  margin-right: 14rpx;
+}
+
+.middle-m {
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.orderimg {
+  height: 70rpx;
+  width: 70rpx;
+  margin-right: 20rpx;
+}
+
+.Wen {
+  width: 40rpx;
+  margin-left: 15rpx;
+}
+
+.phone {
+  width: 26rpx;
+  margin-right: 10rpx;
+}
+
+.padding-25 {
+  padding: 25rpx 30rpx 25rpx 30rpx;
+}
+
+.address {
+  width: 26rpx;
+  margin-right: 25rpx;
+}
+
+.Tuan {
+  width: 75rpx;
+  height: 38rpx;
+  line-height: 38rpx;
+  text-align: center;
+  margin-left: 15rpx;
+  border-radius: 5px;
+}
+
+.purplea {
+  background-color: #e8f0ff;
+  width: 93rpx;
+  height: 42rpx;
+  line-height: 42rpx;
+  text-align: center;
+  border-radius: 5px;
+}
+
+/*  评分  */
+
+.score {
+  position: relative;
+  display: flex;
+}
+
+.score-all {
+  display: flex;
+}
+
+.score-score {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.score-list {
+  width: 26rpx;
+  height: 26rpx;
+  margin-left: 6rpx;
+  display: flex;
+}
+
+.score-img {
+  width: 100%;
+  height: 100%;
+}
+
+.score-image {
+  height: 100%;
+  width: 50%;
+}
+
+.teacher-box {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.teacher-l {
+  display: flex;
+  align-items: center;
+}
+
+.teacher-chat {
+  width: 40rpx;
+}
+
+/*  评分 end  */
+
+.image-radius {
+  border-radius: 50%;
+}
+
+.btn-radius {
+  border-radius: 6rpx;
+}
+
+.btn-fa {
+  margin: 40rpx 0;
+}

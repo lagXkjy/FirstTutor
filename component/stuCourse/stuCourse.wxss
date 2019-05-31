@@ -1,0 +1,77 @@
+/* component/stuCourse/stuCourse.wxss */
+
+.wrapper {
+  padding: 30rpx 30rpx 40rpx;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-t {
+  font-size: 36rpx;
+  color: #2b2b2b;
+  display: flex;
+  width: 66%;
+  box-sizing: border-box;
+}
+
+.image {
+  width: 42rpx;
+  margin-right: 14rpx;
+}
+
+.left-box-t {
+  width: 86%;
+  box-sizing: border-box;
+}
+
+.left-price {
+  color: #7c99d0;
+  font-weight: bold;
+}
+
+.right-t {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.right-other-t {
+  margin-bottom: 10rpx;
+  font-size: 24rpx;
+  color: #aaa;
+}
+
+.right-poper-t {
+  color: #7c99d0;
+  font-size: 24rpx;
+  background: #e8f0ff;
+  height: 42rpx;
+  padding: 0 6rpx;
+  line-height: 42rpx;
+  border-radius: 6rpx;
+}
+
+.left {
+  width: 80%;
+  font-size: 36rpx;
+  color: #2b2b2b;
+  display: flex;
+}
+
+.right {
+  font-size: 30rpx;
+}
+
+.right-price {
+  color: #7c99d0;
+  font-weight: bold;
+}
+
+.left-other {
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  color: #888;
+}

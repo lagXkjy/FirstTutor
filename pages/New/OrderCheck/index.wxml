@@ -1,0 +1,47 @@
+<wxs module='foo'>
+  var f = function(str) {
+    var reg = getRegExp('\D', 'g');
+    var date = getDate(+str.replace(reg, ''));
+    var m = date.getMonth() + 1,
+      d = date.getDate();
+    m < 10 && (m = '0' + m);
+    d < 10 && (d = '0' + d);
+    return m + '-' + d
+  }
+  module.exports = { f: f}
+</wxs>
+<view wx:for='{{cogList}}' wx:key='FgtId' class='margin-t-20'>
+  <view class='flex fon-26 border-t-1 bg-f9 c8 height-75 between padding-lr-30 aitems-center'>
+    <view>One to {{item.whatNum}}</view>
+    <block wx:if="{{item.CorIsVipCourses}}">
+      <view wx:if="{{item.OrderStatr === '待开课'}}" class='color-block'>Waiting for class</view>
+      <view wx:elif="{{item.OrderStatr === '已结课'}}" class='color-block'>Closed</view>
+      <view wx:elif="{{item.OrderStatr === '已支付'}}" class='color-block'>Paid</view>
+      <view wx:elif="{{item.OrderStatr === '已取消' || item.OrderStatr === '订单取消'}}" class='color-block'>Cancelled</view>
+      <view wx:elif="{{item.OrderStatr === '停止结款'}}" class='color-block'>Stop payment</view>
+    </block>
+    <block wx:else>
+      <view wx:if='{{item.CorType==1}}'>Buying Time：{{item.courseBuyTime}}</view>
+      <view wx:if='{{item.CorType!=1}}'>Group Buying Time：{{item.openTime}}</view>
+    </block>
+  </view>
+  <tea-course other='{{true}}' course='{{item}}'></tea-course>
+  <view class='flex fon-24 border-t-1 border-b-1 padding-lr-30  aitems-center bg-fff between'>
+    <view wx:if='{{!item.CorIsVipCourses}}' class='fon-26 c8'>Course Time：{{item.week}}/{{item.FgtStartTime}}</view>
+    <view></view>
+    <view class="flex j-right">
+      <!-- 取消订单 -->
+      <view wx:if='{{item.IsCancel}}' bindtap='cancelOrder' data-index='{{index}}' class='border AnNiu white purple-bg'>Order Cancel</view>
+      <!-- 课程结束 -->
+      <view wx:if='{{item.IsEndOrder}}' bindtap='courseEnd' data-index='{{index}}' class='border AnNiu white purple-bg'>Course End</view>
+      <!--  拼团详情  -->
+      <view wx:if='{{item.FgtType==1}}' bindtap='orderDetail' data-index='{{index}}' class='border AnNiu white purple-bg'>Group Details</view>
+      <!--  订单详情  -->
+      <view wx:if='{{item.FgtType==2}}' bindtap='orderDetail' data-index='{{index}}' class='border AnNiu white purple-bg'>Order Details</view>
+    </view>
+  </view>
+</view>
+<view wx:if='{{cogList.length<=0}}' class='noData'>
+  No Data
+</view>
+<view wx:if='{{cogList.length > 0 && isOver}}' class="data-over padding-tb-40">No More Information</view>

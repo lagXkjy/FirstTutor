@@ -1,0 +1,70 @@
+<view class='flex height-85 border-b-1 padding-lr-30  between aitems-center'>
+  <picker class='flex1' value="{{courseTypeIndex}}" range="{{courseType}}" bindchange="bindCourseType">
+    <view class='flex picker aitems-center '>
+      <view class="fon-22 flex aitems-center yanse ">
+        <view class='width-left'>Course Type</view>
+        <view class='ca'>{{courseType[courseTypeIndex]}}</view>
+      </view>
+    </view>
+  </picker>
+  <image mode='widthFix' style='width:20rpx;' src='/images/jian_13.png'></image>
+</view>
+<view class='flex height-85 padding-lr-30 aitems-center border-b-1 between'>
+  <view class='flex1 aitems-center  fon-22 flex '>
+    <view class='width-left'>Course Name</view>
+    <input bindinput='bindCourseName' class='ca input-width' value='{{courseName}}' placeholder='Course Title' placeholder-class='fon-22'></input>
+  </view>
+</view>
+
+<view class='flex height-85 padding-lr-30 aitems-center border-b-1 between'>
+  <view class='flex1 aitems-center  fon-22 flex page-box'>
+    <view class='width-left'>{{courseTypeIndex!=0?"Total Price of Course":"Course Price"}}</view>
+    <!-- <text>¥</text> -->
+    <input type='digit' maxlength='10' placeholder='Recommended Price:￥200-500/hour' bindinput='bindCourseAllPrice' class='ca input-width' value='{{courseAllPrice}}' placeholder-class='fon-22'></input>
+  </view>
+</view>
+
+<view wx:if="{{courseTypeIndex!==0}}" class='flex height-85 padding-lr-30 aitems-center border-b-1 between'>
+  <view class='flex1 aitems-center  fon-22 flex '>
+    <view class='width-left'>Course Number</view>
+    <input class='ca' value='{{courseNumPeople}}' disabled='disabled'></input>
+  </view>
+</view>
+
+<view wx:if="{{courseTypeIndex!==0}}" class='flex height-85 padding-lr-30 aitems-center border-b-1 between'>
+  <view class='flex1 aitems-center  fon-22 flex page-box'>
+    <view class='width-left'>Price per Person</view>
+    <text>¥</text>
+    <input class='ca' value='{{coursePrice}}' disabled='disabled'></input>
+  </view>
+</view>
+
+<view class='flex height-85 border-b-1 padding-lr-30  between aitems-center'>
+  <picker class='flex1' value="{{durationIndex}}" range="{{duration}}" bindchange="bindDuration">
+    <view class='flex picker aitems-center '>
+      <view class="fon-22 flex aitems-center yanse ">
+        <view class='width-left'>Course Duration</view>
+        <view class='ca'>{{duration[courseDurationIndex]}}Hour</view>
+      </view>
+    </view>
+  </picker>
+  <image mode='widthFix' style='width:20rpx;' src='/images/jian_13.png'></image>
+</view>
+
+<view bindtap='classTime' class='flex height-85 padding-lr-30 aitems-center border-b-1 between'>
+  <view class='flex1 aitems-center  fon-22 flex '>
+    <view class='width-left'>Time Period</view>
+    <view class='ca'>{{courseTime.length>0?"Completed":"To be filled"}}</view>
+  </view>
+  <image mode='widthFix' style='width:20rpx;' src='/images/jian_13.png'></image>
+</view>
+
+<view bindtap='teachers' class='flex height-85 padding-lr-30 aitems-center border-b-1 between'>
+  <view class='flex1 aitems-center  fon-22 flex '>
+    <view class='width-left'>Course Introduction</view>
+    <view class='ca'>{{isCourseIntroduce?"Completed":"To be filled"}}</view>
+  </view>
+  <image mode='widthFix' style='width:20rpx;' src='/images/jian_13.png'></image>
+</view>
+
+<button bindtap='submit' class='btn purple-bg margin-t-60 white'>Save</button>

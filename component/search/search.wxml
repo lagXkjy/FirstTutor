@@ -1,0 +1,7 @@
+<!--component/search/search.wxml-->
+<view class='wrapper'>
+  <view class='box'>
+    <image mode='widthFix' src='/images/search.png' class='image'></image>
+    <input bindinput='inputEvent' class='input' placeholder-class='placeholder' placeholder='{{placeholder}}'></input>
+  </view>
+</view>

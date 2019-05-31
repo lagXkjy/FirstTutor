@@ -1,0 +1,76 @@
+<view style='padding-top:{{paddingTop}}px;'></view>
+<view wx:if='{{listData.length > pageSize && isOver}}' class="data-over">
+  {{isEn ? 'No More Information' : '没有更多信息了'}}
+</view>
+<view class='wrapper'>
+  <!-- 右边  start -->
+  <view class='core' wx:for='{{listData}}' wx:key='{{index}}'>
+    <view wx:if='{{item.isTime}}' class='core-time'>{{item.showTime}}</view>
+    <view wx:if='{{item.CrdBeMySelf==1}}' class='core-me'>
+      <view class='core-box-me'>
+        <image wx:if="{{item.MessageType === 1002}}" class="core-chart-image" mode="widthFix" src='{{chartImageUrl + item.CrdChatMsg}}' />
+        <chart-voice wx:elif="{{item.MessageType === 1003}}" bindaudiocreate='audioCreate' bindstopaudio='stopAudio' chartId='{{item.CrdId}}' isRight='{{true}}' message='{{item.CrdChatMsg}}'></chart-voice>
+        <view wx:else class='core-chart'>{{item.CrdChatMsg}}</view>
+        <view class='core-right' style="opacity: {{item.MessageType === 1002 ? 0 : 1}}">
+          <view class='core-right-1'></view>
+          <view class='core-right-2'></view>
+        </view>
+      </view>
+      <image class='core-image' src='{{myType==2?srcForIdPhoto:""}}{{myImage}}'></image>
+    </view>
+    <!-- 左边  start -->
+    <view wx:if='{{item.CrdBeMySelf==0}}' class='core-you'>
+      <image bindtap='courseInfo' class='core-image' src='{{youType==2?srcForIdPhoto:""}}{{youImage}}'></image>
+      <view class='core-box-you'>
+        <view class='core-left' style="opacity: {{item.MessageType === 1002 ? 0 : 1}}">
+          <view class='core-left-1'></view>
+          <view class='core-left-2'></view>
+        </view>
+        <image wx:if="{{item.MessageType === 1002}}" class="core-chart-image" mode="widthFix" src='{{chartImageUrl + item.CrdChatMsg}}' />
+        <chart-voice wx:elif="{{item.MessageType === 1003}}" bindaudiocreate='audioCreate' bindstopaudio='stopAudio' chartId='{{item.CrdId}}' isRight='{{false}}' message='{{item.CrdChatMsg}}'></chart-voice>
+        <view wx:else bindlongpress='longpress' data-index='{{index}}' class='core-chart'>
+          {{item.CrdChatMsg}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <view id='wrap'></view>
+  <view class='footer'>
+    <image wx:if='{{IsVip}}' hidden='{{isRecord}}' bindtap='changeVoice' class="footer-voice" mode="widthFix" src="/images/voice2.png" />
+    <image wx:if='{{IsVip}}' hidden='{{!isRecord}}' bindtap='changeVoice' class="footer-voice" mode="widthFix" src="/images/keyboard.png" />
+    <view class="footer-input-box">
+      <input hidden='{{isRecord}}' bindconfirm='confirm' value='{{value}}' confirm-hold='{{false}}' adjust-position='{{true}}' confirm-type='send' cursor-spacing='{{18}}' type='text' placeholder='{{isEn?"Please enter the...":"请输入..."}}' placeholder-class='placeholder' maxlength='1000'></input>
+      <view hidden='{{!isRecord}}' bindtouchstart='recordStart' bindtouchend='recordEnd' bindtouchcancel='recordCancel' class="footer-voice-box">
+        {{isEn ? 'Hold to Talk' : '按住 说话'}}
+      </view>
+    </view>
+    <image wx:if='{{IsVip}}' bindtap='chooseImage' class="footer-add" mode="widthFix" src="/images/add2.png" />
+  </view>
+</view>
+<block wx:if='{{!IsVip}}'>
+  <view hidden='{{isEn}}' id='warnZ' class='warn'>
+    <image src='/images/bg-all_02.jpg'></image>
+    <view>
+      <text>严禁学员与外教，在支付定金前，通过FirstTutor平台获取联系方式从而进行线下沟通（敏感字段将被系统屏蔽，并在订单下达后自动打开）</text>
+    </view>
+  </view>
+  <view hidden='{{!isEn}}' id='warnE' class='warn'>
+    <image src='/images/bg-all_02.jpg'></image>
+    <view>
+      <text>
+        It is not allowed to send contact information on app until the client pay the deposit. (All the numbers are blocked until the deposit get paid.)
+      </text>
+    </view>
+  </view>
+</block>
+<view bindtouchmove='move' bindtap='move' hidden='{{!isLayer}}' class='layer'>
+  <view style='margin-top:{{layerH}}px' id='layer-view'>
+    <view hidden='{{isTop}}' class='triangle-top'></view>
+    <view class='layer-content'>
+      <view catchtap='copy' class='layer-list'>{{isEn?"copy":"复制"}}</view>
+      <view catchtap='translate' class='layer-list'>{{isEn?"translate":"翻译"}}</view>
+    </view>
+    <view hidden='{{!isTop}}' class='triangle-bottom'></view>
+  </view>
+</view>
+<image hidden="{{!isTape}}" class="tape" mode="widthFix" src="/images/tape.png" />

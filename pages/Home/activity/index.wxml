@@ -1,0 +1,59 @@
+<change-type is-en='{{isEn}}' bindisEnEvent='isEnEvent'></change-type>
+<!-- 
+  中文版
+  -->
+<block wx:if='{{!isEn}}'>
+  <view class='wrapper'>
+    <view wx:for='{{atyList}}' wx:key='AtyId' bindtap='activityDetail' data-index='{{index}}' class='bg-fff padding-b-20 margin-t-20'>
+      <image class='INg' src='{{srcActivity}}{{item.AtyImgPath}}'></image>
+      <view class='padding-lr-30 fon-32 padding-tb-20 XianZhi'>
+        <text>{{item.AtyTitle}}</text>
+      </view>
+      <view class='flex between padding-lr-30 aitems-center'>
+        <view class='flex aitems-center fon-24 c8'>
+          <text class='activity-price'>¥ {{item.AtyPrice}}</text>
+          <text>{{item.showTime.time}}</text>
+        </view>
+        <view wx:if='{{item.showTime.isEnd}}' bindtap='ChaKan' class='detail fon-24 '>
+          <text>{{item.SignUpType>0?"已报名":"立即报名"}}</text>
+        </view>
+        <view wx:if='{{!item.showTime.isEnd}}' bindtap='ChaKan' class='end fon-24 '>
+          <text>已结束</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:if='{{atyList.length<=0}}' class='noData'>
+    暂无数据
+  </view>
+  <view wx:if='{{atyList.length > 0 && isOver}}' class="data-over padding-tb-40">没有更多信息了</view>
+</block>
+<!-- 
+  英文版
+  -->
+<block wx:if='{{isEn}}'>
+  <view class='wrapper'>
+    <view wx:for='{{atyList}}' wx:key='AtyId' bindtap='activityDetail' data-index='{{index}}' class='bg-fff padding-b-20 margin-t-20'>
+      <image class='INg' src='{{srcActivity}}{{item.AtyImgPath}}'></image>
+      <view class='padding-lr-30 fon-32 padding-tb-20 XianZhi'>
+        <text>{{item.AtyTitle}}</text>
+      </view>
+      <view class='flex between padding-lr-30 aitems-center'>
+        <view class='flex aitems-center fon-24 c8'>
+          <text class='activity-price'>¥ {{item.AtyPrice}}</text>
+          <text>{{item.showTime.time}}</text>
+        </view>
+        <view wx:if='{{item.showTime.isEnd}}' bindtap='ChaKan' class='detail fon-24 '>
+          <text>{{item.SignUpType>0?"Signed Up":"Sign up now"}}</text>
+        </view>
+        <view wx:if='{{!item.showTime.isEnd}}' bindtap='ChaKan' class='end fon-24 '>
+          <text>Closed</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:if='{{atyList.length<=0}}' class='noData'>
+    No Data
+  </view>
+    <view wx:if='{{atyList.length > 0 && isOver}}' class="data-over padding-tb-40">No More Information</view>
+</block>

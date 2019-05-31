@@ -1,0 +1,71 @@
+/* pages/New/orderDetails/index.wxss */
+
+.orderimg {
+  height: 70rpx;
+  width: 70rpx;
+  margin-right: 20rpx;
+  border-radius: 50%;
+}
+
+.Wen {
+  width: 40rpx;
+  margin-left: 15rpx;
+}
+
+.phone {
+  width: 26rpx;
+  margin-right: 10rpx;
+}
+
+.padding-25 {
+  padding: 25rpx 30rpx 25rpx 30rpx;
+}
+
+.address {
+  width: 26rpx;
+  margin-right: 25rpx;
+}
+
+.address-text {
+  width: 90%;
+  box-sizing: border-box;
+}
+
+.Tuan {
+  height: 38rpx;
+  line-height: 38rpx;
+  text-align: center;
+  margin-left: 15rpx;
+  border-radius: 5px;
+  padding: 0 4rpx;
+}
+
+.stu-list {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 25rpx 30rpx;
+  border-top: 1px solid #e0e0e0;
+  font-size: 30rpx;
+  color: #2b2b2b;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.stu-right {
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.stu-left {
+  width: 68%;
+  display: flex;
+  align-items: center;
+}
+
+.stu-name {
+  max-width: 150rpx;
+  word-wrap: break-word;
+}

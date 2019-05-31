@@ -1,0 +1,76 @@
+/* pages/clockIn/memberManage/memberManage.wxss */
+
+.box {
+  background: #fff;
+  border-top: 1px solid #e8e8eb;
+  padding: 0 30rpx;
+}
+
+.list {
+  border-top: 1px solid #e8e8eb;
+  padding: 20rpx 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.box .list:nth-child(1) {
+  border-top: none;
+}
+
+.submit {
+  box-sizing: border-box;
+  border: 1px solid #eb514c;
+  color: #eb514c;
+  border-radius: 5rpx;
+  padding: 0 16rpx;
+  font-size: 26rpx;
+  height: 50rpx;
+  display: flex;
+  align-items: center;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  width: 55%;
+}
+.left-en {
+  display: flex;
+  align-items: center;
+  width: 55%;
+}
+
+.image {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.info-en {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.info {
+  width: 360rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.name {
+  word-wrap: break-word;
+  word-break: break-all;
+  font-size: 26rpx;
+  color: #7c9acf;
+  margin-bottom: 10rpx;
+}
+
+.time {
+  font-size: 24rpx;
+  color: #8e8e8e;
+}

@@ -1,0 +1,36 @@
+/* component/addScore/addScore.wxss */
+
+.score {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.score-box {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 10rpx;
+  padding: 50rpx 50rpx 40rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.score-image {
+  width: 56rpx;
+}
+
+.score-text {
+  color: #fff;
+  font-size: 30rpx;
+  margin-top: 30rpx;
+}
+
+.score-score {
+  color: #f8dc5a;
+}

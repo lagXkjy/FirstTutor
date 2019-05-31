@@ -1,0 +1,6 @@
+/* pages/clockIn/myClockInDiary/myClockInDiary.wxss */
+
+diary-list {
+  margin-bottom: 20rpx;
+  display: block;
+}

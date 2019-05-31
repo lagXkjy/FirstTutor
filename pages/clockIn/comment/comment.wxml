@@ -1,0 +1,18 @@
+<!--pages/clockIn/comment/comment.wxml-->
+<block wx:if='{{!isEn}}'>
+<publish bindsyncData='syncData' isImage='{{false}}' isVideo='{{false}}' placeholder='写评论'></publish>
+<view class='footer'>
+  <view bindtap='cancel' class='cancel footer-btn'>取消</view>
+  <view bindtap='publish' class='confirm footer-btn'>发表评论</view>
+</view>
+</block>
+
+
+<block wx:if='{{isEn}}'>
+<publish bindsyncData='syncData' isImage='{{false}}' isVideo='{{false}}' placeholder='Comment'></publish>
+<view class='footer'>
+  <view bindtap='cancel' class='cancel footer-btn'>cancel</view>
+  <view bindtap='publish' class='confirm footer-btn'>Comment</view>
+</view>
+</block>
+<add-score bindshowScoreCallback='cancel' score-type='{{scoreType}}' score-num='{{scoreNum}}'></add-score>

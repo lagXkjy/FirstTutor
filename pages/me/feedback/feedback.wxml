@@ -1,0 +1,15 @@
+<!--pages/New/Teachers/index.wxml-->
+<view class='flex height-85 padding-lr-30 aitems-center border-b-1 between bg-fff'>
+  <view class='flex1 aitems-center  fon-26 flex '>
+    <view class='{{isEn?"width-left":"width-l"}}'>{{isEn?"Name":"姓名"}}</view>
+    <input bindinput='bindUserName' class='ca input-width' value='{{userName}}' placeholder=''></input>
+  </view>
+</view>
+<view class='flex height-85 padding-lr-30 aitems-center border-b-1 between bg-fff'>
+  <view class='flex1 aitems-center  fon-26 flex '>
+    <view class='{{isEn?"width-left":"width-l"}}'>{{isEn?"Contact Number":"手机号"}}</view>
+    <input type='number' maxlength='11' bindinput='bindPhone' class='ca input-width' value='{{phone}}' placeholder=''></input>
+  </view>
+</view>
+<textarea type='text' bindinput='bindInput' value='{{input}}' maxlength='1000' class='texteare bg-fff fon-26' placeholder-class='c9 fon-26' placeholder='{{isEn?"Please fill in the comments,maximum of 1000 characters":"请填写意见，最多不超过1000个字符"}}'></textarea>
+<button bindtap='submit' class='btn purple-bg margin-t-60 white'>Save</button>

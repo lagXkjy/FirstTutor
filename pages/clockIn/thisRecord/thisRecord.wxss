@@ -1,0 +1,15 @@
+/* pages/clockIn/thisRecord/thisRecord.wxss */
+
+diary-list {
+  background: #fff;
+  box-sizing: border-box;
+  display: block;
+  margin-bottom: 30rpx;
+}
+
+.prompt {
+  text-align: center;
+  margin: 75rpx 0;
+  color: #ccc;
+  font-size: 26rpx;
+}

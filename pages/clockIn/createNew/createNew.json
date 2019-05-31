@@ -1,0 +1,10 @@
+{
+  "backgroundColor": "#F6F6F6",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#000",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "New punch activity",
+  "usingComponents": {
+    "publish": "/component/publish/publish"
+  }
+}

@@ -1,0 +1,77 @@
+<block wx:if="{{!isEn}}">
+  <view wx:if='{{isAuthority}}' class='create' bindtap='createClockIn'>
+    + 新建打卡活动
+  </view>
+  <view wx:else style='height:30rpx;'></view>
+  <view bindtap='toDetails' data-index='{{index}}' class='list' wx:for='{{listData}}' wx:key='Id'>
+    <view class='list-box'>
+      <image mode='aspectFill' class='list-image' src='{{srcClockInImage + item.ActivityHeadImage}}'></image>
+      <view class='list-context'>
+        <view class='list-top'>
+          {{item.ActivityType === 1 ? "[每日打卡]" : "[闯关模式]"}}{{item.ActivityName}}
+          <!-- <text wx:if='{{item.isAdministrator}}' class='list-me'>管理</text> -->
+        </view>
+        <view class='list-bottom'>
+          <view class='list-num people'>
+            <image mode='widthFix' src='/images/people.png'></image>
+            <text>{{item.CYSum}}人已参加</text>
+          </view>
+          <view class='list-num'>
+            <image mode='widthFix' src='/images/clock.png'></image>
+            <text>{{item.DKSum}}次打卡</text>
+          </view>
+        </view>
+      </view>
+      <button wx:if='{{item.isAdministrator}}' class='list-btn list-me'>管理</button>
+      <block wx:else>
+        <button wx:if='{{item.IsParticipate}}' class='list-btn'>打卡</button>
+        <button wx:else class='list-btn'>参加</button>
+      </block>
+    </view>
+  </view>
+  <view wx:if='{{listData.length<=0}}' class='noData'>
+    暂无数据
+  </view>
+  <view wx:if='{{listData.length > 0 && isOver}}' class="data-over padding-tb-40">没有更多信息了</view>
+</block>
+<!-- 英文版 -->
+<block wx:if="{{isEn}}">
+  <view wx:if='{{isAuthority}}' class='create' bindtap='createClockIn'>
+    + New Clock in Activity
+  </view>
+  <view wx:else style='height:30rpx;'></view>
+  <view bindtap='toDetails' data-index='{{index}}' class='list' wx:for='{{listData}}' wx:key='Id'>
+    <view class='list-box'>
+      <view class='list-box-l'>
+        <image mode='aspectFill' class='list-image-en' src='{{srcClockInImage + item.ActivityHeadImage}}'></image>
+        <view class='list-context-en'>
+        <view class='list-top'>
+          {{item.ActivityType === 1 ? "[Daily]" : "[Gage-Task]"}}{{item.ActivityName}}
+          <!-- <text wx:if='{{item.isAdministrator}}' class='list-me'>Admin</text> -->
+        </view>
+          <view class='list-bottom'>
+            <view class='list-num people list-num-en'>
+              <image mode='widthFix' src='/images/people.png'></image>
+              <view class='list-en-num'>{{item.CYSum}} person have participated</view>
+            </view>
+            <view class='list-num list-num-2 list-num-en'>
+              <image mode='widthFix' src='/images/clock.png'></image>
+              <view class='list-en-num list-clock-en'>{{item.DKSum}} clock in</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <button wx:if='{{item.isAdministrator}}' class='list-btn list-me'>Admin</button>
+      <block wx:else>
+        <button wx:if='{{item.IsParticipate}}' class='list-btn'>Clock in</button>
+        <button wx:else class='list-btn'>Join</button>
+      </block>
+    </view>
+  </view>
+  <view wx:if='{{listData.length<=0}}' class='noData'>
+    No Data
+  </view>
+  <view wx:if='{{listData.length > 0 && isOver}}' class="data-over padding-tb-40">No More Information</view>
+</block>
+
+<change-type is-en='{{isEn}}' bindisEnEvent='isEnEvent'></change-type>

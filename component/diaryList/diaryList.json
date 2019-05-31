@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "music": "/component/music/music",
+    "voice": "/component/voice/voice",
+    "add-score": "/component/addScore/addScore"
+  }
+}

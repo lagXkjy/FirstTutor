@@ -1,0 +1,86 @@
+<wxs module="filter">
+function tofixed(str) {
+    var arr = str.split('-')
+    var array = [parseFloat(arr[0]).toFixed(2), parseFloat(arr[1]).toFixed(2)]
+    return array.join('-')
+}
+module.exports = {
+    tofixed:tofixed
+}
+</wxs>
+<block wx:if='{{!isEn}}'>
+    <view class='flex height-85 padding-lr-30 aitems-center border-b-1 between'>
+        <view class='flex1 aitems-center  fon-30 flex '>
+            <view class='width-150 ca margin-r-10'>姓名</view>
+            {{userName}}
+        </view>
+    </view>
+    <view class='flex height-85 padding-lr-30 aitems-center border-b-1 between'>
+        <view class='flex1 aitems-center  fon-30 flex '>
+            <view class='width-150 ca margin-r-10'>年龄</view>
+            {{age}}
+        </view>
+    </view>
+    <view class='flex height-85 padding-lr-30 aitems-center border-b-1 between'>
+        <view class='flex1 aitems-center  fon-30 flex '>
+            <view class='width-150 ca margin-r-10'>性别</view>
+            {{sexData[sexIndex].zh}}
+        </view>
+    </view>
+    <view class='flex height-85 padding-lr-30 aitems-center border-b-1 between'>
+        <view class='flex1 aitems-center  fon-30 flex '>
+            <view class='width-150 ca margin-r-10'>区域</view>
+            {{areaCache.zh}} - {{countData.zh}}
+        </view>
+    </view>
+    <view class='flex height-85 padding-lr-30 aitems-center border-b-1 between'>
+        <view class='flex1 aitems-center  fon-30 flex '>
+            <view class='width-150 ca margin-r-10'>价格区间</view>
+            {{PriceInterval || 'Undisclosed'}}
+        </view>
+    </view>
+    <view class='flex height-85 padding-lr-30 aitems-center border-b-1 between'>
+        <view class='flex1 aitems-center  fon-30 flex '>
+            <view class='width-150 ca margin-r-10'>英语水平</view>
+            {{englishLevel[englishLevelIndex].zh}}
+        </view>
+    </view>
+</block>
+<block wx:if="{{isEn}}">
+    <view class='flex height-85 padding-lr-30 aitems-center border-b-1 between'>
+        <view class='flex1 aitems-center  fon-30 flex '>
+            <view class='width-210 ca margin-r-10'>Name</view>
+            {{userName}}
+        </view>
+    </view>
+    <view class='flex height-85 padding-lr-30 aitems-center border-b-1 between'>
+        <view class='flex1 aitems-center  fon-30 flex '>
+            <view class='width-210 ca margin-r-10'>Age</view>
+            {{age}}
+        </view>
+    </view>
+    <view class='flex height-85 padding-lr-30 aitems-center border-b-1 between'>
+        <view class='flex1 aitems-center  fon-30 flex '>
+            <view class='width-210 ca margin-r-10'>Sex</view>
+            {{sexData[sexIndex].en}}
+        </view>
+    </view>
+    <view class='flex height-85 padding-lr-30 aitems-center border-b-1 between'>
+        <view class='flex1 aitems-center  fon-30 flex '>
+            <view class='width-210 ca margin-r-10'>Region</view>
+            {{areaCache.en}} - {{countData.en}}
+        </view>
+    </view>
+    <view class='flex height-85 padding-lr-30 aitems-center border-b-1 between'>
+        <view class='flex1 aitems-center  fon-30 flex '>
+            <view class='width-210 ca margin-r-10'>Price Range</view>
+            {{PriceInterval ? filter.tofixed(PriceInterval) : 'Undisclosed'}}
+        </view>
+    </view>
+    <view class='flex height-85 padding-lr-30 aitems-center border-b-1 between'>
+        <view class='flex1 aitems-center  fon-30 flex '>
+            <view class='width-210 ca margin-r-10'>English level</view>
+            {{englishLevel[englishLevelIndex].en}}
+        </view>
+    </view>
+</block>

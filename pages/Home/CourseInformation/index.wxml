@@ -1,0 +1,222 @@
+<!-- pages/Home/CourseInformation/index.wxml -->
+<stu-course course='{{course}}'></stu-course>
+<!-- 中文版 -->
+<block wx:if='{{isPage&&!isEn}}'>
+  <view class='big-outer'>
+    <!-- 课程时长 -->
+    <view class='flex aitems-center height-85 padding-lr-30 bg-fff border-t-1 fon-30 c2b border-b-1'>
+      课程时长
+      <view class='ca margin-l-20'>{{course.courseTimeLong}}小时</view>
+    </view>
+    <!-- 外教信息 -->
+    <tutor-info is-en='{{isEn}}' info-list='{{tea}}' photo-url='{{srcForIdPhoto}}'></tutor-info>
+    <!-- 参团 -->
+    <!-- 是一对多类型 && 当前数组有数据 && 是否为vip课程 ? true : 没买过此类课程 -->
+    <view wx:if='{{course.CorType!=1&&fgtList.length>0&&(course.CorIsVipCourses===1?true:course.BeBuyCour<=0)}}' class='bg-fff border-t-1 margin-t-20 padding-lr-30 join-group'>
+      <view class='height-85 fon-26 border-b-1 flex between aitems-center'>
+        <view class='flex c2b aitems-center group-little'>
+          <text>支付开团邀请{{course.CorClaNum}}人参团，人数不足自动退款</text>
+          <view bindtap='spellingRules' class='ca margin-l-20'>详细规则</view>
+        </view>
+        <image class='Jian' mode='widthFix' src='/images/jos_03.jpg'></image>
+      </view>
+      <view>
+        <view class='fon-26 padding-tb-20 c2b'>以下小伙伴正在发起拼团，您可以直接参与：</view>
+        <view wx:if='{{index<3}}' wx:for='{{fgtList}}' wx:key='{{index}}' class='flex ssea aitems-center between margin-b-20'>
+          <view class='flex between flex1 aitems-center'>
+            <image class='xiaoTou' src='{{item.StuAvaUrl}}'></image>
+            <view class='fon-30 join-name'>{{item.StuNickName}}</view>
+            <view class='fon-26 Cans flex1 purple'>
+              <view class='Cans'>还剩{{item.NedCount}}人成团</view>
+              <view class='ca Cans'>截止{{item.countDown}}</view>
+            </view>
+          </view>
+          <view bindtap='goJoinGroup' data-index='{{index}}' class='white purple-bg CanRu fon-30'>
+            去参团
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- end -->
+    <!-- 选择上课时间 -->
+    <view class='border-b-1 margin-t-20'>
+      <modular-title title-context='选择时间段'></modular-title>
+    </view>
+    <!-- 时间段选择组件 -->
+    <vip-time-slot wx:if='{{course.CorIsVipCourses}}' time-tables='{{[timeTables]}}' bindSonTime='SonTime' is-radio='{{course.CorType==1 ? false: true}}'></vip-time-slot>
+    <time-slot wx:else time-tables='{{[timeTables, isEn]}}' bindSonTime='SonTime' is-radio='{{true}}'></time-slot>
+    <!-- 课程介绍 -->
+    <view class='border-b-1 margin-t-20'>
+      <modular-title title-context='课程介绍'></modular-title>
+    </view>
+    <view class='padding-lr-30 bg-fff fon-24 padding-tb-20'>
+      <text class='c72'>{{course.CorDescript}}</text>
+    </view>
+    <!-- 定金说明 -->
+    <block wx:if="{{!course.CorIsVipCourses}}">
+      <view class='border-b-1 margin-t-20'>
+        <modular-title title-context='订金说明'></modular-title>
+      </view>
+      <view class='padding-lr-30 fon-24  c88 bg-fff padding-tb-40'>
+        <text>
+          平台预收首次课程费用{{tea.TeaDepositPer}}%作为订金，剩余费用学生扣除订金后支付给外教。同一个外教的后续课程不通过平台，也不收取平台费，学员直接和外教沟通结算。
+        </text>
+      </view>
+    </block>
+    <!-- footer    一对一 -->
+    <view wx:if='{{course.CorType==1}}' class='footer flex border-t-1 between'>
+      <view class='fon-26 cs flex bg-fff aitems-center padding-l-30'>
+        <view class='margin-r-10'>支付{{course.CorIsVipCourses ? '金额' : '订金'}}</view>
+        <view class='fon-30 bold purple'>
+          ¥{{course.CorIsVipCourses ? vipPayPrice.one : course.CorBuyPrice}}
+        </view>
+      </view>
+      <!-- wx:if='{{course.CorIsVipCourses || course.BeBuyCour<=0}}' -->
+      <view bindtap='sureOrder' class='white fon-32 cs purple-bg'>立即购买</view>
+      <!-- <view wx:else bindtap='orderDetail' class='white fon-32 cs purple-bg'>查看购买详情</view> -->
+    </view>
+    <!-- footer    一对多 -->
+    <view wx:if='{{course.CorType!=1}}' class='footer1 bg-fff flex border-t-1  aitems-center between'>
+      <view class='flex border-r-1 center aitems-center KuanDU'>
+        <view bindtap='goHome' class='fon-20 c88 gaoDU'>
+          <image class='fangZI' mode='widthFix' src='/images/fangzi_07.png'></image>
+          首页
+        </view>
+      </view>
+      <button open-type='getUserInfo' bindgetuserinfo='getUserInfo' class='user-info flex center aitems-center KuanDU'>
+        <view class='fon-20 c88 gaoDU'>
+          <image class='fangZI' mode='widthFix' src='/images/zixun_09.png'></image>
+          咨询
+        </view>
+      </button>
+      <!-- <block wx:if='{{course.CorIsVipCourses || course.BeBuyCour<=0}}'> -->
+      <view bindtap='alonePayment' class='DanDUMai  flex aitems-center center'>
+        <view class='purple fon-26 t-center'>
+          <view>¥{{course.CorIsVipCourses ? vipPayPrice.one : course.CorBuyPrice}}</view>
+          <view>单独购买</view>
+        </view>
+      </view>
+      <view bindtap='fightGroup' class='flex1 DanDUMaia purple-bg white flex aitems-center center'>
+        <view class=' fon-26 t-center'>
+          <view>¥{{course.CorIsVipCourses ? vipPayPrice.many : course.CorGroupPrice}}</view>
+          <view>{{course.CorClaNum}}人拼团</view>
+        </view>
+      </view>
+      <!-- </block> -->
+      <!-- <view wx:else bindtap='orderDetail' class='flex1 DanDUMaia purple-bg white flex aitems-center center'>
+        查看购买详情
+      </view> -->
+    </view>
+  </view>
+</block>
+<!-- 英文版 -->
+<block wx:if='{{isPage&&isEn}}'>
+  <view class='big-outer'>
+    <!-- 课程时长 -->
+    <view class='flex aitems-center height-85 padding-lr-30 bg-fff border-t-1 fon-30 c2b border-b-1'>
+      课程时长
+      <view class='ca margin-l-20'>{{course.courseTimeLong}}Hour</view>
+    </view>
+    <!-- 外教信息 -->
+    <tutor-info is-en='{{isEn}}' info-list='{{tea}}' photo-url='{{srcForIdPhoto}}'></tutor-info>
+    <!-- 参团 -->
+    <!-- 是一对多类型 && 没买过此类课程 && 当前数组有数据 -->
+    <view wx:if='{{course.CorType!=1&&fgtList.length>0&&(course.CorIsVipCourses===1?true:course.BeBuyCour<=0)}}' class='bg-fff border-t-1 margin-t-20 padding-lr-30 join-group'>
+      <view class='height-85 fon-26 border-b-1 flex between aitems-center'>
+        <view class='flex c2b aitems-center group-little'>
+          <text>
+            Invite {{course.CorClaNum}} person to join a group, the number is insufficient automatic refund.
+          </text>
+          <view bindtap='spellingRules' class='ca margin-l-20'>Group Rules</view>
+        </view>
+        <image class='Jian' mode='widthFix' src='/images/jos_03.jpg'></image>
+      </view>
+      <view>
+        <view class='fon-26 padding-tb-20 c2b'>The following friends are launching a group：</view>
+        <view wx:if='{{index<3}}' wx:for='{{fgtList}}' wx:key='{{index}}' class='flex ssea aitems-center between margin-b-20'>
+          <view class='flex between flex1 aitems-center'>
+            <image class='xiaoTou' src='{{item.StuAvaUrl}}'></image>
+            <view class='fon-30 join-name'>{{item.StuNickName}}</view>
+            <view class='fon-26 Cans flex1 purple'>
+              <view class='Cans'>Lack of {{item.NedCount}} person</view>
+              <view class='ca Cans'>As of{{item.countDown}}</view>
+            </view>
+          </view>
+          <view bindtap='goJoinGroup' data-index='{{index}}' class='white purple-bg CanRu fon-30'>
+            join
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- end -->
+    <!-- 选择上课时间 -->
+    <view class='border-b-1 margin-t-20'>
+      <modular-title title-context='Please select time slot'></modular-title>
+    </view>
+    <!-- 时间段选择组件 -->
+    <vip-time-slot wx:if='{{course.CorIsVipCourses}}' time-tables='{{[timeTables]}}' bindSonTime='SonTime' is-radio='{{course.CorType==1 ? false: true}}'></vip-time-slot>
+    <time-slot wx:else time-tables='{{[timeTables, isEn]}}' bindSonTime='SonTime' is-radio='{{true}}'></time-slot>
+    <!-- 课程介绍 -->
+    <view class='border-b-1 margin-t-20'>
+      <modular-title title-context='Course Introduction'></modular-title>
+    </view>
+    <view class='padding-lr-30 bg-fff fon-24 padding-tb-20'>
+      <text class='c72'>{{course.CorDescript}}</text>
+    </view>
+    <!-- 定金说明 -->
+    <block wx:if="{{!course.CorIsVipCourses}}">
+      <view class='border-b-1 margin-t-20'>
+        <modular-title title-context='Statement on Deposit'></modular-title>
+      </view>
+      <view class='padding-lr-30 fon-24  c88 bg-fff padding-tb-40'>
+        <text>
+          Students pay the tutor course fees offline, less the deposit (i.e. {{tea.TeaDepositPer}}% of the total fee for the first course paid by students to FirstTutor online) from the payable for the first course to tutor. The deposit is the one-off lump sum fee charged by FirstTutor for its platform service.
+        </text>
+      </view>
+    </block>
+    <!-- footer    一对一 -->
+    <view wx:if='{{course.CorType==1}}' class='footer flex border-t-1 between'>
+      <view class='fon-26 cs flex bg-fff aitems-center padding-l-30'>
+        <view class='margin-r-10'>{{course.CorIsVipCourses ? 'Deposit' : 'Price'}}</view>
+        <view class='fon-30 bold purple'>
+          ¥{{course.CorIsVipCourses ? vipPayPrice.one : course.CorBuyPrice}}
+        </view>
+      </view>
+      <!-- wx:if='{{course.CorIsVipCourses || course.BeBuyCour<=0}}' -->
+      <view bindtap='sureOrder' class='white fon-32 cs purple-bg'>Buy now</view>
+      <!-- <view wx:else bindtap='orderDetail' class='white fon-32 cs purple-bg'>Check Details</view> -->
+    </view>
+    <!-- footer    一对多 -->
+    <view wx:if='{{course.CorType!=1}}' class='footer1 bg-fff flex border-t-1  aitems-center between'>
+      <view class='flex border-r-1 center aitems-center KuanDU'>
+        <view bindtap='goHome' class='fon-20 c88 gaoDU'>
+          <image class='fangZI' mode='widthFix' src='/images/fangzi_07.png'></image>
+          Home
+        </view>
+      </view>
+      <button open-type='getUserInfo' bindgetuserinfo='getUserInfo' class='user-info flex center aitems-center KuanDU'>
+        <view class='fon-20 c88 gaoDU'>
+          <image class='fangZI' mode='widthFix' src='/images/zixun_09.png'></image>
+          Consulte
+        </view>
+      </button>
+      <!-- <block wx:if='{{course.CorIsVipCourses || course.BeBuyCour<=0}}'> -->
+      <view bindtap='alonePayment' class='DanDUMai  flex aitems-center center'>
+        <view class='purple fon-26 t-center'>
+          <view>¥{{course.CorIsVipCourses ? vipPayPrice.one : course.CorBuyPrice}}</view>
+          <view>Single purchase</view>
+        </view>
+      </view>
+      <view bindtap='fightGroup' class='flex1 DanDUMaia purple-bg white flex aitems-center center'>
+        <view class=' fon-26 t-center'>
+          <view>¥{{course.CorIsVipCourses ? vipPayPrice.many : course.CorBuyPrice}}</view>
+          <view>{{course.CorClaNum}} people spell group</view>
+        </view>
+      </view>
+      <!-- </block> -->
+      <!-- <view wx:else bindtap='orderDetail' class='flex1 DanDUMaia purple-bg white flex aitems-center center'>
+        Check Details
+      </view> -->
+    </view>
+  </view>
+</block>

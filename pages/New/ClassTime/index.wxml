@@ -1,0 +1,7 @@
+<view class='border-b-1'>
+  <modular-title title-context='Select Course Time Slot'></modular-title>
+</view>
+<!-- 时间段选择组件 -->
+<vip-time-slot wx:if='{{IsVip}}' time-no-tables='{{timeNoTables}}' bindSonTime='SonTime'></vip-time-slot>
+<time-slot wx:else time-no-tables='{{[timeNoTables, true]}}' bindSonTime='SonTime'></time-slot>
+<button bindtap='submit' class='btn purple-bg margin-t-60 white'>Save</button>

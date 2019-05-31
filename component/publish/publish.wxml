@@ -1,0 +1,58 @@
+<block wx:for='{{listData}}' wx:key='{{index}}' wx:for-index='indexs' wx:for-item='items'>
+<textarea bindinput='inputEvent' data-indexs='{{indexs}}' class='textarea' placeholder='{{placeholder}}' placeholder-class='placeholder' maxlength='-1' value='{{items.text}}'> </textarea>
+<!-- 图片 -->
+<view hidden='{{items.images.length <= 0}}' class='box image-box'>
+  <view wx:for='{{items.images}}' wx:key='{{index}}' class='image-list {{index === 0 && "image-first"}}'>
+    <image mode='aspectFit' src='{{item.isRevise ? srcClockInImage + item.url : srcClockInCatch + item.url}}' class='image-image'></image>
+    <!-- <image wx:else mode='aspectFit' src='{{srcClockInCatch + item}}' class='image-image'></image> -->
+    <image bindtap='deleteImage' data-index='{{index}}' data-indexs='{{indexs}}' mode='widthFix' class='image-delete' src='/images/delete.png'></image>
+  </view>
+  <view hidden='{{items.images.length >= maxImageNum}}' bindtap='chooseImage' data-indexs='{{indexs}}' class='add-image image-list'>
+    <image mode='widthFix' class='add-image-image' src='/images/add1.png'></image>
+  </view>
+</view>
+<!-- 录音 -->
+<view hidden='{{!items.audioIsShow}}' class='box'>
+  <music wx:if='{{items.audio}}' bindaudioDelete='audioDelete' data-indexs='{{indexs}}' path='{{reviseAudio ? srcClockInAudio : srcClockInCatch}}{{items.audio}}' show-delete='{{true}}' my-type='1' stop-play='{{stopPlay}}'></music>
+  <view wx:if='{{!items.audio}}' class='audio-box'>
+    <view bindtap='audioDelete' data-indexs='{{indexs}}' class='audio-delete'>
+      <image mode='widthFix' src='/images/delete-0.png' class='audio-delete-image'></image>
+      <text class='audio-delete-g'>|</text>
+    </view>
+    <view class='audio-content'>
+      <view class='audio-left'>
+        <view class='audio-point'></view>
+        <text class='audio-time'>{{items.showTime}}</text>
+      </view>
+      <view class='audio-right'>
+        <view class='audio-status'>
+          <view class='audio-resume'></view>
+        </view>
+        <view bindtap='audioComplate' data-indexs='{{indexs}}' class='audio-complate'>{{isEn ? "complete" : "完成"}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 视频 -->
+<view hidden='{{!items.video}}' class='box video-box'>
+  <video cusom-cache="{{false}}" class='video' src='{{reviseVideo ? srcClockInVideo : srcClockInCatch}}{{items.video}}'></video>
+  <view bindtap='deleteVideo' data-indexs='{{indexs}}' class='video-delete'>{{isEn ? "delete" : "删除"}}</view>
+</view>
+<view hidden='{{!isImage &&  items.audioIsShow && !isVideo}}' class='media'>
+  <!-- 图片 -->
+  <view  hidden='{{!isImage || items.images.length > 0}}' bindtap='chooseImage'  data-indexs='{{indexs}}' class='media-list'>
+    <image mode='widthFix' class='media-image' src='/images/camera.png'></image>
+  </view>
+  <!-- 录音 -->
+  <view hidden='{{items.audioIsShow}}'   bindtap='startRecord' data-indexs='{{indexs}}' class='media-list'>
+    <image mode='widthFix' class='media-image' src='/images/speech.png'></image>
+  </view>
+  <!-- 视频 -->
+  <view hidden='{{!isVideo || items.video}}' bindtap='chooseVideo' data-indexs='{{indexs}}' class='media-list'>
+    <image mode='widthFix' class='media-image' src='/images/videotape.png'></image>
+  </view>
+</view>
+</block>
+<view bindtap='addList' wx:if='{{showAdd && listData.length < 3}}' class='add-content'>
+  {{isEn ? "+ Add content" : "+ 添加内容"}}
+</view>

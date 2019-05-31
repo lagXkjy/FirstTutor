@@ -1,0 +1,15 @@
+<!--pages/New/OrdeRreview/index.wxml-->
+<view wx:for='{{rewList}}' wx:key='{{index}}' class='flex between aitems-center border-b-1 outer bg-fff'>
+  <image class='imga' src='{{item.StuAvaUrl}}'></image>
+  <view class='flex1'>
+    <view class='flex between'>
+      <view class='fon-26 bold'>{{item.StuName}}</view>
+      <view class='fon-24 c8'>{{item.showTime}}</view>
+    </view>
+    <view class='fon-24 c8 neirong'>{{item.RewComment}}</view>
+  </view>
+</view>
+<view wx:if='{{rewList.length<=0}}' class='noData'>
+  No Data
+</view>
+<view wx:if='{{rewList.length > 0 && isOver}}' class="data-over padding-tb-40">No More Information</view>

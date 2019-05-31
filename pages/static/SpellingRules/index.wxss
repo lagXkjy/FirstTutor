@@ -1,0 +1,4 @@
+/* pages/Home/SpellingRules/index.wxss */
+page{
+  background-color: #fff;
+}

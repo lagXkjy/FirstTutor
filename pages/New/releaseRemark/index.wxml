@@ -1,0 +1,20 @@
+<view class='header bg-fff border-b-1 padding-tb-20 padding-lr-30'>
+  <text>给TA打分</text>
+  <view class='scoure'>
+    <view bindtap='bindScoure' data-index='{{index}}' class='scoure-box' wx:for='{{5}}' wx:key='{{index}}'>
+      <image src='/images/hui_07.png'></image>
+      <image hidden='{{scoure<=index}}' class='scoure-img' src='/images/xian_05.png'></image>
+    </view>
+  </view>
+</view>
+<textarea type='text' bindinput='bindInput' maxlength='1000' class='texteare bg-fff' placeholder-class='c9 fon-26' placeholder='请对外教做出相应的点评'></textarea>
+<view class="fot-box">
+  <view wx:if='{{IsVip}}' class="tag-box">
+    <view wx:for='{{list}}' wx:key='{{item.id}}' bindtap='changeList' data-index='{{index}}' class="tag-list {{item.select && 'tag-list-select'}}">
+      {{item.context}}
+    </view>
+  </view>
+  <button open-type='getUserInfo' bindgetuserinfo='getUserInfo' class='btn purple-bg margin-t-60 white'>
+    提交点评
+  </button>
+</view>

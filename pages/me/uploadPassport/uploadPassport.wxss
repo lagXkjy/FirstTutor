@@ -1,0 +1,46 @@
+/* pages/me/uploadPassport/uploadPassport.wxss */
+view{
+    box-sizing: border-box;
+}
+.bg-white{
+    background: #ffffff;
+}
+.color-whtie{
+    color: #ffffff;
+}
+.submit-btn{
+    border-radius: 8rpx;
+    height: 90rpx;
+    margin-top: 60rpx;
+}
+.flex{
+    display: flex;
+}
+.justify-center{
+    justify-content: center;
+}
+.align-center{
+    align-items: center;
+}
+.padding-t-30{
+    padding-top: 30rpx;
+}
+.img{
+    width: 100rpx;
+    height: 100rpx;
+    background: #f4f4f4;
+}
+.text{
+    font-size: 32rpx;
+    color: #aaaaaa;
+    margin-left: 30rpx;
+}
+.margin-b-50{
+    margin-bottom: 50rpx;
+}
+.content{
+    border-top:  1px solid #f0f2f5;
+    padding: 40rpx 10rpx;
+    font-size: 24rpx;
+    color: #aaaaaa;
+}

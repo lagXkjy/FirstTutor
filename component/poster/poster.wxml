@@ -1,0 +1,15 @@
+<!--component/poster/poster.wxml-->
+<view wx:if='{{isShow}}' class='wrapper'>
+  <view catchtap='returnBubble' class='canvas-box'>
+    <canvas canvas-id='posterCanvas' class='canvas'></canvas>
+  </view>
+  <view class='footer'>
+    <view bindtap='change' class='close'>
+      {{isEn ? "Close" : "关闭"}}
+    </view>
+    <view catchtap='saveImage' class='save'>
+      {{isEn ? "Save to album" : "保存海报到相册"}}
+    </view>
+  </view>
+ 
+</view>

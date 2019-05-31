@@ -1,0 +1,88 @@
+<!--pages/clockIn/checkAllTheme/checkAllTheme.wxml-->
+<block wx:if='{{!isEn}}'>
+  <search bindsearchInput='inputEvent' placeholder='搜索'></search>
+  <view bindtap='toThemeDetails' data-index='{{nowData.index}}' wx:if='{{themeInfo.ActivityType === 2 && !input}}' class='nowCheckpoint'>
+    <view class='title'>
+      <text>今日关卡<text class='title-g'>|</text>第{{nowData.ThemeCheckpoint}}关</text>
+    </view>
+    <view class='nowCheckpoint-box'>
+      <image class='nowCheckpoint-image' src='{{srcClockInImage + nowData.ThemeHeadImg}}'></image>
+      <view class='nowCheckpoint-prompt'>
+        {{nowData.ThemeName}}
+      </view>
+    </view>
+  </view>
+  <view wx:if='{{listData.length > 0}}' class='wrapper'>
+    <view class='title h'>
+      <text>{{themeInfo.ActivityType === 1 ? "全部主题" : "全部关卡"}}</text>
+    </view>
+    <block wx:for='{{listData}}' wx:key='Id'>
+      <view class='info' bindtap='toThemeDetails' data-index='{{index}}'>
+        <view class='box'>
+          <view class='list-title'>
+            {{item.ThemeName}}
+          </view>
+          <view wx:if='{{themeInfo.ActivityType === 1}}' class='list-time'>{{item.showTime}}</view>
+          <view wx:else class='pass-box'>
+            <view class='pass'>
+              第{{item.ThemeCheckpoint}}关
+            </view>
+            <view wx:if='{{Checkpoint < item.ThemeCheckpoint}}' class='pass-no'>
+              <image mode='widthFix' src='/images/lock.png' class='pass-image'></image>
+              <text>尚未解锁</text>
+            </view>
+          </view>
+        </view>
+        <image src='{{srcClockInImage + item.ThemeHeadImg}}' class='theme-image'></image>
+      </view>
+    </block>
+  </view>
+  <view wx:if='{{listData.length<=0}}' class='noData'>
+    暂无数据
+  </view>
+</block>
+
+
+<block wx:if='{{isEn}}'>
+  <search bindsearchInput='inputEvent' placeholder='Search'></search>
+  <view bindtap='toThemeDetails' data-index='{{nowData.index}}' wx:if='{{themeInfo.ActivityType === 2 && !input}}' class='nowCheckpoint'>
+    <view class='title'>
+      <text>Today's Mission<text class='title-g'>|</text>The {{nowData.ThemeCheckpoint}} Mission</text>
+    </view>
+    <view class='nowCheckpoint-box'>
+      <image class='nowCheckpoint-image' src='{{srcClockInImage + nowData.ThemeHeadImg}}'></image>
+      <view class='nowCheckpoint-prompt'>
+        {{nowData.ThemeName}}
+      </view>
+    </view>
+  </view>
+  <view wx:if='{{listData.length > 0}}' class='wrapper'>
+    <view class='title h'>
+      <text>{{themeInfo.ActivityType === 1 ? "Whole Themes" : "All Mission"}}</text>
+    </view>
+    <block wx:for='{{listData}}' wx:key='Id'>
+      <view class='info' bindtap='toThemeDetails' data-index='{{index}}'>
+        <view class='box'>
+          <view class='list-title'>
+            {{item.ThemeName}}
+          </view>
+          <view wx:if='{{themeInfo.ActivityType === 1}}' class='list-time'>{{item.showTime}}</view>
+          <view wx:else class='pass-box'>
+            <view class='pass'>
+              The {{item.ThemeCheckpoint}} Mission
+            </view>
+            <view wx:if='{{Checkpoint < item.ThemeCheckpoint}}' class='pass-no'>
+              <image mode='widthFix' src='/images/lock.png' class='pass-image'></image>
+              <text>Locked</text>
+            </view>
+          </view>
+        </view>
+        <image src='{{srcClockInImage + item.ThemeHeadImg}}' class='theme-image'></image>
+      </view>
+    </block>
+  </view>
+  <view wx:if='{{listData.length<=0}}' class='noData'>
+    No Data
+  </view>
+</block>
+<view wx:if='{{listData.length > 0 && isOver}}' class="data-over padding-tb-40">{{isEn ? 'No More Information' : '没有更多信息了'}}</view>

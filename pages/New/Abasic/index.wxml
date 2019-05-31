@@ -1,0 +1,79 @@
+<view class='flex height-85 padding-lr-30 aitems-center border-b-1 between'>
+  <view class='flex1 aitems-center  fon-28 flex '>
+    <view class='width-left'>Name</view>
+    <input bindinput='bindUserName' class='ca input-width fon-28' value='{{userName}}' placeholder='To be Filled in' placeholder-class='fon-28'></input>
+  </view>
+</view>
+
+<view class='flex height-85 border-b-1 padding-lr-30  between aitems-center'>
+  <picker class='flex1' range-key='sex' value="{{sexIndex}}" range="{{sexArray}}" bindchange="bindSexChange">
+    <view class='flex picker aitems-center '>
+      <view class="fon-28 flex aitems-center yanse ">
+        <view class='width-l'>Gender</view>
+        <view class='ca fon-28'>{{sexArray[sexIndex].sex}}</view>
+      </view>
+    </view>
+  </picker>
+  <image mode='widthFix' style='width:20rpx;' src='/images/jian_13.png'></image>
+</view>
+
+<view class='flex height-85 border-b-1 padding-lr-30  between aitems-center'>
+  <picker class='flex1' value='1990-01-01' bindchange="bindAgeChange" mode="date">
+    <view class='flex picker aitems-center '>
+      <view class="fon-28 flex aitems-center yanse ">
+        <view class='width-l'>Age</view>
+        <view class='ca'>{{age}}</view>
+      </view>
+    </view>
+  </picker>
+  <image mode='widthFix' style='width:20rpx;' src='/images/jian_13.png'></image>
+</view>
+
+<view bindtap='toUploadPassport' class='flex height-85 border-b-1 padding-lr-30  between aitems-center'>
+    <view class='flex picker aitems-center '>
+      <view class="fon-28 flex aitems-center yanse ">
+        <view class='width-l'>Passport</view>
+        <view class='ca'>{{TeaPassPortPhoto && TeaVisaPhoto ? 'Completed' : 'To be filled'}}</view>
+      </view>
+    </view>
+  <image mode='widthFix' style='width:20rpx;' src='/images/jian_13.png'></image>
+</view>
+
+<view class='flex height-85 padding-lr-30 aitems-center border-b-1 between'>
+  <view class='flex1 aitems-center  fon-28 flex '>
+    <view class='width-left'>WeChat</view>
+    <input bindinput='bindWeChat' class='ca input-width fon-28' value='{{weChat}}' placeholder='To be Filled in' placeholder-class='fon-28'></input>
+  </view>
+</view>
+
+<view class='flex height-85 border-b-1 padding-lr-30  between aitems-center'>
+  <picker class='flex1' range-key='NalEngName' value="{{nationalityIndex}}" range="{{nationalityArray}}" bindchange="bindNationalityChange">
+    <view class='flex picker aitems-center '>
+      <view class="fon-28 flex aitems-center yanse ">
+        <view class='width-l'>Nationality</view>
+        <view class='ca'>{{nationalityArray[nationalityIndex].NalEngName}}</view>
+      </view>
+    </view>
+  </picker>
+  <image mode='widthFix' style='width:20rpx;' src='/images/jian_13.png'></image>
+</view>
+
+<view class='flex height-85 padding-lr-30 aitems-center border-b-1 between'>
+  <view class='flex1 aitems-center  fon-28 flex '>
+    <view class='width-left'>University</view>
+    <input bindinput='bindSchool' class='ca input-width fon-28' value='{{school}}' placeholder='To be Filled in' placeholder-class='fon-28'></input>
+  </view>
+</view>
+<view bindtap='jumpLable' class='flex height-85 border-b-1 padding-lr-30  between aitems-center'>
+  <view class='flex1'>
+    <view class='flex picker aitems-center '>
+      <view class="fon-28 flex aitems-center yanse ">
+        <view class='width-l'>Key Words</view>
+        <view class='ca point'>{{TeaLabelSelect.length > 0 ? 'selected':'Not selected'}}</view>
+      </view>
+    </view>
+  </view>
+  <image mode='widthFix' style='width:20rpx;' src='/images/jian_13.png'></image>
+</view>
+
+<button bindtap='submit' class='btn purple-bg margin-t-60 white'>save</button>

@@ -1,0 +1,26 @@
+/* pages/New/Online/index.wxss */
+
+.imga {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.outer {
+  padding: 25rpx 30rpx;
+  border-radius: 0;
+}
+
+.outer::after {
+  border: none;
+}
+
+.din {
+  width: 15rpx;
+  height: 15rpx;
+  border-radius: 50%;
+  /* background-color: #008753; */
+  background-color: #f00;
+  margin-left: 15rpx;
+}

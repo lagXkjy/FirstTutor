@@ -1,0 +1,3 @@
+<!--pages/New/Teachers/index.wxml-->
+<textarea type='text' bindinput='bindInput' value='{{input}}' maxlength='1000' class='texteare bg-fff fon-26' placeholder-class='c9 fon-26' placeholder='{{placeholder}}'></textarea>
+<button bindtap='submit' class='btn purple-bg margin-t-60 white'>Save</button>

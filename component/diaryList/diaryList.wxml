@@ -1,0 +1,140 @@
+<wxs src='../../utils/filter.wxs' module='filter'/>
+<block wx:if='{{!isEn}}'>
+<view class='wrapper'>
+  <image mode='widthFix' src='{{obj.UserAvaUrl}}' class='left'></image>
+  <view class='right'>
+    <view bindtap='check' class='name'>
+      {{obj.UserNickName}}
+    </view>
+    <view class='day block'>
+      <text class='show-date'>{{obj.showDate}}</text> 已经坚持{{obj.SmallCardSum}}天
+      <!--  || obj.IsCurrentUser -->
+      <text wx:if='{{isAdministrator || obj.IsCurrentUser}}' bindtap='deleteEvent' class='delete'>删除</text>
+    </view>
+    <view wx:if='{{obj.JournalInfoText}}' class='activity margin-t-30 block'>
+      <text>{{filter.decodeUrlComponent(obj.JournalInfoText)}}</text>
+    </view>
+    <!-- 图片 -->
+    <view wx:if='{{obj.imagesArr.length > 0}}' class='image-box margin-t-30 block'>
+      <image bindtap='checkImage' data-index='{{index}}' wx:for='{{obj.imagesArr}}' wx:key='{{index}}' class='image-list' mode='aspectFit' src='{{srcClockInImage + item}}'></image>
+    </view>
+    <music class='margin-t-30 block' wx:if='{{obj.JournalInfoVoice}}' path='{{srcClockInAudio + obj.JournalInfoVoice}}'></music>
+    <video cusom-cache="{{false}}" class='margin-t-30 video block' wx:if='{{obj.JournalInfoVideo}}' src='{{srcClockInVideo + obj.JournalInfoVideo}}'></video>
+    <view class='checkpoint'>
+      <view wx:if='{{obj.ThemeCheckpoint}}' class='checkpoint-activity'>
+        第{{obj.ThemeCheckpoint}}关：{{obj.ThemeName}}
+      </view>
+      <view wx:else class='checkpoint-activity'>
+        {{obj.themeTime}}：{{obj.ThemeName}}
+      </view>
+    </view>
+    <view wx:if='{{showActivity}}' bindtap='toActivityDetails' class='activity-z'>
+      <view class='activity-left'>
+        <image mode='aspectFill' class='activity-image' src='{{srcClockInImage + obj.ActivityHeadImage}}'></image>
+        <view class='activity-text'>{{obj.ActivityName}}</view>
+      </view>
+      <image mode='widthFix' class='activity-right' src='/images/jos_03.jpg'></image>
+    </view>
+    <view class='function margin-t-30'>
+      <button bindtap='changePraise' class='share'>
+        <image mode='widthFix' src='{{obj.IsFabulous ? "/images/praise1.png" : "/images/praise.png"}}' class='share-image'></image>
+        <text class='share-text'>赞</text>
+      </button>
+      <button bindtap='toComment' class='share'>
+        <image mode='widthFix' src='/images/comment.png' class='share-image'></image>
+        <text class='share-text'>评论</text>
+      </button>
+      <button class='share' open-type='share' data-JournalID='{{obj.Id}}' data-ThemeId='{{obj.ThemeId}}'>
+        <image mode='widthFix' src='/images/share.png' class='share-image'></image>
+        <text class='share-text'>分享</text>
+      </button>
+    </view>
+    <view class='commit'>
+      <view wx:if='{{obj.FabulousList.length > 0}}' class='praise'>
+        <image mode='widthFix' src='/images/praise1.png' class='praise-image'></image>
+        <view class='praise-text'>
+          <text wx:for='{{obj.FabulousList}}' wx:key='{{index}}'><text wx:if='{{index!==0}}'>，</text>{{item.UserNickName}}</text>
+        </view>
+      </view>
+      <view wx:if='{{index < commentIndex}}' wx:for='{{obj.CommentList}}' wx:key='{{index}}' class='comment-list'>
+        <text class='comment-name'>{{item.UserNickName}}：</text>
+        <text class='comment-text'>{{filter.decodeUrlComponent(item.CommentInfoText)}}</text>
+        <voice wx:if='{{item.CommentInfoVoice}}' path='{{srcClockInAudio + item.CommentInfoVoice}}' class='voice'></voice>
+      </view>
+      <view bindtap='checkMore' hidden='{{commentIndex >= obj.CommentList.length}}' class='more'>查看更多</view>
+    </view>
+  </view>
+</view>
+</block>
+
+
+<block wx:if='{{isEn}}'>
+<view class='wrapper'>
+  <image mode='widthFix' src='{{obj.UserAvaUrl}}' class='left'></image>
+  <view class='right'>
+    <view bindtap='check' class='name'>
+      {{obj.UserNickName}}
+    </view>
+    <view class='day block'>
+      <text class='show-date'>{{obj.showDate}}</text> Sign in for {{obj.SmallCardSum}} days
+      <!--  || obj.IsCurrentUser -->
+      <text wx:if='{{isAdministrator || obj.IsCurrentUser}}' bindtap='deleteEvent' class='delete'>Delete</text>
+    </view>
+    <view wx:if='{{obj.JournalInfoText}}' class='activity margin-t-30 block'>
+      <text>{{filter.decodeUrlComponent(obj.JournalInfoText)}}</text>
+    </view>
+    <!-- 图片 -->
+    <view wx:if='{{obj.imagesArr.length > 0}}' class='image-box margin-t-30 block'>
+      <image bindtap='checkImage' data-index='{{index}}' wx:for='{{obj.imagesArr}}' wx:key='{{index}}' class='image-list' mode='aspectFit' src='{{srcClockInImage + item}}'></image>
+    </view>
+    <music class='margin-t-30 block' wx:if='{{obj.JournalInfoVoice}}' path='{{srcClockInAudio + obj.JournalInfoVoice}}'></music>
+    <video cusom-cache="{{false}}" class='margin-t-30 video block' wx:if='{{obj.JournalInfoVideo}}' src='{{srcClockInVideo + obj.JournalInfoVideo}}'></video>
+    <view class='checkpoint'>
+      <view wx:if='{{obj.ThemeCheckpoint}}' class='checkpoint-activity'>
+        The {{obj.ThemeCheckpoint}} Mission：{{obj.ThemeName}}
+      </view>
+      <view wx:else class='checkpoint-activity'>
+        {{obj.themeTime}}：{{obj.ThemeName}}
+      </view>
+    </view>
+    <view wx:if='{{showActivity}}' bindtap='toActivityDetails' class='activity-z'>
+      <view class='activity-left'>
+        <image mode='aspectFill' class='activity-image' src='{{srcClockInImage + obj.ActivityHeadImage}}'></image>
+        <view class='activity-text'>{{obj.ActivityName}}</view>
+      </view>
+      <image mode='widthFix' class='activity-right' src='/images/jos_03.jpg'></image>
+    </view>
+    <view class='function margin-t-30'>
+      <button bindtap='changePraise' class='share'>
+        <image mode='widthFix' src='{{obj.IsFabulous ? "/images/praise1.png" : "/images/praise.png"}}' class='share-image'></image>
+        <text class='share-text'>Like</text>
+      </button>
+      <button bindtap='toComment' class='share'>
+        <image mode='widthFix' src='/images/comment.png' class='share-image'></image>
+        <text class='share-text'>Comment</text>
+      </button>
+      <button class='share' open-type='share' data-JournalID='{{obj.Id}}' data-ThemeId='{{obj.ThemeId}}'>
+        <image mode='widthFix' src='/images/share.png' class='share-image'></image>
+        <text class='share-text'>Share</text>
+      </button>
+    </view>
+    <view class='commit'>
+      <view wx:if='{{obj.FabulousList.length > 0}}' class='praise'>
+        <image mode='widthFix' src='/images/praise1.png' class='praise-image'></image>
+        <view class='praise-text'>
+          <text wx:for='{{obj.FabulousList}}' wx:key='{{index}}'><text wx:if='{{index!==0}}'>，</text>{{item.UserNickName}}</text>
+        </view>
+      </view>
+      <view wx:if='{{index < commentIndex}}' wx:for='{{obj.CommentList}}' wx:key='{{index}}' class='comment-list'>
+        <text class='comment-name'>{{item.UserNickName}}：</text>
+        <text class='comment-text'>{{filter.decodeUrlComponent(item.CommentInfoText)}}</text>
+        <voice wx:if='{{item.CommentInfoVoice}}' path='{{srcClockInAudio + item.CommentInfoVoice}}' class='voice'></voice>
+      </view>
+      <view bindtap='checkMore' hidden='{{commentIndex >= obj.CommentList.length}}' class='more'>Look at more</view>
+    </view>
+  </view>
+</view>
+</block>
+
+<!-- 加分 -->
+<add-score score-type='{{scoreType}}' score-num='{{scoreNum}}'></add-score>

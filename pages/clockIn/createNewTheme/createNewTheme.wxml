@@ -1,0 +1,75 @@
+<!--pages/clockIn/createNewTheme/createNewTheme.wxml-->
+<block wx:if='{{!isEn}}'>
+  <view class='header'>
+    <view bindtap='chooseImage' class='image-box'>
+      <view class='image-add'>+</view>
+      <view class='image-text'>
+        主题头图
+        <text>(比例2:1)</text>
+      </view>
+      <view catchtap='stopBubble' wx:if='{{headerImage}}' class='header-image-box'>
+        <image src='{{headerImage.isRevise ? srcClockInImage + headerImage.url : srcClockInCatch + headerImage.url}}' class='header-image'></image>
+        <!-- <image wx:else src='{{srcClockInCatch + headerImage}}' class='header-image'></image> -->
+        <image bindtap='headerImageDelete' src='/images/delete.png' class='header-image-delete'></image>
+      </view>
+    </view>
+    <view class='header-right'>
+      <input bindinput='inputEvent' value='{{inputTitle}}' type='text' class='header-input' placeholder='请输入标题' placeholder-class='placeholder'></input>
+      <picker wx:if='{{type === 1}}' bindchange='timeChange' value='{{chooseTime}}' start='{{startTime}}' end='{{endTime}}' mode='date' class='header-picker'>
+        <view class='picker-box'>
+          <view class='picker-time'>{{chooseTime}}</view>
+          <image mode='widthFix' class='picker-image' src='/images/jian_13.png'></image>
+        </view>
+      </picker>
+      <view wx:else class='picker-box'>
+        第{{checkPoint}}关
+      </view>
+    </view>
+  </view>
+  <publish bindsyncData='syncData' show-add='{{true}}' placeholder='打卡主题文字内容' theme-info-data='{{themeInfoData}}' bindpageHide='pageHide'></publish>
+  <view wx:if='{{ThemeId}}' bindtap='reverse' class='footer'>
+    修改主题
+  </view>
+  <view wx:else bindtap='submit' class='footer'>
+    发布主题
+  </view>
+</block>
+
+
+
+<block wx:if='{{isEn}}'>
+  <view class='header'>
+    <view bindtap='chooseImage' class='image-box'>
+      <view class='image-add'>+</view>
+      <view class='image-text'>
+        Themes image
+        <!-- <text>(比例2:1)</text> -->
+      </view>
+      <view catchtap='stopBubble' wx:if='{{headerImage}}' class='header-image-box'>
+        <image src='{{headerImage.isRevise ? srcClockInImage + headerImage.url : srcClockInCatch + headerImage.url}}' class='header-image'></image>
+        <!-- <image wx:else src='{{srcClockInCatch + headerImage}}' class='header-image'></image> -->
+        <image bindtap='headerImageDelete' src='/images/delete.png' class='header-image-delete'></image>
+      </view>
+    </view>
+    <view class='header-right'>
+      <input bindinput='inputEvent' value='{{inputTitle}}' type='text' class='header-input' placeholder='Please enter the title' placeholder-class='placeholder'></input>
+      <picker wx:if='{{type === 1}}' bindchange='timeChange' value='{{chooseTime}}' start='{{startTime}}' end='{{endTime}}' mode='date' class='header-picker'>
+        <view class='picker-box'>
+          <view class='picker-time'>{{chooseTime}}</view>
+          <image mode='widthFix' class='picker-image' src='/images/jian_13.png'></image>
+        </view>
+      </picker>
+      <view wx:else class='picker-box'>
+        The {{checkPoint}} Mission
+      </view>
+    </view>
+  </view>
+  <publish bindsyncData='syncData' show-add='{{true}}' placeholder='Text Content' theme-info-data='{{themeInfoData}}' bindpageHide='pageHide'></publish>
+  <view wx:if='{{ThemeId}}' bindtap='reverse' class='footer'>
+    Modified the Theme
+  </view>
+  <view wx:else bindtap='submit' class='footer'>
+    Post New Theme
+  </view>
+
+</block>

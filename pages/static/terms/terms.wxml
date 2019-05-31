@@ -1,0 +1,8 @@
+<block>
+  <view class='title'>{{pagesData.title}}</view>
+  <view class='list' wx:for='{{pagesData.context}}' wx:key='{{index}}'>
+    <text class='p'>{{item.item}}</text>
+    <view class='item' wx:for='{{item.list}}' wx:key='{{index}}'>{{item}}</view>
+  </view>
+  <view class='name'>{{pagesData.name}}</view>
+</block>

@@ -1,0 +1,52 @@
+<!-- 
+  中文版
+  -->
+<block wx:if='{{!isEn}}'>
+  <image class='imgas' src='/images/successs_03.jpg'></image>
+  <view class='fon-42 t-center bold'>{{contentText}}</view>
+  <button bindtap='goHome' class='border buns bg-fff btn purple fon-37'>去首页逛逛吧</button>
+  <button wx:if='{{audit===2}}' bindtap='returnNew' class=' white btn purple-bg fon-37'>返回重新申请</button>
+  <black wx:if='{{status===1}}'>
+    <button bindtap='bindShowPoster' class=' white btn purple-bg fon-37'>点击生成海报</button>
+    <view class='fon-24 dibu'>
+      {{poster.PstAbstract}}
+    </view>
+  </black>
+  <view wx:if='{{isPoster}}' class='model'>
+    <view class='modle-main'>
+      <image class='img-haibao' src='{{srcPoster}}{{poster.PstImgName}}'></image>
+      <button bindtap='savePoster' class='btoon purple-bg'>保存海报</button>
+    </view>
+    <view>
+      <view bindtap='bindIsPoster' class='t-center'>
+        <icon type="cancel" color='#fff' size="30" />
+      </view>
+    </view>
+  </view>
+</block>
+<!-- 
+  英文版
+  -->
+<block wx:if='{{isEn}}'>
+  <image class='imgas' src='/images/successs_03.jpg'></image>
+  <view class='fon-42 t-center bold'>{{contentText}}</view>
+  <button bindtap='goHome' class='border buns bg-fff btn purple fon-37'>Home</button>
+  <button wx:if='{{audit===2}}' bindtap='returnNew' class=' white btn purple-bg fon-37'>Return application</button>
+  <black wx:if='{{status===1}}'>
+    <button bindtap='bindShowPoster' class=' white btn purple-bg fon-37'>Generate Poster</button>
+    <view class='fon-24 dibu'>
+      {{poster.PstAbstract}}
+    </view>
+  </black>
+  <view wx:if='{{isPoster}}' class='model'>
+    <view class='modle-main'>
+      <image class='img-haibao' src='{{srcPoster}}{{poster.PstImgName}}'></image>
+      <button bindtap='savePoster' class='btoon purple-bg'>Save Poster</button>
+    </view>
+    <view>
+      <view bindtap='bindIsPoster' class='t-center'>
+        <icon type="cancel" color='#fff' size="30" />
+      </view>
+    </view>
+  </view>
+</block>

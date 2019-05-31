@@ -1,0 +1,5 @@
+<!--component/voice/voice.wxml-->
+<view bindtap='changePlay' class='wrapper'>
+  <image mode='widthFix' class='wrapper-image' src='{{isPlay ? "/images/voice1.png" : "/images/voice.png"}}'></image>
+  <view class='wrapper-time'>{{start}}</view>
+</view>

@@ -1,0 +1,48 @@
+<!--  中文版  -->
+<block wx:if='{{!isEn}}'>
+  <view wx:for='{{atyInfos}}' wx:key='{{index}}' class='outer margin-b-20 bg-fff'>
+    <view class='flex between'>
+      <image class='imga' src='{{srcActivity}}{{item.AtyImgPath}}'></image>
+      <view class='flex1'>
+        <view class='fon-30 XianZhi c2b'>{{item.AtyTitle}}</view>
+        <!-- 1 未开始 2 进行中 3 已结束  -->
+        <view class='fon-24 margin-t-20 green'>{{item.status===1?"未开始":item.status===2?"进行中":"已结束"}}</view>
+      </view>
+    </view>
+    <view class='flex between margin-t-20 aitems-center'>
+      <view class='flex aitems-center fon-24 c8'>
+        <image class='address' mode='widthFix' src='/images/newaddress_07.png'></image>
+        {{item.whatTime}}
+      </view>
+      <view bindtap='activityDetail' data-index='{{index}}' class='detail fon-24 purple border'>查看详情</view>
+    </view>
+  </view>
+  <view wx:if='{{atyInfos.length<=0}}' class='noData'>
+    暂无数据
+  </view>
+  <view wx:if='{{atyInfos.length > 0 && isOver}}' class="data-over padding-tb-40">没有更多信息了</view>
+</block>
+<!--  英文版  -->
+<block wx:if='{{isEn}}'>
+  <view wx:for='{{atyInfos}}' wx:key='{{index}}' class='outer margin-b-20 bg-fff'>
+    <view class='flex between'>
+      <image class='imga' src='{{srcActivity}}{{item.AtyImgPath}}'></image>
+      <view class='flex1'>
+        <view class='fon-30 XianZhi c2b'>{{item.AtyTitle}}</view>
+        <!-- 1 未开始 2 进行中 3 已结束  -->
+        <view class='fon-24 margin-t-20 green'>{{item.status===1?"Not Started":item.status===2?"Ongoing":"Closed"}}</view>
+      </view>
+    </view>
+    <view class='flex between margin-t-20 aitems-center'>
+      <view class='flex aitems-center fon-24 c8'>
+        <image class='address' mode='widthFix' src='/images/newaddress_07.png'></image>
+        {{item.whatTime}}
+      </view>
+      <view bindtap='activityDetail' data-index='{{index}}' class='detail fon-24 purple border'>Details</view>
+    </view>
+  </view>
+  <view wx:if='{{atyInfos.length<=0}}' class='noData'>
+    No Data
+  </view>
+  <view wx:if='{{atyInfos.length > 0 && isOver}}' class="data-over padding-tb-40">No More Information</view>
+</block>

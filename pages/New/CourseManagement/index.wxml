@@ -1,0 +1,22 @@
+<view class='big-outer'>
+  <view wx:for='{{courInfos}}' wx:key='{{index}}' class='margin-t-20'>
+    <view class='flex fon-26 border-t-1 bg-f9 c8 height-75 between padding-lr-30 aitems-center'>
+      <view wx:if='{{item.CorCanView==0}}'>To be Approved</view>
+      <view wx:if='{{item.CorCanView==1}}'>Approved</view>
+      <view wx:if='{{item.CorCanView==2}}'>Approval Failed</view>
+      <view>Launch Time：{{item.showTime}}</view>
+    </view>
+    <tea-course bindtap='orderDetails' data-index='{{index}}' other='{{false}}' course='{{item}}'></tea-course>
+    <view class='flex fon-24 border-t-1 border-b-1 padding-lr-30 aitems-center bg-fff j-right'>
+      <view bindtap='openOrClose' data-index='{{index}}' class='border AnNiu white purple-bg'>{{item.CorSwitch==0?"Close":"Open"}}</view>
+      <view bindtap='bindDelete' data-index='{{index}}' class='purple AnNiu border'>Delete</view>
+      <view bindtap='groupList' data-index='{{index}}' wx:if='{{item.CorType!=1&&item.CorCanView==1}}' class='border AnNiu white purple-bg'>Group Orders {{item.FGCount}}</view>
+      <view bindtap='orderDetails' data-index='{{index}}' wx:if='{{item.CorCanView==1&&item.CorType==1}}' class='border AnNiu white purple-bg'>Check</view>
+        <view bindtap='reviseReleaseCourse' data-index='{{index}}' wx:if='{{item.CorCanView==1}}' class='border AnNiu white purple-bg'>Modify</view>  
+    </view>
+  </view>
+  <view wx:if='{{courInfos.length<=0}}' class='noData'>
+    No Data
+  </view>
+  <view bindtap='releaseCourse' class='footer fon-30 white purple-bg'>Launch Course</view>
+</view>

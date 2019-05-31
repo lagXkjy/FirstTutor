@@ -1,0 +1,44 @@
+/* pages/New/seeDetail/index.wxss */
+
+page {
+  background-color: #fff;
+}
+
+.list-box {
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+}
+
+.list-cont {
+  box-sizing: border-box;
+  align-items: flex-start;
+}
+
+.list-textArea {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+button {
+  border-radius: 0;
+}
+
+.fujia {
+  padding: 30rpx;
+  font-size: 26rpx;
+}
+
+.btn-k {
+  background: #fff;
+  border: 1px solid #7c99d0;
+  color: #7c99d0;
+}
+
+.margin-b-30 {
+  margin-bottom: 30rpx;
+}
+
+.margin-t-30{
+  margin-top: 30rpx;
+}

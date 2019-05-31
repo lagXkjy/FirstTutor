@@ -1,0 +1,201 @@
+<block wx:if='{{isPage}}'>
+  <view class='big-outer'>
+    <stu-course course='{{course}}'></stu-course>
+    <!-- 中文版 -->
+    <block wx:if='{{!isEn}}'>
+      <view class='flex aitems-center height-85 padding-lr-30 bg-fff border-t-1 fon-30 c2b '>
+        课程时长
+        <view class='ca margin-l-20'>{{course.courseTimeLong}}小时</view>
+      </view>
+      <view class='flex aitems-center height-85  padding-lr-30 bg-fff border-t-1 fon-30 c2b '>
+        上课时间段
+        <view class='ca margin-l-20 week-time'>{{weekTimeData[0].weekTime}}</view>
+      </view>
+      <view wx:if='{{groupType==2}}' class='flex aitems-center height-85  padding-lr-30 bg-fff border-t-1 fon-30 c2b '>
+        上课时间
+        <view class='ca margin-l-20'>{{weekTimeData[0].startCourseTime}}</view>
+      </view>
+      <view wx:if='{{groupType==2}}' class='flex aitems-center height-85  padding-lr-30 bg-fff border-t-1 fon-30 c2b'>
+        上课地点
+        <view class='ca margin-l-20'>{{weekTimeData[0].courseAddress}}</view>
+      </view>
+      <!-- 外教信息 -->
+      <view class='border-t-1 border-b-1 margin-b-20'>
+        <tutor-info is-en='{{isEn}}' info-list='{{teacher}}' photo-url='{{srcForIdPhoto}}'></tutor-info>
+      </view>
+      <!-- vip一对一课程专用 -->
+      <block wx:if="{{manyTime==1}}" wx:for='{{weekTimeData}}' wx:key='{{index}}'>
+        <view class='flex aitems-center height-85  padding-lr-30 bg-fff border-b-1 fon-30 c2b {{index===0&&"border-t-1"}}'>
+          <text>上课时间段{{index+1}}</text>
+          <view class='ca margin-l-20 week-time'>{{item.weekTime}}</view>
+        </view>
+        <view class='flex bg-fff  height-85 padding-lr-30 aitems-center border-b-1 between'>
+          <view class='flex1 aitems-center  fon-30 flex list-box'>
+            <view class='width-150'>上课时间</view>
+            <picker bindchange='bindTimeChange' data-index='{{index}}' class='list-input' value='{{item.timeIndex}}' range='{{item.timeList}}'>
+              <input disabled='disabled' value='{{item.startCourseTime}}' type='text' class='ca list-box-inpu' placeholder-class='ca' placeholder='（请设置上课开始时间）'></input>
+            </picker>
+          </view>
+          <image mode='widthFix' style='width:20rpx;' src='/images/jian_13.png'></image>
+        </view>
+      </block>
+      <!-- 姓名 -->
+      <view class='flex bg-fff margin-t-20 border-t-1 height-85 padding-lr-30 aitems-center border-b-1 between'>
+        <view class='flex1 aitems-center  fon-30 flex list-box'>
+          <view class='width-100'>姓名</view>
+          <input bindinput='bindStudentName' type='text' class='ca list-input' placeholder-class='ca' placeholder='请输入姓名' value='{{studentName}}'></input>
+        </view>
+      </view>
+      <!-- 手机号 -->
+      <view class='flex bg-fff  height-85 padding-lr-30 aitems-center border-b-1 between'>
+        <view class='flex1 aitems-center  fon-30 flex list-box'>
+          <view class='width-100'>手机</view>
+          <input bindinput='bindStudentPhone' value='{{studentPhone}}' maxlength='11' type='number' class='ca list-input' placeholder-class='ca' placeholder='请输入手机号'></input>
+        </view>
+      </view>
+      <!-- 选择上课时间段 -->
+      <view wx:if='{{manyTime!=1&&orderType==2||groupType==1}}' class='flex bg-fff  height-85 padding-lr-30 aitems-center border-b-1 between'>
+        <view class='flex1 aitems-center  fon-30 flex list-box'>
+          <view class='width-150'>上课时间</view>
+          <picker bindchange='bindTimeChange' data-index='0' class='list-input' value='{{weekTimeData[0].timeIndex}}' range='{{weekTimeData[0].timeList}}'>
+            <input disabled='disabled' value='{{weekTimeData[0].startCourseTime}}' type='text' class='ca list-box-inpu' placeholder-class='ca' placeholder='（请设置上课开始时间）'></input>
+          </picker>
+        </view>
+        <image mode='widthFix' style='width:20rpx;' src='/images/jian_13.png'></image>
+      </view>
+      <!-- 上课地址 -->
+      <view wx:if='{{orderType==2||groupType==1}}' class='flex bg-fff  height-85 padding-lr-30 aitems-center border-b-1 between'>
+        <view class='flex1 aitems-center  fon-30 flex list-box'>
+          <view class='width-150'>上课地址</view>
+          <input bindinput='bindCourseAddress' value='{{courseAddress}}' type='text' class='ca list-input' placeholder-class='ca' placeholder='（建议英文填写）'></input>
+        </view>
+      </view>
+      <!-- 定金说明 -->
+      <block wx:if="{{!course.CorIsVipCourses}}">
+        <view class='border-b-1 margin-t-20'>
+          <modular-title title-context='订金说明'></modular-title>
+        </view>
+        <view class='padding-lr-30 fon-24 border-b-1 c88 bg-fff padding-tb-40'>
+          <text>
+            平台预收首次课程费用{{teacher.TeaDepositPer}}%作为订金，剩余费用学生扣除订金后支付 给外教。同一个外教的后续课程不通过平台，也不收取平台费，学员直接和外教沟通结算。
+          </text>
+        </view>
+      </block>
+      <view class='agreement c88'>
+        <checkbox bindtap='checkChange' checked='{{false}}' color='green'></checkbox>
+        <view>
+          我已接受并阅读
+          <text bindtap='terms' class='purple'>《FirstTutor服务协议》</text>
+        </view>
+      </view>
+      <!-- footer -->
+      <view class='footer flex border-t-1 between'>
+        <view class='fon-26 cs flex bg-fff aitems-center padding-l-30'>
+          <view class='margin-r-10'>支付{{course.CorIsVipCourses ? '金额' : '订金'}}</view>
+          <view class='fon-30 bold purple'>¥{{PayPrice}}</view>
+        </view>
+        <button open-type='getUserInfo' class='white fon-32 cs purple-bg submit-button' bindgetuserinfo='getUserInfo'>
+          提交订单
+        </button>
+      </view>
+    </block>
+    <!-- 英文版 -->
+    <block wx:if='{{isEn}}'>
+      <view class='flex aitems-center height-85 padding-lr-30 bg-fff border-t-1 fon-30 c2b '>
+        Course Duration
+        <view class='ca margin-l-20'>{{course.courseTimeLong}}Hour</view>
+      </view>
+      <view class='flex aitems-center height-85  padding-lr-30 bg-fff border-t-1 fon-30 c2b '>
+        Course Time Slot
+        <view class='ca margin-l-20 week-time'>{{weekTimeData[0].weekTime}}</view>
+      </view>
+      <view wx:if='{{groupType==2}}' class='flex aitems-center height-85  padding-lr-30 bg-fff border-t-1 fon-30 c2b '>
+        Course Time
+        <view class='ca margin-l-20'>{{weekTimeData[0].startCourseTime}}</view>
+      </view>
+      <view wx:if='{{groupType==2}}' class='flex aitems-center height-85  padding-lr-30 bg-fff border-t-1 fon-30 c2b'>
+        Tutor Address
+        <view class='ca margin-l-20'>{{weekTimeData[0].courseAddress}}</view>
+      </view>
+      <!-- 外教信息 -->
+      <view class='border-t-1'>
+        <tutor-info is-en='{{isEn}}' info-list='{{teacher}}' photo-url='{{srcForIdPhoto}}'></tutor-info>
+      </view>
+      <!-- vip一对一课程专用 -->
+      <block wx:if="{{manyTime==1}}" wx:for='{{weekTimeData}}' wx:key='{{index}}'>
+        <view class='flex aitems-center height-85  padding-lr-30 bg-fff border-b-1 fon-30 c2b {{index===0&&"border-t-1"}}'>
+          <text>Course Time Slot {{index+1}}</text>
+          <view class='ca margin-l-20 week-time'>{{item.weekTime}}</view>
+        </view>
+        <view class='flex bg-fff  height-85 padding-lr-30 aitems-center border-b-1 between'>
+          <view class='flex1 aitems-center  fon-30 flex list-box'>
+            <view class='width-150'>Course Time</view>
+            <picker bindchange='bindTimeChange' data-index='{{index}}' class='list-input' value='{{item.timeIndex}}' range='{{item.timeList}}'>
+              <input disabled='disabled' value='{{item.startCourseTime}}' type='text' class='ca list-box-inpu' placeholder-class='ca' placeholder='（请设置上课开始时间）'></input>
+            </picker>
+          </view>
+          <image mode='widthFix' style='width:20rpx;' src='/images/jian_13.png'></image>
+        </view>
+      </block>
+      <!-- 姓名 -->
+      <view class='flex bg-fff margin-t-20 border-t-1 height-85 padding-lr-30 aitems-center border-b-1 between'>
+        <view class='flex1 aitems-center  fon-30 flex list-box'>
+          <view class='width-l'>Name</view>
+          <input bindinput='bindStudentName' type='text' class='ca list-input' placeholder-class='ca' placeholder='Please fill in your name.' value='{{studentName}}'></input>
+        </view>
+      </view>
+      <!-- 手机号 -->
+      <view class='flex bg-fff  height-85 padding-lr-30 aitems-center border-b-1 between'>
+        <view class='flex1 aitems-center  fon-30 flex list-box'>
+          <view class='width-l'>Contact Number</view>
+          <input bindinput='bindStudentPhone' value='{{studentPhone}}' maxlength='11' type='number' class='ca list-input' placeholder-class='ca' placeholder='Please fill in the mobile phone number'></input>
+        </view>
+      </view>
+      <!-- 选择上课时间段 -->
+      <view wx:if='{{manyTime!=1&&orderType==2||groupType==1}}' class='flex bg-fff  height-85 padding-lr-30 aitems-center border-b-1 between'>
+        <view class='flex1 aitems-center  fon-30 flex list-box'>
+          <view class='width-l'>Course Time</view>
+          <picker bindchange='bindTimeChange' data-index='0' class='list-input' value='{{weekTimeData[0].timeIndex}}' range='{{weekTimeData[0].timeList}}'>
+            <input disabled='disabled' value='{{weekTimeData[0].startCourseTime}}' type='text' class='ca list-box-inpu' placeholder-class='ca' placeholder='（请设置上课开始时间）'></input>
+          </picker>
+        </view>
+        <image mode='widthFix' style='width:20rpx;' src='/images/jian_13.png'></image>
+      </view>
+      <!-- 上课地址 -->
+      <view wx:if='{{orderType==2||groupType==1}}' class='flex bg-fff  height-85 padding-lr-30 aitems-center border-b-1 between'>
+        <view class='flex1 aitems-center  fon-30 flex list-box'>
+          <view class='width-l'>Course Address</view>
+          <input bindinput='bindCourseAddress' value='{{courseAddress}}' type='text' class='ca list-input' placeholder-class='ca' placeholder='Default offline negotiation'></input>
+        </view>
+      </view>
+      <!-- 定金说明 -->
+      <block wx:if="{{!course.CorIsVipCourses}}">
+        <view class='border-b-1 margin-t-20'>
+          <modular-title title-context='Statement on Deposit '></modular-title>
+        </view>
+        <view class='padding-lr-30 fon-24 border-b-1 c88 bg-fff padding-tb-40'>
+          <text>
+            Students pay the tutor course fees offline, less the deposit (i.e. {{teacher.TeaDepositPer}}% of the total fee for the first course paid by students to FirstTutor online) from the payable for the first course to tutor. The deposit is the one-off lump sum fee charged by FirstTutor for its platform service.
+          </text>
+        </view>
+      </block>
+      <view class='agreement c88'>
+        <checkbox bindtap='checkChange' checked='{{false}}' color='#22A415'></checkbox>
+        <view>
+          I have accepted and read
+          <text bindtap='terms' class='agreement-text'>The FirstTutor service agreement</text>
+        </view>
+      </view>
+      <!-- footer -->
+      <view class='footer flex border-t-1 between'>
+        <view class='fon-26 cs flex bg-fff aitems-center padding-l-30'>
+          <view class='margin-r-10'>Price</view>
+          <view class='fon-30 bold purple'>¥{{PayPrice}}</view>
+        </view>
+        <button open-type='getUserInfo' class='white fon-32 cs purple-bg submit-button' bindgetuserinfo='getUserInfo'>
+          Submit orders
+        </button>
+      </view>
+    </block>
+  </view>
+</block>

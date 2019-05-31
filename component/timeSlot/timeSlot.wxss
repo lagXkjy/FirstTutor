@@ -1,0 +1,109 @@
+/* component/timeSlot/timeSlot.wxss */
+
+.border-box {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 100%;
+  background: #fff;
+  padding: 20rpx 0;
+}
+
+.week {
+  width: 100%;
+  padding: 0 30rpx;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.week-list {
+  width: 90rpx;
+  height: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #888;
+}
+
+.week-list-border {
+  border: 1px solid #e0e0e0;
+  margin-top: 20rpx;
+  color: #000;
+}
+
+/* 不能选 */
+
+.no-change {
+  background: #c8c8c8;
+}
+
+/* 当前选中 */
+
+.select {
+  background: #7c99d0;
+  color: #fff;
+}
+
+/* 已被购买 */
+  
+.pay {
+  background: #ffae00;
+  color: #fff;
+  border: none;
+}
+
+.pour {
+  width: 100%;
+  margin-top: 20rpx;
+  padding: 0 30rpx;
+}
+
+.pour-box {
+  display: flex;
+  padding: 18rpx;
+  background: #ececec;
+  width: 100%;
+}
+
+.pour-title {
+  width: 29rpx;
+  height: 29rpx;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20rpx;
+  font-size: 20rpx;
+  background: #7c99d0;
+  color: #fff;
+}
+
+.pour-title-en {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20rpx;
+  font-size: 20rpx;
+  background: #7c99d0;
+  color: #fff;
+}
+
+.pour-context {
+  font-size: 22rpx;
+  width: 90%;
+}
+
+.pour-context-en {
+  font-size: 22rpx;
+  width: 90%;
+}
+
+.pour-list {
+  margin-bottom: 10rpx;
+}

@@ -1,0 +1,13 @@
+<!--pages/New/area/index.wxml-->
+
+<view class='border-b-1'>
+  <modular-title title-context='Choose teaching area（multiple choice）'></modular-title>
+</view>
+<!-- <view class='tishi'>
+  <text>Please select the following teaching area in Shanghai. (If you select "Other Cities", please remember to mark your city in your "Key Words")</text>
+</view> -->
+<view class='flex  fon-26 padding-lr-30 between warp'>
+  <view wx:for='{{pageList}}' data-index='{{index}}' bindtap='bindChange' wx:key='{{index}}' class='QuKuai {{item.isShow?purple:null}}'>{{item.areaEn?item.areaEn:item.AiName}}</view>
+</view>
+<!-- <view wx:for='{{list}}' wx:key='{{index}}'>{{item}}</view> -->
+<button bindtap='submit' class='btn purple-bg margin-t-60 white'>save</button>

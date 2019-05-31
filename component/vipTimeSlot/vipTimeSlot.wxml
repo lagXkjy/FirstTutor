@@ -1,0 +1,60 @@
+<view class='wrapper border-box'>
+    <view class='header border-box'>
+        <view class="header-l" bindtap='reduce'>
+            <image hidden="{{indexItem>0}}" mode="widthFix" class='header-img' src='/images/jian1.png' />
+            <image hidden="{{indexItem<=0}}" mode="widthFix" class='header-img rotate' src='/images/jian2.png' />
+        </view>
+        <!-- scroll-x='true' bindscroll="headerScroll" scroll-left='{{headLeft}}px' -->
+        <scroll-view id="head-scroll" class='header-scroll border-box'>
+        <!-- {{listIndex === index && "select"}} -->
+            <view wx:if="{{ index >= indexItem && index <= indexItem  + 7 }}" bindtap='clickHead' data-index='{{index}}' class='header-list border-box' wx:for="{{list}}" wx:key='{{index}}'>
+                <view class="header-list-box">
+                    <view>{{item.month}}-{{item.day}}</view>
+                    <view wx:if='{{item.isToday}}'>{{isEn ? 'today' : '今天'}}</view>
+                </view>
+            </view>
+        </scroll-view>
+        <view class="header-l" bindtap='add'>
+            <image hidden="{{indexItem>=21}}" mode="widthFix" class='header-img' src='/images/jian2.png' />
+            <image hidden="{{indexItem<21}}" mode="widthFix" class='header-img rotate' src='/images/jian1.png' />
+        </view>
+    </view>
+    <view class='week border-box'>
+        <!-- scroll-x='true' bindscroll="weekScroll" scroll-left='{{weekLeft}}px' -->
+        <scroll-view id="week-scroll" class='header-scroll border-box'>
+            <view wx:if="{{ index >= indexItem && index <= indexItem  + 7 }}" wx:for="{{list}}" wx:key='{{index}}' class="week-list border-box">
+                <view class='week-list-box'>
+                    <view bindtap='_selectTime' data-timetype='{{k.timeType}}' data-index='{{index}}' data-v='{{v}}' wx:for='{{item.children}}' wx:for-item="k" wx:for-index="v" wx:key="{{v}}" class="week-list-border {{k.timeType === 0 && 'no-change'}} {{k.timeType === 2 && 'select'}} {{k.timeType === 3 && 'pay'}}">
+                        {{k.timeName}}
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view wx:if='{{!isEn}}' class='pour border-box'>
+        <view class='pour-box border-box'>
+            <view class='pour-title'>注</view>
+            <view class='pour-context border-box'>
+                <view class='pour-list border-box'>上午：课程区间9-12点；下午1：课程区间12-15点；</view>
+                <view class='pour-list border-box'>下午2：课程区间15-18点；晚上：课程区间18-21点；</view>
+                <view class='pour-list border-box'>
+                    特别注意: 以上时间表仅供参考，不表明老师的实际可得时间。您的选择仅表明初始意向，具体请在下单前和老师直接确认。一旦您确认购买，您将看到老师的联系方式，此时，平台将视为您已与老师就能否授课和授课时间达成了一致。请务必仔细阅读关于订金退款的平台规则（我的-条款与条件）。
+                </view>
+            </view>
+        </view>
+    </view>
+    <view wx:if='{{isEn}}' class='pour border-box'>
+        <view class='pour-box border-box'>
+            <view class='pour-title-en'>p.s.</view>
+            <view class='pour-context-en border-box'>
+                <view class='pour-list border-box'>AM：Course time slot: 9:00-12:00；</view>
+                <view class='pour-list border-box'>PM1：Course time slot: 12:00-15:00；</view>
+                <view class='pour-list border-box'>PM2： Course time slot: 15:00-18:00；</view>
+                <view class='pour-list border-box'>PM3：Course time slot: 18:00-21:00；</view>
+                <view class='pour-list border-box'>
+                    Please confirm the exact course time slot through offline discussion.
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

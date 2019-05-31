@@ -1,0 +1,159 @@
+/* component/timeSlot/timeSlot.wxss */
+
+.border-box {
+    box-sizing: border-box;
+  }
+  
+  .wrapper {
+    width: 100%;
+    background: #fff;
+    padding: 20rpx 0;
+  }
+  .header{
+      border-top: 1px solid #e0e0e0;
+      border-bottom: 1px solid #e0e0e0;
+      height: 60rpx;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      /* padding: 0 20rpx; */
+  }
+  .header-l{
+    width: 40rpx;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header-img{
+      width: 20rpx;
+  }
+  .header-scroll{
+      width: 100%;
+      height: 100%;
+      overflow:hidden;
+      white-space:nowrap;
+  }
+  .header-list{
+      width: 14.29%;
+      height: 100%;
+      display: inline-block;
+      font-size: 0;
+      vertical-align:top;
+  }
+  .header-list-box{
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-size: 24rpx;
+  }
+  
+  .week {
+    width: 100%;
+    padding: 0 30rpx;
+    font-size: 24rpx;
+  }
+  
+  .week-list {
+    width: 14.29%;
+    color: #888;
+    display: inline-block;
+    font-size: 0;
+    vertical-align:top;
+    padding-right: 10rpx;
+  }
+  .week-list-box{
+      font-size: 24rpx;
+  }
+  
+  .week-list-border {
+    border: 1px solid #e0e0e0;
+    margin-top: 20rpx;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50rpx;
+    width: 100%;
+  }
+  
+  /* 不能选 */
+  
+  .no-change {
+    background: #c8c8c8;
+  }
+  
+  /* 当前选中 */
+  
+  .select {
+    background: #7c99d0;
+    color: #fff;
+  }
+    
+  /* 已被购买 */
+  
+  .pay {
+    background: #ffae00;
+    color: #fff;
+    border: none;
+  }
+  
+  .pour {
+    width: 100%;
+    margin-top: 20rpx;
+    padding: 0 30rpx;
+  }
+  
+  .pour-box {
+    display: flex;
+    padding: 18rpx;
+    background: #ececec;
+    width: 100%;
+  }
+  
+  .pour-title {
+    width: 29rpx;
+    height: 29rpx;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20rpx;
+    font-size: 20rpx;
+    background: #7c99d0;
+    color: #fff;
+  }
+  
+  .pour-title-en {
+    width: 50rpx;
+    height: 50rpx;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20rpx;
+    font-size: 20rpx;
+    background: #7c99d0;
+    color: #fff;
+  }
+  
+  .pour-context {
+    font-size: 22rpx;
+    width: 90%;
+  }
+  
+  .pour-context-en {
+    font-size: 22rpx;
+    width: 90%;
+  }
+  
+  .pour-list {
+    margin-bottom: 10rpx;
+  }
+  
+  .rotate{
+    transform: rotateY(180deg);
+  }

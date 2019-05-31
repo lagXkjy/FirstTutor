@@ -1,0 +1,84 @@
+/* pages/New/OrdeRreview/index.wxss */
+
+.imga {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.outer {
+  padding: 25rpx 30rpx;
+}
+
+.neirong {
+  margin-top: 20rpx;
+}
+
+.AnNiu {
+  padding: 13rpx 20rpx;
+  text-align: center;
+  margin: 14rpx 0;
+  margin-left: 10rpx;
+}
+
+.wrapper>.list:nth-child(1) {
+  margin-top: 0;
+}
+
+/*  评分  */
+
+.score {
+  position: relative;
+  display: flex;
+}
+
+.score-all {
+  display: flex;
+}
+
+.score-score {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.score-list {
+  width: 26rpx;
+  height: 26rpx;
+  margin-left: 6rpx;
+  display: flex;
+}
+
+.score-img {
+  width: 100%;
+  height: 100%;
+}
+
+.score-image {
+  height: 100%;
+  width: 50%;
+}
+
+.teacher-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.teacher-l {
+  display: flex;
+  align-items: center;
+}
+
+.teacher-chat {
+  width: 40rpx;
+}
+
+/*  评分 end  */
+
+.list-footer {
+  display: flex;
+  justify-content: flex-end;
+}

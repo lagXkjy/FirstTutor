@@ -1,0 +1,9 @@
+<!-- 加分 -->
+<view wx:if='{{isShow}}' class='score'>
+  <view class='score-box'>
+    <image class='score-image' mode='widthFix' src='/images/gold.png'></image>
+    <view class='score-text'>
+      <text>{{scoreText}} <text class='score-score'>+{{scoreNum}}{{isEn ? "points" : "分"}}</text></text>
+    </view>
+  </view>
+</view>

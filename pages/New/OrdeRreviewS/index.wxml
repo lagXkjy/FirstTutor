@@ -1,0 +1,18 @@
+<view class='wrapper'>
+  <view wx:for='{{teaList}}' wx:key='{{index}}' class='list margin-t-20'>
+    <!--  外教信息  -->
+    <tutor-info is-en='{{isEn}}' info-list='{{item}}' photo-url='{{srcForIdPhoto}}'></tutor-info>
+    <view class='padding-tb-10 flex fon-24 border-t-1 border-b-1 padding-lr-30  aitems-center bg-fff between'>
+      <view class='fon-26 c8'>
+        {{item.RewId>0?"已点评":"未点评"}}
+      </view>
+      <view class='list-footer'>
+        <view wx:if='{{item.RewId<=0}}' bindtap='releaseRemark' data-index='{{index}}' class='border AnNiu white purple-bg'>立即点评</view>
+        <view wx:if='{{item.RewId>0}}' bindtap='bindDelete' data-index='{{index}}' class='border AnNiu white purple-bg'>删除点评</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:if='{{teaList.length<=0}}' class='noData'>
+  暂无数据
+</view>

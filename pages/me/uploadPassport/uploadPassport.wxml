@@ -1,0 +1,17 @@
+<!-- pages/me/uploadPassport/uploadPassport.wxml -->
+<view class='padding-lr-30 bg-white padding-t-30'>
+    <view class="flex align-center margin-b-50">
+        <image bindtap='chooseImage' data-key='TeaPassPortPhoto' mode="aspectFill" class="img" src="{{TeaPassPortPhoto ? srcForIdPhoto + TeaPassPortPhoto : '/images/tupian_03.jpg'}}" />
+        <text class="text">Upload passport homepage</text>
+    </view>
+    <view class="flex align-center margin-b-50">
+        <image bindtap='chooseImage' data-key='TeaVisaPhoto' mode="aspectFill" class="img" src="{{TeaVisaPhoto ? srcForIdPhoto + TeaVisaPhoto : '/images/tupian_03.jpg'}}" />
+        <text class="text">Upload Chinese Visa page</text>
+    </view>
+    <view class='content'>
+        <text >{{text}}</text>
+    </view>
+</view>
+<view class="padding-lr-30 color-whtie">
+    <view bindtap='submit' class="purple-bg submit-btn flex justify-center align-center">Submit</view>
+</view>

@@ -1,0 +1,51 @@
+<wxs src='../../../utils/filter.wxs' module='filter'/>
+<view class='wrapper {{isDetail && "wrapper-h"}}'>
+  <view class='wrapper-box' id='theme-info'>
+    <view class='header'>
+      <view class='header-type'>
+        <image class='header-image' src="/images/dd.png" />
+        <block wx:if='{{!isEn}}'>
+        <text wx:if='{{themeInfo.ThemeCheckpoint}}'>闯关模式：第{{themeInfo.ThemeCheckpoint}}关</text>
+        <text wx:else>每日打卡：{{themeInfo.showTime}}</text>
+        </block>
+        <block wx:if='{{isEn}}'>
+        <text wx:if='{{themeInfo.ThemeCheckpoint}}'>Checkpoint:The {{themeInfo.ThemeCheckpoint}} Mission</text>
+        <text wx:else>Daily:{{themeInfo.showTime}}</text>
+        </block>
+        
+      </view>
+      <view class='header-name'>
+        {{themeInfo.ThemeName}}
+      </view>
+    </view>
+    <view hidden='{{!isDetail}}'>
+      <image class='banner' mode='widthFix' src='{{srcClockInImage + themeInfo.ThemeHeadImg}}'></image>
+      <view class='info'>
+      <block wx:for='{{themeInfo.infoArr}}' wx:key='{{index}}'>
+        <view wx:if='{{item.text}}' class='article margin-t-30'>
+         <text bindlongpress='longpress' data-index='{{index}}'>{{filter.decodeUrlComponent(item.text)}}</text>
+        </view>
+        <view wx:if='{{item.images.length > 0}}' class='image-box margin-t-30'>
+          <image bindtap='checkImage' data-index='{{index}}' data-indexs='{{indexs}}' mode='widthFix' class='image' wx:for='{{item.images}}' wx:for-item='items' wx:for-index='indexs' wx:key='{{indexs}}' src='{{srcClockInImage + items}}'></image>
+        </view>
+        <music wx:if='{{item.audio}}' path='{{srcClockInAudio + item.audio}}' my-type='1' class='music margin-t-30'></music>
+        <video  wx:if='{{item.video}}' cusom-cache="{{false}}" src='{{srcClockInVideo + item.video}}' class='video margin-t-30'></video>
+      </block>
+      </view>
+    </view>
+    <view bindtap='changeDetail' class='arrow {{isDetail && isFixed && "fixed"}}'>
+      <image class='arrow-image {{isDetail && "arrow-rotate"}}' mode='widthFix' src="/images/tt.png" />
+    </view>
+    <view style='height:100rpx;'>
+      
+    </view>
+  </view>
+</view>
+<view hidden='{{isDetail}}'>
+  <publish bindsyncData='syncData' placeholder='{{isEn ? "Tell us about your gains and thinks today. " : "说说今天的感想和收获吧"}}'></publish>
+  <view class='footer'>
+    <view bindtap='cancel' class='cancel footer-btn'>{{isEn ? "cancel" : "取消"}}</view>
+    <button bindgetuserinfo='userInfo' open-type='getUserInfo' class='confirm footer-btn'>{{isEn ? "Post" : "发表日记"}}</button>
+  </view>
+  <add-score bindshowScoreCallback='showScoreCallback' score-type='{{scoreType}}' score-num='{{scoreNum}}'></add-score>
+</view>

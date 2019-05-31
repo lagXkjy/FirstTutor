@@ -1,0 +1,8 @@
+/* pages/New/OrderCheck/index.wxss */
+
+.AnNiu {
+  padding: 13rpx 20rpx;
+  text-align: center;
+  margin: 14rpx 0;
+  margin-left: 10rpx;
+}

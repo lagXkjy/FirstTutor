@@ -1,0 +1,15 @@
+/* pages/New/Teachers/index.wxss */
+
+.texteare {
+  width: 100%;
+  height: 346rpx;
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+
+.width-left {
+  width: 236rpx;
+}
+.width-l{
+  width: 150rpx;
+}

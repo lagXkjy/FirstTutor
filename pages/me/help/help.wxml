@@ -1,0 +1,28 @@
+<!--pages/me/help/help.wxml-->
+<view bindtap='call' class='flex between height-102 padding-lr-30 border-b-1 aitems-center fon-32'>
+  <view class='flex  aitems-center'>
+    <image mode='widthFix' class='image' src='/images/call.png'></image>
+    {{phone}}
+  </view>
+  <image mode='widthFix' style='width:21rpx;' src='/images/jian_13.png'></image>
+</view>
+<view class='flex between height-102 padding-lr-30 border-b-1 aitems-center fon-32'>
+  <view class='flex  aitems-center'>
+    <image mode='widthFix' class='image' src='/images/weChat.png'></image>
+    {{isEn?"Administrator WeChat":"管理员微信号"}}:{{weChat}}
+  </view>
+</view>
+<view bindtap='commonProblem' class='flex between height-102 padding-lr-30 border-b-1 aitems-center fon-32'>
+  <view class='flex  aitems-center'>
+    <image mode='widthFix' class='image' src='/images/what.png'></image>
+    {{isEn?"Common problems":"常见问题"}}
+  </view>
+  <image mode='widthFix' style='width:21rpx;' src='/images/jian_13.png'></image>
+</view>
+<view bindtap='feedback' class='flex between height-102 padding-lr-30 border-b-1 aitems-center fon-32'>
+  <view class='flex  aitems-center'>
+    <image mode='widthFix' class='image' src='/images/opion.png'></image>
+    {{isEn?"Feedback":"意见反馈"}}
+  </view>
+  <image mode='widthFix' style='width:21rpx;' src='/images/jian_13.png'></image>
+</view>

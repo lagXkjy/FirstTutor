@@ -1,0 +1,100 @@
+.QiHao {
+  width: 42rpx;
+  margin-right: 14rpx;
+}
+
+.big-outer {
+  padding-bottom: 100rpx;
+}
+
+.middle-m {
+  padding-top: 30rpx;
+  padding-bottom: 40rpx;
+}
+
+.purplea {
+  background-color: #e8f0ff;
+  width: 93rpx;
+  height: 42rpx;
+  line-height: 42rpx;
+  text-align: center;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+}
+
+.cs {
+  width: 50%;
+}
+
+.week-time {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 60%;
+}
+
+.right-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.group-little {
+  display: flex;
+  justify-content: space-between;
+  width: 96%;
+}
+
+.list-box {
+  box-sizing: border-box;
+}
+
+.list-input {
+  width: 90%;
+}
+
+.list-box-inpu {
+  width: 100%;
+}
+
+.width-l {
+  width: 256rpx;
+}
+
+.agreement {
+  width: 100%;
+  padding: 30rpx;
+  font-size: 24rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.agreement checkbox {
+  transform: scale(0.8);
+}
+
+.agreement-text {
+  color: #7c99d0;
+  font-style: italic;
+}
+
+.submit-button {
+  border-radius: 0rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit-button::after {
+  border: none;
+}

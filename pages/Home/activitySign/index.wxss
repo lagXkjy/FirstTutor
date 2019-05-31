@@ -1,0 +1,57 @@
+.JieShu {
+  height: 80rpx;
+  line-height: 80rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.footer {
+  background-color: #7c99d0;
+  height: 100rpx;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.footer-btn-l {
+  padding-left: 30rpx;
+  font-size: 26rpx;
+  background: #fff;
+  height: 100%;
+  width: 50%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.footer-btn-r {
+  width: 50%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-btn-r::after {
+  border: none;
+}
+
+.box-box {
+  width: 110rpx;
+}
+
+.list-textArea {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}

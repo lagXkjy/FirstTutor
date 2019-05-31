@@ -1,0 +1,12 @@
+/* pages/me/help/help.wxss */
+
+page {
+  background: #fff;
+}
+.height-102 {
+  height: 102rpx;
+}
+.image{
+  width: 54rpx;
+  margin-right: 20rpx;
+}

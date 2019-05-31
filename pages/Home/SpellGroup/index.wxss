@@ -1,0 +1,171 @@
+/* pages/Home/SpellGroup/index.wxss */
+
+.QiHao {
+  width: 42rpx;
+  margin-right: 14rpx;
+}
+
+.middle-m {
+  padding-top: 30rpx;
+  padding-bottom: 40rpx;
+}
+
+.purplea {
+  background-color: #e8f0ff;
+  width: 93rpx;
+  height: 42rpx;
+  line-height: 42rpx;
+  text-align: center;
+}
+
+.phone {
+  width: 26rpx;
+  margin-right: 10rpx;
+}
+
+.padding-25 {
+  padding: 25rpx 30rpx 25rpx 30rpx;
+}
+
+.address {
+  width: 26rpx;
+  margin-right: 25rpx;
+}
+
+/*框  */
+
+.Kuang {
+  width: 100%;
+  /* min-height: 378rpx; */
+  background-color: #e8f0ff;
+  padding-top: 45rpx;
+  position: relative;
+  padding-bottom: 45rpx;
+}
+
+.btn {
+  width: 100%;
+}
+
+.Soa {
+  width: 95rpx;
+  height: 95rpx;
+  border-radius: 50%;
+  display: block;
+}
+
+.waiceng {
+  position: relative;
+  margin: 0 10rpx;
+}
+
+.tuanZhang {
+  width: 70rpx;
+  height: 23rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20rpx;
+  position: absolute;
+  left: 10rpx;
+  bottom: -5rpx;
+}
+
+.text1 {
+  width: 0;
+  height: 0;
+  border-right: 20rpx solid transparent;
+  border-bottom: 20rpx solid #e8f0ff;
+  border-left: 20rpx solid transparent;
+  position: absolute;
+  left: 48%;
+  top: -18rpx;
+}
+
+.view-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.core {
+  position: relative;
+  padding-top: 40rpx;
+}
+
+.group-fail-title {
+  font-size: 32rpx;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.group-fail-context {
+  font-size: 26rpx;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40rpx;
+}
+
+.group-success-title {
+  font-size: 32rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 40rpx;
+}
+
+.group-success-title image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+  border-radius: 50%;
+}
+
+.groupSuccess {
+  padding: 40rpx 30rpx;
+}
+
+.image-radius {
+  border-radius: 50%;
+}
+
+.btn-radius {
+  border-radius: 6rpx;
+}
+
+.btn-fa {
+  margin: 40rpx 0;
+}
+
+.orderimg {
+  height: 70rpx;
+  width: 70rpx;
+  margin-right: 20rpx;
+}
+
+.Tuan {
+  width: 75rpx;
+  height: 38rpx;
+  line-height: 38rpx;
+  text-align: center;
+  margin-left: 15rpx;
+  border-radius: 5px;
+}
+
+.wen {
+  border: 1px dashed #7c99d0;
+  border-radius: 50%;
+  background: #fff;
+  color: #7c99d0;
+  font-weight: bold;
+  width: 95rpx;
+  height: 95rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  font-size: 50rpx;
+  padding-left: 14rpx;
+}

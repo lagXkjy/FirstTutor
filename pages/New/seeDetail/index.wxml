@@ -1,0 +1,49 @@
+<view class='border-box padding-tb-20 padding-lr-30  border-b-1 '>
+  <view class='aitems-center fon-26 flex between'>
+    <view class='width-l ca'>Location</view>
+    <view class='c2b width-r'>{{lnd.address}}</view>
+  </view>
+</view>
+
+<view class='border-box padding-tb-20 padding-lr-30  border-b-1 '>
+  <view class='aitems-center fon-26 flex between'>
+    <view class='width-l ca'>Course Time</view>
+    <view class='c2b width-r'>{{lnd.week}}</view>
+  </view>
+</view>
+
+<view class='border-box padding-tb-20 padding-lr-30  border-b-1 '>
+  <view class='aitems-center fon-26 flex between'>
+    <view class='width-l ca'>Time Period</view>
+    <view class='c2b width-r'>{{lnd.time}}</view>
+  </view>
+</view>
+
+<view class='border-box padding-tb-20 padding-lr-30  border-b-1 '>
+  <view class='aitems-center fon-26 flex between'>
+    <view class='width-l ca'>Acceptable Price Range(per hour)</view>
+    <view class='c2b width-r'>¥{{lnd.NedMinPrice}} - ¥{{lnd.NedMaxPrice}}</view>
+  </view>
+</view>
+<view class='border-box padding-tb-20 padding-lr-30  border-b-1 '>
+  <view class='aitems-center fon-26 flex between'>
+    <view class='width-l ca'>Course Address</view>
+    <view class='c2b width-r'>{{lnd.NedAddress}}</view>
+  </view>
+</view>
+
+<view class='border-box padding-tb-20 padding-lr-30  border-b-1 '>
+  <view class='aitems-center fon-26 flex between'>
+    <view class='width-l ca '>Course</view>
+    <view class='c2b width-r'>{{lnd.NedCorName}}</view>
+  </view>
+</view>
+
+<view class='border-box padding-tb-20 padding-lr-30  border-b-1 '>
+  <view class='aitems-center fon-26 flex between'>
+    <view class='width-l ca'>Other Requirement</view>
+    <view class='c2b width-r'>{{lnd.NedOther}}</view>
+  </view>
+</view>
+
+<button bindtap='onlineChart' class='btn purple-bg margin-t-60 white'>Online Contact</button>

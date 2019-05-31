@@ -1,0 +1,63 @@
+/* pages/New/NeedSee/index.wxss */
+
+.QiHao {
+  width: 42rpx;
+  margin-right: 14rpx;
+}
+
+.middle-m {
+  padding-top: 30rpx;
+  padding-bottom: 40rpx;
+}
+
+.AnNiu {
+  padding: 13rpx 20rpx;
+  text-align: center;
+  margin: 14rpx 0;
+  margin-left: 10rpx;
+}
+
+.wrapper {
+  padding-bottom: 80rpx;
+  box-sizing: border-box;
+}
+
+.wrapper>.page-list:nth-child(1) {
+  margin-top: 0;
+}
+
+.footer {
+  height: 80rpx;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 32rpx;
+  background: #7c99d0;
+}
+
+.text-type {
+  color: #7c99d0;
+}
+
+.list-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.left-80 {
+  width: 70%;
+}
+
+.point {
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,39 @@
+<wxs src='../../utils/filter.wxs' module='filter' />
+<view wx:if='{{infoList}}' class='wrapper border-box'>
+  <view class='box-left border-box'>
+    <image catchtap='lookYouImage' lazy-load='true' data-index='{{index}}' class='head-image' src='{{infoList.TeaIDPhoto ? photoUrl + infoList.TeaIDPhoto : infoList.TeaAvaUrl}}'></image>
+    <!-- <image catchtap='lookYouImage' lazy-load='true' data-index='{{index}}' class='head-image' src='{{infoList.image && infoList.image}}'></image> -->
+    <view class='border-box box-content'>
+      <view class='box-uername border-box'>
+        <text>{{infoList.TeaName || infoList.TeaNickName}}</text>
+        <view class='box-image'>
+          <image wx:if='{{infoList.IsVip==1}}' class='vip' mode='widthFix' src='/images/VIP.png'></image>
+          <!--  星星  -->
+          <view class='score'>
+            <image src='{{infoList.RewScore>=index+1 ? "/images/xian_05.png":"/images/hui_07.png"}}' wx:for='{{5}}' wx:key='{{index}}' mode='widthFix' class='score-list'></image>
+          </view>
+        </view>
+      </view>
+      <!-- 待删  -->
+      <!-- <view class='box-context border-box point' wx:if='{{infoList.TeaLabelCla && infoList.TeaLabelCla.length>0}}'>
+        <text wx:for='{{infoList.TeaLabelCla}}' wx:key='{{index}}'><text wx:if='{{index!==0}}'>/</text>{{item.LcTitle}}</text>
+      </view> -->
+      <view wx:if='{{infoList.school}}' class='school border-box point'>
+        {{infoList.school}}
+      </view>
+      <view class='lable' wx:if='{{infoList.TeaLabelSelect && infoList.TeaLabelSelect.length>0}}'>
+        <view class='lable-list' wx:for='{{infoList.TeaLabelSelect}}' wx:key='{{index}}'>{{isEn?item.LcEngTitle:item.LcTitle}}</view>
+      </view>
+      <view wx:else class='box-context border-box point'>
+        {{infoList.TeaAbstract}}
+      </view>
+
+    </view>
+  </view>
+  <view class='price' wx:if='{{!chatImage&&isPrice&&infoList.CorMinPrice&&filter.parseint(infoList.CorMinPrice)}}'>¥{{filter.parseint(infoList.CorMinPrice)}}
+    <text class='h'>起</text>
+  </view>
+  <button class='user-info' wx:if='{{chatImage}}' open-type='getUserInfo' catchgetuserinfo='getUserInfo'>
+    <image mode='widthFix' class='chatImage' src='{{chatImage}}'></image>
+  </button>
+</view>

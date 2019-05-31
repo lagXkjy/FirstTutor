@@ -1,0 +1,61 @@
+/* component/teaCourse/teaCourse.wxss */
+
+.border-box {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 100%;
+  background: #fff;
+  padding: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.group-right {
+  font-size: 24rpx;
+  color: #7c99d0;
+  background: #e8f0ff;
+  padding: 4rpx 10rpx;
+}
+
+.group-left {
+  width: 65%;
+  display: flex;
+}
+
+.image {
+  width: 42rpx;
+  margin-right: 14rpx;
+}
+
+.group-content {
+  width: 86%;
+}
+
+.group-price {
+  margin-top: 10rpx;
+  color: #7c99d0;
+  font-weight: bold;
+}
+
+.right {
+  color: #7c99d0;
+  font-weight: bold;
+}
+
+.left {
+  width: 65%;
+  display: flex;
+}
+
+.content {
+  width: 86%;
+}
+
+.other {
+  font-size: 24rpx;
+  color: #888;
+  margin-top: 10rpx;
+}

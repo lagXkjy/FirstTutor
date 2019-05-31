@@ -1,0 +1,94 @@
+/* pages/Home/Success/index.wxss */
+page{
+  background-color: #fff;
+}
+.imgas{
+  width: 263rpx;
+  height: 251rpx;
+  display: block;
+  margin:187rpx auto 52rpx auto;
+}
+.buns{
+  margin-top: 50rpx;
+  margin-bottom: 30rpx;
+}
+.btn{
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.dibu{
+  width: 90%;
+  margin:30rpx auto;
+  color: #4c4c4c;
+}
+
+.model {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 50;
+  box-sizing: border-box;
+}
+
+.m-top {
+  width: 100%;
+  height: 366rpx;
+  border-radius: 20rpx 20rpx 0 0;
+}
+
+.touzixun {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  line-height: 366rpx;
+  color: white;
+  font-size: 37rpx;
+  border-radius: 20rpx 20rpx 0 0;
+}
+
+.modle-main {
+  width: 602rpx;
+  height: 950rpx;
+  margin: 60rpx auto;
+  border-radius: 20rpx 20rpx 20rpx 20rpx;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.img-haibao {
+  width: 100%;
+  height: 100%;
+  border-radius: 30rpx;
+  box-sizing: border-box;
+}
+
+.btoon {
+  position: absolute;
+  width: 50%;
+  height: 102rpx;
+  border-radius: 50rpx;
+  left: 25%;
+  bottom: -51rpx;
+  line-height: 102rpx;
+  border: 0;
+  color: white;
+  font-size: 42rpx;
+}
+
+button::after {
+  border: 0;
+}
+
+.zhongA {
+  height: 40rpx;
+  line-height: 40rpx;
+  width: 100rpx;
+  text-align: center;
+}
+
+.address {
+  width: 26rpx;
+  margin-right: 25rpx;
+}

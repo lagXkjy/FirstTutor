@@ -1,0 +1,11 @@
+{
+  "backgroundColor": "#F6F6F6",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#000",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "管理打卡主题",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "search": "/component/search/search"
+  }
+}

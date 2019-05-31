@@ -1,0 +1,10 @@
+<view class='wrapper'>
+  <view id='content'>
+    <canvas class='canvas cut-canvas' canvas-id="cutCanvas"></canvas>
+    <canvas class='canvas' canvas-id="myCanvas" bindtouchstart='startEvent' bindtouchmove='moveEvent' bindtouchend='endEvent' bindtouchcancel='endEvent'></canvas>
+  </view>
+</view>
+<view class='footer'>
+  <view bindtap='cancel'>{{isEn ? "cancel" : "取消"}}</view>
+  <view bindtap='success'>{{isEn ? "complete" : "完成"}}</view>
+</view>

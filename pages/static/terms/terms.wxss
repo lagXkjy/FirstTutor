@@ -1,0 +1,32 @@
+/* pages/Home/SpellingRules/index.wxss */
+
+page {
+  background-color: #fff;
+}
+
+.title {
+  margin-bottom: 30rpx;
+  margin-top: 30rpx;
+  font-size: 30rpx;
+  text-align: center;
+  font-weight: bold;
+}
+
+.list {
+  font-size: 26rpx;
+  padding: 0 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.p {
+}
+.item{
+  padding-left: 50rpx;
+  margin-top: 20rpx;
+}
+.name{
+  text-align: right;
+  font-size: 26rpx;
+  margin-bottom: 30rpx;
+  padding-right: 30rpx;
+}

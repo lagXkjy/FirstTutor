@@ -1,0 +1,10 @@
+{
+  "backgroundColor": "#F6F6F6",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#000",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "Course Management",
+  "usingComponents": {
+    "tea-course": "/component/teaCourse/teaCourse"
+  }
+}

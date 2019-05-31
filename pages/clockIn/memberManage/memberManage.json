@@ -1,0 +1,10 @@
+{
+  "backgroundColor": "#F6F6F6",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#000",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "成员管理",
+  "usingComponents": {
+    "search": "/component/search/search"
+  }
+}

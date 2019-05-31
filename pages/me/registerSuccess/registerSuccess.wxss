@@ -1,0 +1,51 @@
+/* pages/me/registerSuccess/registerSuccess.wxss */
+
+page {
+  background: #fff;
+}
+
+.image {
+  width: 160rpx;
+  margin: 0 auto;
+  display: block;
+  margin-top: 150rpx;
+}
+
+.content {
+  width: 100%;
+  margin-top: 50rpx;
+  text-align: center;
+  font-size: 30rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+
+.other {
+  width: 100%;
+  padding: 0 30rpx;
+  font-size: 26rpx;
+  /* text-align: center;  */
+  box-sizing: border-box;
+  color: #cacaca;
+  margin-top: 50rpx;
+}
+
+.footer {
+  position: fixed;
+  bottom: 50rpx;
+  left: 0;
+  width: 100%;
+}
+
+.btn-k {
+  background: #fff;
+  border: 1px solid #7c99d0;
+  margin-bottom: 20rpx;
+  color: #7c99d0;
+}
+
+.btn {
+  font-size: 34rpx;
+  padding-left: 0;
+  padding-right: 0;
+}

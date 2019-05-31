@@ -1,0 +1,28 @@
+<swiper class='swiper bg-fff' indicator-dots="{{true}}" indicator-active-color="#fff" indicator-color="#ccc" autoplay="{{true}}" circular='{{true}}'>
+  <block wx:for="{{banList}}" wx:key='{{index}}'>
+    <swiper-item>
+      <image bindtap='jumpPath' data-index='{{index}}' src="{{srcBanner}}{{item.BanImgName}}" class="slide-image" />
+    </swiper-item>
+  </block>
+</swiper>
+<view class='bg-fff'>
+  <view class='flex aitems-center center'>
+    <image class='imgs' src='/images/LS_03.png'></image>
+    <view class='fon-26 Huo c9'>{{isEn?'Latest Activity':'最新活动'}}</view>
+    <image class='imgs' src='/images/LS_05.jpg'></image>
+  </view>
+</view>
+<view bindtap='activityDetail' class='padding-lr-30 bg-fff'>
+  <image class='img-m' src='{{srcActivity}}{{activity.AtyImgPath}}'></image>
+</view>
+<view class='bg-fff'>
+  <view class='flex aitems-center center'>
+    <image class='imgs' src='/images/LS_03.png'></image>
+    <view class='fon-26 Huo c9'>{{isEn?'My colleague':'推荐外教'}}</view>
+    <image class='imgs' src='/images/LS_05.jpg'></image>
+  </view>
+</view>
+<!-- 推荐外教列表 -->
+<tutor-info is-en='{{isEn}}' bindtap='teacherInfo' data-index='{{index}}' wx:for='{{listData}}' wx:key='TeaId' info-list='{{item}}' isPrice='{{true}}' photo-url='{{srcForIdPhoto}}' class='border-t-1'></tutor-info>
+<change-type is-en='{{isEn}}' bindisEnEvent='isEnEvent'></change-type>
+<view wx:if='{{isOver}}' class="data-over padding-tb-40">{{isEn ? 'No More Information' : '没有更多信息了'}}</view>

@@ -1,0 +1,101 @@
+<view class='flex height-85 padding-lr-30 aitems-center border-b-1 between'>
+  <view class='flex1 aitems-center  fon-30 flex '>
+    <view class='width-150 ca margin-r-10'>姓名</view>
+    <input type='text' bindinput='bindName' value='{{userName}}' class='c2b list-textArea' placeholder='未填写' placeholder-class='ca'></input>
+  </view>
+</view>
+<view class='flex height-85 padding-lr-30 aitems-center border-b-1 between'>
+  <view class='flex1 aitems-center  fon-30 flex '>
+    <view class='width-150 ca margin-r-10'>手机号</view>
+    <input type='number' maxlength='11' bindinput='bindPhone' value='{{phone}}' class='c2b list-textArea' placeholder='未填写' placeholder-class='ca'></input>
+  </view>
+</view>
+<view class='flex height-85 border-b-1 padding-lr-30  between aitems-center'>
+  <picker mode="multiSelector" class='flex1' value="{{countIndex}}" range="{{countList}}" range-key='AiName' bindcolumnchange='changeColumn'>
+    <view class='flex picker aitems-center '>
+      <view class="fon-30 flex aitems-center yanse ">
+        <view class='width-135 ca'>所在区域</view>
+        <view class='c2b'>{{countList[0][countIndex[0]].AiName}} - {{countList[1][countIndex[1]].AiName}}</view>
+      </view>
+    </view>
+  </picker>
+  <image mode='widthFix' style='width:20rpx;' src='/images/jian_13.png'></image>
+</view>
+<view class='flex height-85 border-b-1 padding-lr-30  between aitems-center'>
+  <picker class='flex1' value="{{weekIndex}}" range="{{weekList}}" bindchange="bindWeekChange">
+    <view class='flex picker aitems-center '>
+      <view class="fon-30 flex aitems-center yanse ">
+        <view class='width-135 ca'>选择星期</view>
+        <view class='c2b'>{{weekList[weekIndex]}}</view>
+      </view>
+    </view>
+  </picker>
+  <image mode='widthFix' style='width:20rpx;' src='/images/jian_13.png'></image>
+</view>
+<view class='flex height-85 border-b-1 padding-lr-30  between aitems-center'>
+  <picker class='flex1' value="{{timeIndex}}" range="{{timeList}}" bindchange="bindTimeChange">
+    <view class='flex picker aitems-center '>
+      <view class="fon-30 flex aitems-center yanse ">
+        <view class='width-135 ca'>时间段</view>
+        <view class='c2b'>{{timeList[timeIndex]}}</view>
+      </view>
+    </view>
+  </picker>
+  <image mode='widthFix' style='width:20rpx;' src='/images/jian_13.png'></image>
+</view>
+<view class='flex padding-tb-20 border-b-1 padding-lr-30  between aitems-center'>
+  <picker mode="multiSelector" class='flex1' value="{{priceIndex}}" range="{{pariceList}}" bindchange="bindPriceChange">
+    <view class='flex picker aitems-center '>
+      <view class="fon-30 flex aitems-center yanse ">
+        <view class='width-135 ca'>
+          <view>费用区间</view>
+          <view>(小时费)</view>
+        </view>
+        <view class='c2b'>
+          ¥{{pariceList[0][priceIndex[0]]}} - ¥{{pariceList[1][priceIndex[1]]}}
+        </view>
+      </view>
+    </view>
+  </picker>
+  <image mode='widthFix' style='width:20rpx;' src='/images/jian_13.png'></image>
+</view>
+<view class='flex height-85 padding-lr-30 aitems-center border-b-1 between'>
+  <view class='flex1 aitems-center  fon-30 flex '>
+    <view class='width-150 ca margin-r-10'>上课地址</view>
+    <input type='text' bindinput='bindAddress' value='{{address}}' class='c2b list-textArea' placeholder='建议填写英文' placeholder-class='ca'></input>
+  </view>
+</view>
+<view class='flex height-85 border-b-1 padding-lr-30  between aitems-center'>
+  <picker class='flex1' value="{{sexIndex}}" range-key='data' range="{{sexData}}" bindchange="bindSexChange">
+    <view class='flex picker aitems-center '>
+      <view class="fon-30 flex aitems-center yanse ">
+        <view class='width-135 ca'>性别</view>
+        <view class='c2b'>{{sexData[sexIndex].data}}</view>
+      </view>
+    </view>
+  </picker>
+  <image mode='widthFix' style='width:20rpx;' src='/images/jian_13.png'></image>
+</view>
+<view class='flex height-85 padding-lr-30 aitems-center border-b-1 between'>
+  <view class='flex1 aitems-center  fon-30 flex '>
+    <view class='width-150 ca margin-r-10'>年龄</view>
+    <input type='number' maxlength='3' bindinput='bindAge' value='{{age}}' class='c2b list-textArea' placeholder='未填写' placeholder-class='ca'></input>
+  </view>
+</view>
+<view class='flex height-85 padding-lr-30 aitems-center border-b-1 between'>
+  <view class='flex1 aitems-center  fon-30 flex '>
+    <view class='width-150 ca margin-r-10'>学习课程</view>
+    <input type='text' maxlength='500' bindinput='bindCourse' value='{{course}}' class='c2b list-textArea' placeholder='建议填写英文' placeholder-class='ca'></input>
+  </view>
+</view>
+<view class='flex height-85 padding-lr-30 aitems-center border-b-1 between'>
+  <view class='flex1 aitems-center  fon-30 flex'>
+    <view class='width-150 ca margin-r-10'>其他要求</view>
+    <input type='text' maxlength='1000' bindinput='bindOther' value='{{other}}' class='c2b list-textArea' placeholder='建议填写英文' placeholder-class='ca'></input>
+  </view>
+</view>
+<view class='fujia ca'>
+  发布需求前，请先设置模板消息，以便外教发起与你沟通时，激活留言消息的提醒功能
+</view>
+<button bindtap='stuTemplateMessage' class='btn btn-k'>设置模板消息</button>
+<button bindtap='submit' class='btn purple-bg margin-t-30 white margin-b-30'>{{status===1?"提交需求":"修改需求"}}</button>

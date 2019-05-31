@@ -1,0 +1,156 @@
+/* component/tutorInfo/tutorInfo.wxss */
+
+.border-box {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 30rpx;
+  background: #fff;
+  align-items: center;
+  width: 100%;
+}
+
+.box-left {
+  display: flex;
+  align-items: center;
+  width: 85%;
+}
+
+.head-image {
+  border-radius: 50%;
+  width: 99rpx;
+  height: 99rpx;
+  margin-right: 20rpx;
+}
+
+.box-content {
+  width: 76%;
+}
+
+.box-uername {
+  margin-bottom: 10rpx;
+  font-size: 26rpx;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box-uername::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.box-image {
+  float: left;
+  display: flex;
+}
+
+.box-context {
+  font-size: 24rpx;
+  color: #888;
+}
+
+.vip {
+  width: 28rpx;
+  margin-left: 10rpx;
+}
+
+.score {
+  position: relative;
+  display: flex;
+}
+
+.score-all {
+  display: flex;
+}
+
+.score-score {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.score-list {
+  width: 26rpx;
+  height: 26rpx;
+  margin-left: 6rpx;
+  display: flex;
+}
+
+.score-img {
+  width: 100%;
+  height: 100%;
+}
+
+.score-image {
+  height: 100%;
+  width: 50%;
+}
+
+.chatImage {
+  width: 40rpx;
+}
+
+.user-info {
+  background: transparent;
+  border: none;
+}
+
+.user-info::after {
+  border: none;
+}
+
+.price {
+  font-size: 26rpx;
+  color: #7c99d0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  line-height: 0rpx;
+}
+
+.h {
+  color: #888;
+  font-size: 24rpx;
+}
+
+.point {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.lable {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  height: 40rpx;
+  flex-wrap: wrap;
+  margin-top: 15rpx;
+}
+
+.lable-list {
+  box-sizing: border-box;
+  border: 1rpx solid #7c99d0;
+  color: #7c99d0;
+  margin-right: 10rpx;
+  font-size: 24rpx;
+  padding: 0 10rpx;
+  height: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5rpx;
+  line-height: 0;
+}
+
+.school {
+  font-size: 24rpx;
+  color: #000;
+}

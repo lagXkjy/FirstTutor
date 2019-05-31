@@ -1,0 +1,12 @@
+page {
+  background-color: #fff;
+}
+
+.page-box text {
+  color: #aaa;
+  margin-right: 5rpx;
+}
+
+.width-left {
+  width: 236rpx;
+}

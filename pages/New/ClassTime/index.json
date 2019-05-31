@@ -1,0 +1,11 @@
+{
+  "backgroundColor": "#F6F6F6",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#000",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "Select Time Slot",
+  "usingComponents": {
+    "modular-title": "/component/modularTitle/modularTitle",
+    "time-slot": "/component/timeSlot/timeSlot"
+  }
+}

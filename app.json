@@ -1,0 +1,126 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/Home/Home/index",
+    "pages/clockIn/clockIn/clockIn",
+    "pages/clockIn/createNew/createNew",
+    "pages/clockIn/createNewTheme/createNewTheme",
+    "pages/clockIn/checkAllTheme/checkAllTheme",
+    "pages/clockIn/dataManage/dataManage",
+    "pages/clockIn/memberManage/memberManage",
+    "pages/clockIn/manageTheme/manageTheme",
+    "pages/clockIn/themeDetails/themeDetails",
+    "pages/clockIn/details/details",
+    "pages/clockIn/cutOut/cutOut",
+    "pages/clockIn/myClockInDiary/myClockInDiary",
+    "pages/clockIn/publishDiary/publishDiary",
+    "pages/clockIn/comment/comment",
+    "pages/clockIn/thisRecord/thisRecord",
+    "pages/me/prohibit/prohibit",
+    "pages/me/register/register",
+    "pages/New/Abasic/index",
+    "pages/me/lable/lable",
+    "pages/me/uploadPassport/uploadPassport",
+    "pages/me/stuRegister/stuRegister",
+    "pages/me/checkDemand/checkDemand",
+    "pages/static/terms/terms",
+    "pages/static/SpellingRules/index",
+    "pages/static/webView/webView",
+    "pages/me/registerSuccess/registerSuccess",
+    "pages/me/stuTemplateMessage/stuTemplateMessage",
+    "pages/Home/activitySign/index",
+    "pages/static/templateMessage/templateMessage",
+    "pages/Home/foreignTeacher/index",
+    "pages/New/index/index",
+    "pages/me/commonProblem/commonProblem",
+    "pages/me/feedback/feedback",
+    "pages/me/help/help",
+    "pages/Home/BuySuccess/index",
+    "pages/New/NeedSeeS/index",
+    "pages/New/OrdeRreviewS/index",
+    "pages/New/OrderCheckS/index",
+    "pages/Home/sureOrder/index",
+    "pages/Home/CourseInformation/index",
+    "pages/New/CourseManagement/index",
+    "pages/Home/activity/index",
+    "pages/Home/SpellGroup/index",
+    "pages/New/orderDetails/index",
+    "pages/Home/Success/index",
+    "pages/New/basic/basic",
+    "pages/New/activity/index",
+    "pages/New/OrderCheck/index",
+    "pages/New/courseDetail/index",
+    "pages/New/activityDetail/index",
+    "pages/New/qualification/index",
+    "pages/New/onlineChart/index",
+    "pages/New/ReleaseCourse/index",
+    "pages/Home/teachersInformation/index",
+    "pages/Home/Learningneeds/index",
+    "pages/New/orderDetailsS/index",
+    "pages/New/GroupList/index",
+    "pages/New/releaseRemark/index",
+    "pages/New/ClassTime/index",
+    "pages/New/Teachers/index",
+    "pages/New/area/index",
+    "pages/New/seeDetailS/index",
+    "pages/New/OrdeRreview/index",
+    "pages/New/Online/index",
+    "pages/New/stuInfo/stuInfo",
+    "pages/New/NeedSee/index",
+    "pages/New/seeDetail/index"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "FirstTutor",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "color": "#848383",
+    "selectedColor": "#7c99d0",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/Home/Home/index",
+        "text": "首页",
+        "iconPath": "/images/KAN_16.png",
+        "selectedIconPath": "/images/LO_13.png"
+      },
+      {
+        "pagePath": "pages/Home/foreignTeacher/index",
+        "text": "找外教",
+        "iconPath": "/images/KAN_18.png",
+        "selectedIconPath": "/images/LO_15.png"
+      },
+      {
+        "pagePath": "pages/Home/activity/index",
+        "text": "活动",
+        "iconPath": "/images/KAN_21.png",
+        "selectedIconPath": "/images/LO_18.png"
+      },
+      {
+        "pagePath": "pages/clockIn/clockIn/clockIn",
+        "text": "打卡",
+        "iconPath": "/images/clock2.png",
+        "selectedIconPath": "/images/clock1.png"
+      },
+      {
+        "pagePath": "pages/New/index/index",
+        "text": "我",
+        "iconPath": "/images/TE_13.png",
+        "selectedIconPath": "/images/KAN_13.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "vip-time-slot": "/component/vipTimeSlot/vipTimeSlot"
+  },
+  "permission": {
+		"scope.userLocation": {
+			"desc": "小程序获取您的位置，用于更好的为您提供服务"
+		}
+	}
+}

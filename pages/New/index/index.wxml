@@ -1,0 +1,37 @@
+<view class='header'>
+  <view class='header-box'>
+    <open-data wx:if='{{!TeaIdPhoto&&!UserAvaUrl}}' class='avatarUrl' type="userAvatarUrl"></open-data>
+    <image wx:if='{{TeaIdPhoto||UserAvaUrl}}' class='avatarUrl' src='{{TeaIdPhoto&&srcForIdPhoto}}{{TeaIdPhoto||UserAvaUrl}}'></image>
+  </view>
+  <view class='header-context'>
+    <open-data wx:if='{{!UserNickName}}' class="userinfo-nickname" type="userNickName" lang="zh_CN"></open-data>
+    <view wx:if='{{UserNickName}}' class="userinfo-nickname">{{UserNickName}}</view>
+  </view>
+  <image wx:if='{{vip&&isEn}}' mode='widthFix' class='Guan' src='/images/guan_03.png'></image>
+</view>
+<change-type is-en='{{isEn}}' bindisEnEvent='isEnEvent'></change-type>
+<!--  列表出现条件，有openid  -->
+<block wx:if='{{openid}}'>
+  <!--  学生  -->
+  <view wx:if='{{!isEn}}' class='fon-28 ffoter bg-fff '>
+    <button open-type='getUserInfo' bindgetuserinfo='getUserInfo' hover-class='none' wx:for="{{studentList}}" wx:key='{{index}}' data-url='{{item.luJin}}' class='flex lasta between height-102 padding-lr-30 border-t-1 aitems-center'>
+      <view class='this-flex'>
+        <image mode='widthFix' style='width:44rpx; margin-right:20rpx' src='{{item.url}}'></image>
+        <text>{{item.title}}</text>
+        <view wx:if='{{(index==5)&&(unReadC>0)}}' class='din'></view>
+      </view>
+      <image mode='widthFix' style='width:21rpx;' src='/images/jian_13.png'></image>
+    </button>
+  </view>
+  <!--  导师  -->
+  <view wx:if='{{isEn}}' class='fon-28 ffoter bg-fff '>
+    <button open-type='getUserInfo' wx:if='{{item.id===8?true:(teaToe && item.isShow)}}' wx:for="{{teacherList}}" wx:key='{{index}}' data-url='{{item.luJin}}' bindgetuserinfo='getUserInfo' class='flex lasta between height-102 padding-lr-30 border-t-1 aitems-center'>
+      <view class='this-flex'>
+        <image mode='widthFix' style='width:44rpx; margin-right:20rpx' src='{{item.url}}'></image>
+        <text>{{item.title}}</text>
+        <view wx:if='{{(item.id===4&&notCNum>0)||(item.id===7&&unReadC>0)||(msgCourse&&item.id===2)}}' class='din'></view>
+      </view>
+      <image mode='widthFix' style='width:21rpx;' src='/images/jian_13.png'></image>
+    </button>
+  </view>
+</block>

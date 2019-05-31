@@ -1,0 +1,175 @@
+/* pages/clockIn/publishDiary/publishDiary.wxss */
+
+publish {
+  display: block;
+  padding: 30rpx;
+  background: #fff;
+}
+
+.add-score {
+  display: block;
+}
+
+.footer {
+  display: flex;
+  width: 100%;
+  height: 90rpx;
+  color: #fff;
+  font-size: 30rpx;
+}
+
+.footer-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cancel {
+  height: 100%;
+  width: 36%;
+  background: #999;
+}
+
+.confirm {
+  height: 100%;
+  width: 64%;
+  background: #7c99d0;
+  border-radius: 0;
+  border: none;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-size: 30rpx;
+}
+
+.confirm::after {
+  border: none;
+}
+
+.wrapper {
+  width: 100vw;
+  max-height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  color: #292929;
+}
+
+.wrapper-h {
+  height: 100vh;
+}
+
+.wrapper-box {
+  width: 100vw;
+  max-height: 100vh;
+  background: #f5f6f9;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.header {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30rpx 30rpx 0;
+}
+
+.header-type {
+  display: flex;
+  align-items: center;
+  font-size: 26rpx;
+  line-height: 26rpx;
+}
+
+.header-image {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 22rpx;
+}
+
+.header-name {
+  font-size: 28rpx;
+  margin-top: 30rpx;
+}
+
+.arrow {
+  background: #f5f6f9;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80rpx;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.arrow-image {
+  width: 50rpx;
+  transform: rotateZ(180deg);
+}
+
+.arrow-rotate {
+  transform: rotateZ(0deg);
+}
+
+.margin-t-30 {
+  margin-top: 30rpx;
+}
+
+.info {
+  width: 100%;
+  padding: 0 30rpx 40rpx;
+  box-sizing: border-box;
+}
+
+.banner {
+  width: 100%;
+  margin-top: 30rpx;
+  font-size: 0;
+  display: block;
+}
+
+.title {
+  font-size: 30rpx;
+  color: #000;
+  font-weight: bold;
+}
+
+.article {
+  color: #2e2e2e;
+  font-size: 30rpx;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.margin-t-30 {
+  margin-top: 30rpx;
+}
+
+.video {
+  width: 100%;
+  height: 300rpx;
+}
+
+.image-box {
+  box-sizing: border-box;
+}
+
+.image {
+  /* width: 150rpx;
+  height: 150rpx;
+  margin-right: 20rpx; */
+  width: 60%;
+  margin: 20rpx auto 0;
+  display: block;
+}
+
+.music {
+  display: block;
+}
+
+.fixed{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}

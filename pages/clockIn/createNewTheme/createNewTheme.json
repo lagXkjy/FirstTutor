@@ -1,0 +1,10 @@
+{
+  "backgroundColor": "#F6F6F6",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#000",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "新建打卡主题",
+  "usingComponents": {
+    "publish": "/component/publish/publish"
+  }
+}

@@ -1,0 +1,27 @@
+<!-- component/teaCourse/teaCourse.wxml -->
+<view class='wrapper border-box'>
+  <!-- 团 -->
+  <block wx:if='{{course.CorType!=1}}'>
+    <view class='group-left border-box'>
+      <image wx:if="{{course.CorIsVipCourses == 1}}" class='image' mode='widthFix' src='/images/tuan_07.png'></image>
+      <image wx:else class='image' mode='widthFix' src='/images/tuan_06.png'></image>
+      <view class='group-content border-box'>
+        <text class='group-title'>{{course.CorTitle}}</text>
+        <view class='group-price'>¥{{course.CorPrice}}</view>
+      </view>
+    </view>
+    <view class='group-right'>Group of {{course.CorType}} People</view>
+  </block>
+  <!-- 单 -->
+  <block wx:if='{{course.CorType==1}}'>
+    <view class='left border-box'>
+      <image wx:if="{{course.CorIsVipCourses == 1}}" class='image' mode='widthFix' src='/images/qi_04.png'></image>
+      <image wx:else class='image' mode='widthFix' src='/images/qi_03.png'></image>
+      <view class='content border-box'>
+        <text class='title'>{{course.CorTitle}}</text>
+        <view class='other' wx:if='{{other}}'>Order Placed by {{course.BuyCount}} People</view>
+      </view>
+    </view>
+    <view class='right'>¥{{course.CorPrice}}</view>
+  </block>
+</view>

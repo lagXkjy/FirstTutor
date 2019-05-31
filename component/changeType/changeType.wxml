@@ -1,0 +1,11 @@
+<!--component/changeType/changeType.wxml-->
+<view class='wrapper'>
+  <button wx:if='{{!isEn}}' bindgetuserinfo='userInfo' class='box' open-type='getUserInfo'>
+    <view>Tutor</view>
+    <view>Entry</view>
+  </button>
+  <button wx:if='{{isEn}}' bindgetuserinfo='userInfo' class='box-en' open-type='getUserInfo'>
+    <view>Student</view>
+    <view>Entry</view>
+  </button>
+</view>

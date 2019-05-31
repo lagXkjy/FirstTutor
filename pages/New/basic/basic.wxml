@@ -1,0 +1,28 @@
+<!--pages/New/basic/basic.wxml-->
+<view wx:for="{{pagesList}}" wx:key='{{index}}' bindtap='jump' data-index='{{index}}' data-url='{{item.url}}' class='list-box'>
+  <view class='list-box-item fon-28'>
+    <view class='list-left'>{{item.ZiLiao}}</view>
+    <view class='zxx_text_overflow'>{{item.Types}}</view>
+  </view>
+  <image mode='widthFix' class='list-image' src='/images/jian_13.png'></image>
+</view>
+<!--  选择区域  -->
+<picker bindchange='changeCity' range='{{cityList}}' range-key='{{"cityEn"?"cityEn":"CanCityName"}}' value='{{cityIndex}}'>
+  <view class='list-box'>
+    <view class='list-box-item fon-28'>
+      <view class='list-left'>Teaching Area</view>
+      <view class='zxx_text_overflow'>{{forTea.TeaClaArea.length>0?'selected':'Not selected'}}</view>
+    </view>
+    <image mode='widthFix' class='list-image' src='/images/jian_13.png'></image>
+  </view>
+</picker>
+<!--  -->
+<view class='flex height-85 padding-lr-30 aitems-center border-b-1 between'>
+  <view class='flex1 aitems-center  fon-28 flex '>
+    <view style='width:320rpx;'>Contact Number</view>
+    <input style='width:75%;' bindinput='bindPhone' class='ca' type='number' maxlength='11' value='{{phone}}' placeholder='unfilled'></input>
+  </view>
+</view>
+<!--  -->
+
+<button bindtap='submit' class='btn purple-bg margin-t-60 white'>Save</button>

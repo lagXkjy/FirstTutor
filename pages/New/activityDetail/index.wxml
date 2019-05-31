@@ -1,0 +1,104 @@
+<import src="../../../wxParse/wxParse.wxml" />
+  <swiper class='header' indicator-dots="{{true}}" indicator-active-color="#fff" indicator-color="#ccc" autoplay="{{true}}" circular='{{true}}'>
+    <block wx:for="{{atyImgs}}" wx:key='{{index}}'>
+      <swiper-item>
+        <image src="{{srcActivity}}{{item}}" />
+      </swiper-item>
+    </block>
+  </swiper>
+<!--  
+    中文版
+  -->
+<block wx:if='{{!isEn}}'>
+  <view class='middle-middle bg-fff'>
+    <view class='fon-32 margin-b-20'>{{atyInfo.AtyTitle}}</view>
+    <view class='fon-24 c8'>
+      <text class='activity-price'>¥ {{atyInfo.AtyPrice}}</text> 已报名{{atyInfo.AtyPartNum}}人/{{atyInfo.AtyNumOPer}}人
+    </view>
+  </view>
+  <view class='border-t-1'>
+    <view class='flex border-b-1 bg-fff DIZHi aitems-center  between '>
+      <view class='flex aitems-center '>
+        <image mode='widthFix' class='imgs-s' src='/images/time_03.png'></image>
+        <view class='fon-24 baomi c8'>活动时间</view>
+        <view class='fon-24 XianZhi1'>{{atyInfo.startTime}} 至 {{atyInfo.endTime}}</view>
+      </view>
+    </view>
+    <view bindtap='openLoc' class='flex border-b-1 bg-fff DIZHi aitems-center  between '>
+      <view class='flex aitems-center '>
+        <image mode='widthFix' class='imgs-s' src='/images/add_06.png'></image>
+        <view class='fon-24 baomi c8'>活动地址</view>
+        <view class='fon-24 XianZhi1'>{{atyInfo.AtyAddress}}</view>
+      </view>
+      <image mode='widthFix' class='img-rrr' src='/images/jian_13.png'></image>
+    </view>
+  </view>
+  <!-- 外教视频 -->
+  <block wx:if='{{atyInfo.AtyVideoName}}'>
+    <view class='border-b-1 margin-t-20'>
+      <modular-title title-context='活动视频'></modular-title>
+    </view>
+    <view class='sepa bg-fff'>
+      <video class='video' src="{{srcActivityVideo}}{{atyInfo.AtyVideoName}}" controls></video>
+    </view>
+  </block>
+  <!-- 活动介绍 -->
+  <view class='border-b-1 margin-t-20 border-t-1'>
+    <modular-title title-context='活动介绍'></modular-title>
+  </view>
+  <view class='context'>
+    <view class="wxParse">
+      <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+    </view>
+  </view>
+  <view wx:if='{{status===1}}' class='footer white fon-30 JieShu'>活动已结束</view>
+  <view bindtap='activitySign' wx:if='{{status===0}}' class='footer white fon-30 JieShu footer-btn'>{{alreadySignUp>0?"已报名":"立即报名"}}</view>
+</block>
+<!--  
+  英文版 
+ -->
+<block wx:if='{{isEn}}'>
+  <view class='middle-middle bg-fff'>
+    <view class='fon-32 margin-b-20'>{{atyInfo.AtyTitle}}</view>
+    <view class='fon-24 c8'>
+      <text class='activity-price'>¥ {{atyInfo.AtyPrice}}</text>Signed up by {{atyInfo.AtyPartNum}} or {{atyInfo.AtyNumOPer}} People
+    </view>
+  </view>
+  <view class='border-t-1'>
+    <view class='flex border-b-1 bg-fff DIZHi aitems-center  between '>
+      <view class='flex aitems-center '>
+        <image mode='widthFix' class='imgs-s' src='/images/time_03.png'></image>
+        <view class='fon-24 baomi-en c8'>Activity Time</view>
+        <view class='fon-24 XianZhi1'>{{atyInfo.startTime}} to {{atyInfo.endTime}}</view>
+      </view>
+    </view>
+    <view bindtap='openLoc' class='flex border-b-1 bg-fff DIZHi aitems-center  between '>
+      <view class='flex aitems-center '>
+        <image mode='widthFix' class='imgs-s' src='/images/add_06.png'></image>
+        <view class='fon-24 baomi-en c8'>Activity Address</view>
+        <view class='fon-24 XianZhi1'>{{atyInfo.AtyAddress}}</view>
+      </view>
+      <image mode='widthFix' class='img-rrr' src='/images/jian_13.png'></image>
+    </view>
+  </view>
+  <!-- 外教视频 -->
+  <block wx:if='{{atyInfo.AtyVideoName}}'>
+    <view class='border-b-1 margin-t-20'>
+      <modular-title title-context='Activity Video'></modular-title>
+    </view>
+    <view class='sepa bg-fff'>
+      <video class='video' src="{{srcActivityVideo}}{{atyInfo.AtyVideoName}}" controls></video>
+    </view>
+  </block>
+  <!-- 活动介绍 -->
+  <view class='border-b-1 margin-t-20 border-t-1'>
+    <modular-title title-context='Activity Introduction'></modular-title>
+  </view>
+  <view class='context'>
+    <view class="wxParse">
+      <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+    </view>
+  </view>
+  <view wx:if='{{status===1}}' class='footer white fon-30 JieShu'>Activity Closed</view>
+  <view bindtap='activitySign' wx:if='{{status===0}}' class='footer white fon-30 JieShu footer-btn'>{{alreadySignUp>0?"Signed Up":"Sign up now"}}</view>
+</block>

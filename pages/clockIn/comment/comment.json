@@ -1,0 +1,12 @@
+{
+  "backgroundColor": "#F6F6F6",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#000",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "发表评论",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "publish": "/component/publish/publish",
+    "add-score": "/component/addScore/addScore"
+  }
+}

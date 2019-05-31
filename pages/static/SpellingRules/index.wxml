@@ -1,0 +1,7 @@
+<!--pages/Home/SpellingRules/index.wxml-->
+<view wx:for='{{pagesData}}' wx:key='{{index}}' class='padding-tb-20  padding-lr-30 '>
+  <view class='fon-26'>
+    <view class='fon-30 margin-b-20'>{{item.title}}</view>
+    <view wx:for='{{item.context}}' wx:key='{{index}}'>{{item}}</view>
+  </view>
+</view>

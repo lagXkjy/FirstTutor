@@ -1,0 +1,17 @@
+/* pages/login/login.wxss */
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: none;
+}
+.wrapper::after{
+    border: none;
+    border-radius: none;
+}
+.wrapper image{
+    width: 100%;
+}

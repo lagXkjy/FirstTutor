@@ -1,0 +1,67 @@
+<!--pages/static/templateMessage/templateMessage.wxml-->
+<view class='header'>
+  <view class='fon-30 margin-b'>
+    Why do I need to set up template message?
+  </view>
+  <text class='fon-24 c8'>
+  We strongly recommend you bind your mobile phone number with our WeChat account to activate our WeChat message service in order to receive message reminders for orders placed by or message from students automatically by following the instructions below:
+  </text>
+</view>
+<view class='item'>
+  <view class='title fon-28 border-b-1'>
+    Step 1: Subscribe our WeChat official account (i.e. "FirstTutor")
+  </view>
+  <view class='item-context fon-24'>
+    <view class='float'>1
+      <view class='sf-box'>
+        <view class='sf'>st</view>
+      </view>
+    </view>
+    <text>Click "…" in the top right corner</text>
+  </view>
+  <view class='item-context fon-24'>
+    <view class='float'>2
+      <view class='sf-box'>
+        <view class='sf'>nd</view>
+      </view>
+    </view>
+    <text>Click "About FirstTutor"</text>
+  </view>
+  <view class='item-context fon-24'>
+    <view class='float'>3
+      <view class='sf-box'>
+        <view class='sf'>rd</view>
+      </view>
+    </view>
+    <text> Click "FirstTutor"</text>
+  </view>
+  <view class='item-context fon-24'>
+    <view class='float'>4
+      <view class='sf-box'>
+        <view class='sf'>th</view>
+      </view>
+    </view>
+    <text>Click "Subscribe XXX"</text>
+  </view>
+</view>
+<view class='item'>
+  <view class='title fon-28 border-b-1'>
+    Step 2: Enter FirstTutor and link your mobile phone number with FirstTutor
+  </view>
+  <view class='item-context fon-24'>
+    <view class='float'>1
+      <view class='sf-box'>
+        <view class='sf'>st</view>
+      </view>
+    </view>
+    <text>Click the menu"Link MP"</text>
+  </view>
+  <view class='item-context fon-24'>
+    <view class='float'>2
+      <view class='sf-box'>
+        <view class='sf'>nd</view>
+      </view>
+    </view>
+    <text>Input your mobile phone number (this number must be the same with that used for registration).</text>
+  </view>
+</view>

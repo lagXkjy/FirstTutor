@@ -1,0 +1,12 @@
+{
+  "backgroundColor": "#F6F6F6",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#000",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "主题详情",
+  "usingComponents": {
+    "music": "/component/music/music",
+    "diary-list": "/component/diaryList/diaryList",
+    "add-score": "/component/addScore/addScore"
+  }
+}

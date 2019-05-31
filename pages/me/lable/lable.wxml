@@ -1,0 +1,4 @@
+<view class='flex  fon-26 padding-lr-30 between warp'>
+  <view wx:for='{{pageList}}' data-index='{{index}}' bindtap='bindChange' wx:key='{{index}}' class='QuKuai {{item.isShow?purple:null}}'>{{item.LcEngTitle?item.LcEngTitle:item.LcTitle}}</view>
+</view>
+<button bindtap='submit' class='btn purple-bg margin-t-60 white'>save</button>

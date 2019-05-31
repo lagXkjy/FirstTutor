@@ -1,0 +1,88 @@
+/* pages/clockIn/manageTheme/manageTheme.wxss */
+
+search {
+  display: block;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.list {
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+
+.info {
+  padding: 30rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-image {
+  width: 200rpx;
+  height: 100rpx;
+}
+
+.box {
+  width: 450rpx;
+}
+
+.title {
+  font-size: 28rpx;
+  color: #000;
+  word-break: break-all;
+  word-wrap: break-word;
+  margin-bottom: 20rpx;
+}
+
+.pass {
+  border: 1px solid #e96733;
+  font-size: 24rpx;
+  color: #e96733;
+  padding: 8rpx 20rpx;
+  border-radius: 5rpx;
+  display: inline-block;
+}
+
+.list-footer {
+  padding: 20rpx 30rpx;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.list-btn {
+  height: 50rpx;
+  border-radius: 50rpx;
+  padding: 0 30rpx;
+  border: 1px solid #e5e5e5;
+  font-size: 24rpx;
+  color: #5e5e5e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20rpx;
+}
+
+.list-image {
+  width: 26rpx;
+  margin-right: 10rpx;
+}
+
+.footer {
+  height: 100rpx;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #7c9acf;
+  color: #fff;
+  font-size: 30rpx;
+}
+.list-time {
+  font-size: 24rpx;
+  color: #999;
+}

@@ -1,0 +1,27 @@
+<!-- 头部课程信息 -->
+<tea-course other='{{false}}' course='{{course}}'></tea-course>
+<view class='margin-t-20'>
+  <view wx:for='{{MemList}}' wx:key='{{index}}' class='border-t-1'>
+    <group-member member-info='{{item}}' is-head='{{index===0?true:false}}' is-chat='{{true}}'></group-member>
+  </view>
+</view>
+<view bindtap='lookAddress' class='padding-25 bg-fff flex aitems-center fon-26 border-t-1 border-b-1'>
+  <image mode='widthFix' class='address' src='/images/adddress_14.png'></image>
+  <view class='address-text'>Address for Attending Course ：{{cog.FgtStudyAddress}}</view>
+</view>
+
+<view class='padding-25 margin-t-20 fon-24 border-t-1 border-b-1 bg-fff'>
+  <block wx:if='{{course.CorType==1}}'>
+    <view class='margin-b-20 '>Order Number：{{MemList[0].OdrOutradeno}}</view>
+    <view class='margin-b-20 '>Order Placement Time：{{MemList[0].orderCreatTime}}</view>
+    <view class='margin-b-20 '>Paying Time：{{MemList[0].orderBuyTime}}</view>
+  </block>
+  <block wx:else>
+    <view class='margin-b-20 '>Group Number：{{cog.FgtNumber}}</view>
+    <view class='margin-b-20 '>Start Time for Group Buying：{{cog.courseStartTime}}</view>
+    <view class='margin-b-20 '>Ending Time for Group Buying：{{cog.courseEndTime}}</view>
+  </block>
+  <view class='margin-b-20 '>Course Time Slot：{{MemList[0].timeStr}}</view>
+  <view class='margin-b-20 '>Course Duration：{{course.courseTimeLong}}hour</view>
+  <view class='margin-b-20 '>Course Time：{{cog.FgtStartTime}}</view>
+</view>

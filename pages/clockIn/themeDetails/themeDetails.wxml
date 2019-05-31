@@ -1,0 +1,86 @@
+<wxs src='../../../utils/filter.wxs' module='filter'/>
+<image class='banner' mode='widthFix' src='{{srcClockInImage + themeInfo.ThemeHeadImg}}'></image>
+<block wx:if='{{!isEn}}'>
+  <view class='info'>
+      <view class='title'>
+        {{themeInfo.ThemeName}}
+      </view>
+      <view class='num margin-t-30'>
+        <view wx:if='{{type === 1}}'>{{themeInfo.showTime}}</view>
+        <view wx:if='{{type === 2}}'>第{{themeInfo.ThemeCheckpoint}}关</view>
+        <view>阅读{{themeInfo.YueDu}}</view>
+      </view>
+    <block wx:for='{{themeInfo.infoArr}}' wx:key='index'>
+      <view wx:if='{{item.text}}' class='article margin-t-30'>
+        <text bindlongpress='longpress' data-index='{{index}}'>{{filter.decodeUrlComponent(item.text)}}</text>
+      </view>
+      <view wx:if='{{item.images.length > 0}}' class='image-box margin-t-30'>
+        <image bindtap='checkImage' data-index='{{index}}' data-indexs='{{indexs}}' mode='widthFix' class='image' wx:for='{{item.images}}' wx:for-item='items' wx:for-index='indexs' wx:key='{{indexs}}' src='{{srcClockInImage + items}}'></image>
+      </view>
+      <music wx:if='{{item.audio}}' path='{{srcClockInAudio + item.audio}}' my-type='1' class='music margin-t-30'></music>
+      <video wx:if='{{item.video}}' cusom-cache="{{false}}"  src='{{srcClockInVideo + item.video}}' class='video margin-t-30'></video>
+    </block>
+  </view>
+  <view class='footer'>
+    <button open-type='share' data-ThemeId='{{themeInfo.Id}}' class='footer-btn footer-share'>分享</button>
+    <block wx:if='{{isInit}}'>
+      <button class='footer-btn footer-clockIn gray'>去打卡</button>
+    </block>
+    <block wx:else>
+      <button wx:if='{{IsCompleted}}' bindtap='toPublishDiary' class='footer-btn footer-clockIn'>去打卡</button>
+      <button wx:else class='footer-btn footer-clockIn gray'>已打卡</button>
+    </block>
+  </view>
+  <block wx:if='{{listData.length > 0}}'>
+    <view class='raking-me'>
+      <view class='raking-me-left'>
+        打卡日记
+      </view>
+    </view>
+    <diary-list binddeleteDiary='deleteDiary' data-index='{{index}}' wx:for='{{listData}}' obj='{{item}}' wx:key='Id'></diary-list>
+  </block>
+</block>
+
+
+<block wx:if='{{isEn}}'>
+  <view class='info'>
+    <view class='title'>
+      {{themeInfo.ThemeName}}
+    </view>
+    <view class='num margin-t-30'>
+      <view wx:if='{{type === 1}}'>{{themeInfo.showTime}}</view>
+      <view wx:if='{{type === 2}}'>The {{themeInfo.ThemeCheckpoint}} Mission</view>
+      <view>{{themeInfo.YueDu}} Views</view>
+    </view>
+    <block wx:for='{{themeInfo.infoArr}}' wx:key='index'>
+      <view wx:if='{{item.text}}' class='article margin-t-30'>
+        <text bindlongpress='longpress' data-index='{{index}}'>{{filter.decodeUrlComponent(item.text)}}</text>
+      </view>
+      <view wx:if='{{item.images.length > 0}}' class='image-box margin-t-30'>
+        <image bindtap='checkImage' data-index='{{index}}' data-indexs='{{indexs}}' mode='widthFix' class='image' wx:for='{{item.images}}' wx:for-item='items' wx:for-index='indexs' wx:key='{{indexs}}' src='{{srcClockInImage + items}}'></image>
+      </view>
+      <music wx:if='{{item.audio}}' path='{{srcClockInAudio + item.audio}}' my-type='1' class='music margin-t-30'></music>
+      <video wx:if='{{item.video}}' cusom-cache="{{false}}"  src='{{srcClockInVideo + item.video}}' class='video margin-t-30'></video>
+    </block>
+  </view>
+  <view class='footer'>
+    <button open-type='share' data-ThemeId='{{themeInfo.Id}}' class='footer-btn footer-share'>Share</button>
+    <block wx:if='{{isInit}}'>
+      <button class='footer-btn footer-clockIn gray'>To Clock in</button>
+    </block>
+    <block wx:else>
+      <button wx:if='{{IsCompleted}}' bindtap='toPublishDiary' class='footer-btn footer-clockIn'>To Clock in</button>
+      <button wx:else class='footer-btn footer-clockIn gray'>Have signed in</button>
+    </block>
+  </view>
+  <block wx:if='{{listData.length > 0}}'>
+    <view class='raking-me'>
+      <view class='raking-me-left'>
+        Diary of Clock in
+      </view>
+    </view>
+    <diary-list binddeleteDiary='deleteDiary' data-index='{{index}}' wx:for='{{listData}}' obj='{{item}}' wx:key='Id'></diary-list>
+  </block>
+</block>
+<add-score score-type='{{scoreType}}' score-num='{{scoreNum}}'></add-score>
+<view wx:if='{{listData.length > 0 && isOver}}' class="data-over padding-tb-40">{{isEn ? 'No More Information' : '没有更多信息了'}}</view>

@@ -1,0 +1,18 @@
+<!--component/groupMember/groupMember.wxml-->
+<view class='wrapper border-box'>
+  <view class='box-left'>
+    <image mode='widthFix' class='head-image' src='{{memberInfo.UserAvaUrl}}'></image>
+    <view class='box-content'>
+      <text class='float'>{{memberInfo.OdrName}}</text>
+      <view wx:if='{{isHead&&!isEn}}' class='tuan float'>团长</view>
+      <view wx:if='{{isHead&&isEn}}' class='tuan float'>Group leader</view>
+      <button wx:if='{{isChat}}' open-type='getUserInfo' catchgetuserinfo='getUserInfo' class='user-info'>
+        <image mode='widthFix' class='chat float' src='/images/DuiHua_06.png'></image>
+      </button>
+    </view>
+  </view>
+  <view bindtap='callPhone' class='box-right'>
+    <image class='phone' mode='widthFix' src='/images/phone_06.png'></image>
+    <text>{{memberInfo.OdrPhone}}</text>
+  </view>
+</view>

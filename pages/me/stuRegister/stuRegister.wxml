@@ -1,0 +1,59 @@
+<view class='flex height-85 padding-lr-30 aitems-center border-b-1 between'>
+  <view class='flex1 aitems-center  fon-30 flex '>
+    <view class='width-150 ca margin-r-10'>姓名</view>
+    <input type='text' bindinput='bindName' value='{{userName}}' class='c2b list-textArea' placeholder='未填写' placeholder-class='ca'></input>
+  </view>
+</view>
+<view class='flex height-85 padding-lr-30 aitems-center border-b-1 between'>
+  <view class='flex1 aitems-center  fon-30 flex '>
+    <view class='width-150 ca margin-r-10'>手机号</view>
+    <input type='number' maxlength='11' bindinput='bindPhone' value='{{phone}}'  class='c2b list-textArea' placeholder='未填写' placeholder-class='ca'></input>
+  </view>
+</view>
+<view class='flex height-85 border-b-1 padding-lr-30  between aitems-center'>
+  <picker class='flex1' mode="multiSelector" value="{{countIndex}}" range="{{countList}}" range-key='AiName' bindcolumnchange='changeColumn'>
+    <view class='flex picker aitems-center '>
+      <view class="fon-30 flex aitems-center yanse ">
+        <view class='width-135 ca'>所在区域</view>
+        <view class='c2b'>{{countList[0][countIndex[0]].AiName}} - {{countList[1][countIndex[1]].AiName}}</view>
+      </view>
+    </view>
+  </picker>
+  <image mode='widthFix' style='width:20rpx;' src='/images/jian_13.png'></image>
+</view>
+<view class='flex height-85 border-b-1 padding-lr-30  between aitems-center'>
+  <picker class='flex1' value="{{sexIndex}}" range-key='text' range="{{sexData}}" bindchange="bindSexChange">
+    <view class='flex picker aitems-center '>
+      <view class="fon-30 flex aitems-center yanse ">
+        <view class='width-135 ca'>性别</view>
+        <view class='c2b'>{{sexData[sexIndex].text}}</view>
+      </view>
+    </view>
+  </picker>
+  <image mode='widthFix' style='width:20rpx;' src='/images/jian_13.png'></image>
+</view>
+<view class='flex height-85 padding-lr-30 aitems-center border-b-1 between'>
+  <view class='flex1 aitems-center  fon-30 flex '>
+    <view class='width-150 ca margin-r-10'>年龄</view>
+    <input type='number' maxlength='3' bindinput='bindAge' value='{{age}}' class='c2b list-textArea' placeholder='未填写' placeholder-class='ca'></input>
+  </view>
+</view>
+<view class='flex height-85 padding-lr-30 aitems-center border-b-1 between'>
+  <view class='flex1 aitems-center  fon-30 flex '>
+    <view class='width-150 ca margin-r-10'>微信号</view>
+    <input type='text' bindinput='bindWechat' value='{{wechat}}' class='c2b list-textArea' placeholder='未填写' placeholder-class='ca'></input>
+  </view>
+</view>
+<view class='flex height-85 border-b-1 padding-lr-30  between aitems-center'>
+  <picker class='flex1' value="{{englishLevelIndex}}" range-key='zh' range="{{englishLevel}}" bindchange="bindEnglishLevel">
+    <view class='flex picker aitems-center '>
+      <view class="fon-30 flex aitems-center yanse ">
+        <view class='width-135 ca'>英语水平</view>
+        <view class='c2b'>{{englishLevel[englishLevelIndex].zh}}</view>
+      </view>
+    </view>
+  </picker>
+  <image mode='widthFix' style='width:20rpx;' src='/images/jian_13.png'></image>
+</view>
+<button wx:if='{{!card}}' bindtap='stuTemplateMessage' class='btn btn-k margin-t-30'>设置模板消息</button>
+<button bindtap='getOpenId' class='btn purple-bg margin-t-30 white margin-b-30'>{{isRegister?"修改":"注册"}}</button>

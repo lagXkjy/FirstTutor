@@ -1,0 +1,45 @@
+<block wx:if='{{!isEn}}'> 
+<search bindsearchInput='inputchange' placeholder='搜索成员'></search>
+<view class='box'>
+  <block wx:for='{{listData}}' wx:key='{{index}}'>
+    <view class='list'>
+      <view class='left'>
+        <image mode='widthFix' src='{{item.UserAvaUrl}}' class='image'></image>
+        <view class='info'>
+          <view class='name'>{{item.UserNickName}}</view>
+          <view class='time'>{{item.showTime}}</view>
+        </view>
+      </view>
+      <view bindtap='changeAuthority' data-index='{{index}}' class='submit'>{{item.SmallCardLimit ? "取消限制" : "限制发表"}}</view>
+    </view>
+  </block>
+</view>
+<view wx:if='{{listData.length<=0}}' class='noData'>
+  暂无成员
+</view>
+</block>
+
+
+
+<block wx:if='{{isEn}}'> 
+<search bindsearchInput='inputchange' placeholder='Search by Name'></search>
+<view class='box'>
+  <block wx:for='{{listData}}' wx:key='{{index}}'>
+    <view class='list'>
+      <view class='left-en'>
+        <image mode='widthFix' src='{{item.UserAvaUrl}}' class='image'></image>
+        <view class='info-en'>
+          <view class='name'>{{item.UserNickName}}</view>
+          <view class='time'>{{item.showTime}}</view>
+        </view>
+      </view>
+      <view bindtap='changeAuthority' data-index='{{index}}' class='submit'>{{item.SmallCardLimit ? "Take off Restrictions" : "Comment Restriction "}}</view>
+    </view>
+  </block>
+</view>
+<view wx:if='{{listData.length<=0}}' class='noData'>
+  No Data
+</view>
+</block>
+
+<view wx:if='{{listData.length > 0 && isOver}}' class="data-over padding-tb-40">{{isEn ? 'No More Information' : '没有更多信息了'}}</view>

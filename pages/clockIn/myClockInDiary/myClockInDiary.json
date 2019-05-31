@@ -1,0 +1,11 @@
+{
+  "backgroundColor": "#F6F6F6",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#000",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "我的打卡日记",
+  "usingComponents": {
+    "diary-list": "/component/diaryList/diaryList",
+    "add-score": "/component/addScore/addScore"
+  }
+}

@@ -1,0 +1,35 @@
+<!-- component/stuCourse/stuCourse.wxml -->
+<!-- 一对一 -->
+<view wx:if='{{course.CorType==1}}' class='wrapper'>
+  <view class='left'>
+    <image wx:if="{{course.CorIsVipCourses == 1}}" class='image' mode='widthFix' src='/images/qi_04.png'></image>
+    <image wx:else class='image' mode='widthFix' src='/images/qi_03.png'></image>
+    <view class='left-box-t'>
+      <text>{{course.CorTitle}}</text>
+      <view class='left-other' wx:if='{{!course.CorIsVipCourses && isEn}}'>{{course.BuyCount}} People Applied</view>
+      <view class='left-other' wx:if='{{!course.CorIsVipCourses && !isEn}}'>已有{{course.BuyCount}}人参与</view>
+    </view>
+  </view>
+  <view class='right'>
+    <view class='right-price'>¥{{course.CorPrice}}</view>
+  </view>
+</view>
+<!-- 一对多 -->
+<view wx:if='{{course.CorType!=1}}' class='wrapper'>
+  <view class='left-t'>
+    <image wx:if="{{course.CorIsVipCourses == 1}}" class='image' mode='widthFix' src='/images/tuan_07.png'></image>
+    <image wx:else class='image' mode='widthFix' src='/images/tuan_06.png'></image>
+    <view class='left-box-t'>
+      <text>{{course.CorTitle}}</text>
+      <view class='left-price'>¥{{course.CorPrice}}</view>
+    </view>
+  </view>
+  <view class='right-t' wx:if='{{!isEn}}'>
+    <view class='right-other-t'>已有{{course.BuyCount}}人参与</view>
+    <view class='right-poper-t'>{{course.CorClaNum}}人团</view>
+  </view>
+  <view class='right-t' wx:if='{{isEn}}'>
+    <view class='right-other-t'>{{course.BuyCount}} People Applied</view>
+    <view class='right-poper-t'>Group of {{course.CorClaNum}} People</view>
+  </view>
+</view>

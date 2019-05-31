@@ -1,0 +1,4 @@
+<!--pages/clockIn/myClockInDiary/myClockInDiary.wxml-->
+<diary-list show-activity='{{true}}' binddeleteDiary='deleteDiary' data-index='{{index}}' wx:for='{{listData}}' obj='{{item}}' wx:key='{{index}}'></diary-list>
+<add-score score-type='{{scoreType}}' score-num='{{scoreNum}}'></add-score>
+<view wx:if='{{listData.length > 0 && isOver}}' class="data-over padding-tb-40">{{isEn ? 'No More Information' : '没有更多信息了'}}</view>

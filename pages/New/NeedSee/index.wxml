@@ -1,0 +1,25 @@
+<view class='wrapper'>
+  <view wx:for='{{lnList}}' wx:key='{{index}}' class='margin-t-20'>
+    <view class=' middle-m bg-fff flex aitems-center between padding-lr-30 border-t-1'>
+      <view class=' fon-36  c2b left-80'>
+        <view class='point'>
+          {{item.NedCorName}}
+        </view>
+        <view class='c8  fon-24 margin-t-20'>{{item.address}} | {{item.week}} | {{item.time}}</view>
+      </view>
+      <view class='purplea purple fon-32 bold'>¥{{item.NedMinPrice}} - ¥{{item.NedMaxPrice}}</view>
+    </view>
+    <view class='flex fon-24 border-t-1 border-b-1 padding-lr-30  aitems-center bg-fff between'>
+      <view class='fon-26 c8 image-box'>
+        <image mode='widthFix' class='url-image' src='{{item.StuAvaUrl}}'></image>
+        <image mode='widthFix' class='url-gender' src='{{item.StuGender==0?"/images/nv.png":"/images/nan.png"}}'></image>
+        <text class='image-t-l'>Age {{item.StuAge}}</text> |
+        <text class='image-t-r'>Views {{item.BrowingTimes}}</text>
+      </view>
+      <view bindtap='seeDetail' data-index='{{index}}' class='border AnNiu white purple-bg'>Online Contact</view>
+    </view>
+  </view>
+</view>
+<view wx:if='{{lnList.length<=0}}' class='noData'>
+  No Data
+</view>
